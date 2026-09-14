@@ -1,0 +1,61 @@
+name: cf_port_test_generator Sub
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'cf_port_test_generator.py'
+      - 'gem.yaml'
+      - '.github/workflows/cf_port_test_generator.yml'
+  schedule:
+    # 北京时间每天早上 8:00（UTC 00:00）
+    - cron: '0 0 * * *'
+  workflow_dispatch:   # 支持手动触发
+
+permissions:
+  contents: write     # 必须，否则无法 push 回仓库
+
+jobs:
+  build:
+    name: Build WARP Subscription
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 保证后续能正确 push
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'   # 3.10/3.11/3.12 都可以
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install cryptography requests pyyaml
+
+      - name: Run generate.py
+        id: generate
+        run: |
+          python cf_port_test_generator.py
+        continue-on-error: false   # 注册失败就让整个任务失败，方便排查
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add *.yaml  || true
+
+          # 只有文件真正变化时才提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-update WARP subscription [skip ci]"
+            git push
+            echo "Subscription updated and pushed."
+          fi

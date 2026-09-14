@@ -91,19 +91,19 @@ from pathlib import Path
 IP_SOURCES = {
 
     "1only":
-        "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_1only.txt",
+        "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
 
     "2only":
-        "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_2only.txt",
+        "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
 
     "3only":
-        "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_3only.txt",
+        "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_3only.txt",
 
     "4only":
-        "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_4only.txt",
+        "https://raw.githubusercontent.com/qjlxg/Psfaaff/refs/heads/main/ips_4only.txt",
 
     "5plus":
-        "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_5plus.txt",
+        "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_5plus.txt",
 }
 
 

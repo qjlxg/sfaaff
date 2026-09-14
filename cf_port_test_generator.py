@@ -7,7 +7,7 @@ Cloudflare 优选 IP 多端口批量对照测试生成器
     不修改原来的正式生成器。
 
     从 gem.yaml 中读取所有有效节点，
-    但不再判断原节点是不是 Cloudflare 节点。
+    不判断原节点是不是 Cloudflare 节点。
 
     直接取 gem.yaml 中第一个有效节点作为“自建服务器模板”，
     然后把这个模板的 server/IP 替换成优选 Cloudflare IP，
@@ -21,7 +21,7 @@ Cloudflare 优选 IP 多端口批量对照测试生成器
         ips_4only.txt  → cf_port_test_4only.yaml
         ips_5plus.txt  → cf_port_test_5plus.yaml
 
-    每个 IP 会分别测试：
+    测试端口：
 
         80
         443
@@ -31,31 +31,13 @@ Cloudflare 优选 IP 多端口批量对照测试生成器
         2087
         2096
 
-    注意：
-        gem.yaml 可以有 5 个、10 个、20 个甚至更多节点。
-        本脚本只取第一个有效节点作为测试模板。
+    gem.yaml 中可以有多个节点。
+    本脚本只取第一个有效节点作为测试母模板。
 
-        例如：
-
-            自建服务器节点1
-            自建服务器节点2
-            自建服务器节点3
-            ...
-            自建服务器节点10
-
-        实际只使用：
-
-            自建服务器节点1
-
-        然后：
-
-            节点1配置
-                ↓
-            替换 Cloudflare IP
-                ↓
-            替换测试端口
-                ↓
-            生成候选节点
+    支持：
+        vmess://
+        vless://
+        trojan://
 
     本脚本不会修改原 gem.yaml。
 """
@@ -65,7 +47,13 @@ import yaml
 import base64
 import json
 import copy
-from urllib.parse import urlparse, parse_qs, unquote
+
+from urllib.parse import (
+    urlparse,
+    parse_qs,
+    unquote,
+)
+
 from pathlib import Path
 
 
@@ -74,9 +62,9 @@ from pathlib import Path
 IP_SOURCES = {
     "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
     "2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
-    "3only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_3only.txt",
-    "4only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_4only.txt",
-    "5plus": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_5plus.txt",
+    "3only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_3only.txt",
+    "4only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_4only.txt",
+    "5plus": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_5plus.txt",
 }
 
 TEMPLATE_FILE = Path("gem.yaml")
@@ -149,13 +137,19 @@ def fetch_ips(url):
 
             # 去掉注释
             if "#" in line:
-                line = line.split("#", 1)[0].strip()
+                line = line.split(
+                    "#",
+                    1
+                )[0].strip()
 
             if not line:
                 continue
 
             # 如果是 IP:PORT，则只取 IP
-            parts = line.rsplit(":", 1)
+            parts = line.rsplit(
+                ":",
+                1
+            )
 
             if len(parts) == 2:
                 try:
@@ -182,15 +176,26 @@ def fetch_ips(url):
             ):
                 break
 
-        print(f"成功读取 IP：{len(ips)}")
+        print(
+            f"成功读取 IP：{len(ips)}"
+        )
 
-        for i, ip in enumerate(ips, 1):
-            print(f"{i:5d}. {ip}")
+        for i, ip in enumerate(
+            ips,
+            1
+        ):
+            print(
+                f"{i:5d}. {ip}"
+            )
 
         return ips
 
     except Exception as e:
-        print(f"读取 IP 失败：{e}")
+
+        print(
+            f"读取 IP 失败：{e}"
+        )
+
         return []
 
 
@@ -200,10 +205,13 @@ def parse_vmess_uri(uri):
     """
 
     try:
+
         encoded = uri[8:].strip()
 
         # 兼容缺少 padding
-        encoded += "=" * (-len(encoded) % 4)
+        encoded += "=" * (
+            -len(encoded) % 4
+        )
 
         decoded = base64.b64decode(
             encoded
@@ -212,7 +220,9 @@ def parse_vmess_uri(uri):
             errors="ignore"
         )
 
-        data = json.loads(decoded)
+        data = json.loads(
+            decoded
+        )
 
         name = (
             data.get("ps")
@@ -258,7 +268,10 @@ def parse_vmess_uri(uri):
             "type": "vmess",
             "server": server,
             "port": port,
-            "uuid": data.get("id", ""),
+            "uuid": data.get(
+                "id",
+                ""
+            ),
             "alterId": int(
                 data.get("aid")
                 or data.get("alterId")
@@ -310,21 +323,246 @@ def parse_vmess_uri(uri):
         return None
 
 
+def parse_trojan_uri(uri):
+    """
+    解析 trojan:// URI。
+
+    例如：
+
+    trojan://password@example.com:443
+        ?security=tls
+        &sni=example.com
+        &alpn=h3
+        &fp=randomized
+        &allowlnsecure=1
+        &type=ws
+        &host=example.com
+        &path=%2Ftr%3Fed%3D2560
+        #节点名称
+    """
+
+    try:
+
+        parsed = urlparse(
+            uri
+        )
+
+        password = unquote(
+            parsed.username
+            or ""
+        )
+
+        server = (
+            parsed.hostname
+            or ""
+        )
+
+        port = (
+            parsed.port
+            or 443
+        )
+
+        if not server:
+            return None
+
+        query = parse_qs(
+            parsed.query,
+            keep_blank_values=True
+        )
+
+        def get_q(
+            key,
+            default=""
+        ):
+
+            value = query.get(
+                key
+            )
+
+            if not value:
+                return default
+
+            return unquote(
+                value[0]
+            )
+
+        name = (
+            unquote(
+                parsed.fragment
+            )
+            if parsed.fragment
+            else "Trojan"
+        )
+
+        security = get_q(
+            "security",
+            ""
+        )
+
+        sni = get_q(
+            "sni",
+            ""
+        )
+
+        fp = get_q(
+            "fp",
+            ""
+        )
+
+        allow_insecure = get_q(
+            "allowlnsecure",
+            ""
+        )
+
+        if not allow_insecure:
+            allow_insecure = get_q(
+                "allowInsecure",
+                ""
+            )
+
+        network = get_q(
+            "type",
+            "tcp"
+        )
+
+        proxy = {
+            "name": name,
+            "type": "trojan",
+            "server": server,
+            "port": port,
+            "password": password,
+        }
+
+        # TLS
+        tls_ports = (
+            443,
+            8443,
+            2053,
+            2083,
+            2087,
+            2096,
+        )
+
+        if (
+            security == "tls"
+            or port in tls_ports
+        ):
+            proxy["tls"] = True
+
+        # SNI
+        if sni:
+            proxy["sni"] = sni
+
+        # ALPN
+        alpn_values = query.get(
+            "alpn",
+            []
+        )
+
+        if alpn_values:
+
+            proxy["alpn"] = [
+                unquote(x)
+                for x in alpn_values
+            ]
+
+        # 指纹
+        if fp:
+            proxy[
+                "client-fingerprint"
+            ] = fp
+
+        # allowInsecure
+        if allow_insecure:
+
+            proxy[
+                "skip-cert-verify"
+            ] = (
+                str(
+                    allow_insecure
+                ).lower()
+                in (
+                    "1",
+                    "true",
+                    "yes",
+                )
+            )
+
+        # network
+        proxy[
+            "network"
+        ] = network
+
+        # WS
+        if network == "ws":
+
+            path = get_q(
+                "path",
+                "/"
+            )
+
+            host = get_q(
+                "host",
+                ""
+            )
+
+            ws_opts = {
+                "path": path or "/"
+            }
+
+            if host:
+
+                ws_opts[
+                    "headers"
+                ] = {
+                    "Host": host
+                }
+
+            proxy[
+                "ws-opts"
+            ] = ws_opts
+
+        return proxy
+
+    except Exception:
+        return None
+
+
 def parse_uri_to_proxy(uri):
     """
-    解析 vmess:// / vless://。
+    解析：
+
+        vmess://
+        vless://
+        trojan://
     """
 
     uri = uri.strip()
 
-    if uri.startswith("vmess://"):
-        return parse_vmess_uri(uri)
+    if uri.startswith(
+        "vmess://"
+    ):
+        return parse_vmess_uri(
+            uri
+        )
 
-    if not uri.startswith("vless://"):
+    if uri.startswith(
+        "trojan://"
+    ):
+        return parse_trojan_uri(
+            uri
+        )
+
+    if not uri.startswith(
+        "vless://"
+    ):
         return None
 
     try:
-        parsed = urlparse(uri)
+
+        parsed = urlparse(
+            uri
+        )
 
         uuid = parsed.username
 
@@ -336,14 +574,24 @@ def parse_uri_to_proxy(uri):
         if not server:
             return None
 
-        port = parsed.port or 443
-
-        query = parse_qs(
-            parsed.query
+        port = (
+            parsed.port
+            or 443
         )
 
-        def get_q(name, default=""):
-            value = query.get(name)
+        query = parse_qs(
+            parsed.query,
+            keep_blank_values=True
+        )
+
+        def get_q(
+            name,
+            default=""
+        ):
+
+            value = query.get(
+                name
+            )
 
             if not value:
                 return default
@@ -406,8 +654,12 @@ def parse_uri_to_proxy(uri):
             )
 
         if security == "tls":
-            proxy["servername"] = (
-                sni or server
+
+            proxy[
+                "servername"
+            ] = (
+                sni
+                or server
             )
 
         if port in (
@@ -418,10 +670,16 @@ def parse_uri_to_proxy(uri):
             2087,
             2096,
         ):
+
             proxy["tls"] = True
 
-            if not proxy.get("servername"):
-                proxy["servername"] = (
+            if not proxy.get(
+                "servername"
+            ):
+
+                proxy[
+                    "servername"
+                ] = (
                     sni
                     or server
                 )
@@ -433,11 +691,16 @@ def parse_uri_to_proxy(uri):
             }
 
             if host:
-                ws_opts["headers"] = {
+
+                ws_opts[
+                    "headers"
+                ] = {
                     "Host": host
                 }
 
-            proxy["ws-opts"] = ws_opts
+            proxy[
+                "ws-opts"
+            ] = ws_opts
 
         return proxy
 
@@ -445,7 +708,9 @@ def parse_uri_to_proxy(uri):
         return None
 
 
-def universal_load_subscription(file_path):
+def universal_load_subscription(
+    file_path
+):
     """
     通用读取：
 
@@ -455,26 +720,34 @@ def universal_load_subscription(file_path):
         Base64 协议链接
     """
 
-    path = Path(file_path)
+    path = Path(
+        file_path
+    )
 
     if not path.exists():
+
         print(
-            f"模板文件不存在：{file_path}"
+            f"模板文件不存在："
+            f"{file_path}"
         )
+
         return {
             "proxies": []
         }
 
     try:
+
         raw = path.read_text(
             encoding="utf-8",
             errors="ignore"
         )
 
     except Exception as e:
+
         print(
             f"读取模板失败：{e}"
         )
+
         return {
             "proxies": []
         }
@@ -486,9 +759,15 @@ def universal_load_subscription(file_path):
     # ==================================================
 
     try:
-        data = yaml.safe_load(raw)
 
-        if isinstance(data, dict):
+        data = yaml.safe_load(
+            raw
+        )
+
+        if isinstance(
+            data,
+            dict
+        ):
 
             proxies = data.get(
                 "proxies"
@@ -498,15 +777,21 @@ def universal_load_subscription(file_path):
                 proxies,
                 list
             ):
+
                 valid = []
 
                 for node in proxies:
-                    if isinstance(
-                        node,
-                        dict
-                    ) and node.get(
-                        "server"
+
+                    if (
+                        isinstance(
+                            node,
+                            dict
+                        )
+                        and node.get(
+                            "server"
+                        )
                     ):
+
                         valid.append(
                             node
                         )
@@ -514,11 +799,15 @@ def universal_load_subscription(file_path):
                 if valid:
 
                     print(
-                        f"【识别成功】当前文件为：YAML 配置，"
-                        f"成功提取 {len(valid)} 个有效节点。"
+                        f"【识别成功】当前文件为："
+                        f"YAML 配置，"
+                        f"成功提取 "
+                        f"{len(valid)} 个有效节点。"
                     )
 
-                    data["proxies"] = valid
+                    data[
+                        "proxies"
+                    ] = valid
 
                     return data
 
@@ -543,6 +832,7 @@ def universal_load_subscription(file_path):
             (
                 "vmess://",
                 "vless://",
+                "trojan://",
             )
         ):
 
@@ -551,6 +841,7 @@ def universal_load_subscription(file_path):
             )
 
             if proxy:
+
                 proxies.append(
                     proxy
                 )
@@ -558,8 +849,10 @@ def universal_load_subscription(file_path):
     if proxies:
 
         print(
-            f"【识别成功】当前文件为：明文链接列表，"
-            f"成功提取 {len(proxies)} 个有效节点。"
+            f"【识别成功】当前文件为："
+            f"明文链接列表，"
+            f"成功提取 "
+            f"{len(proxies)} 个有效节点。"
         )
 
         return {
@@ -589,7 +882,10 @@ def universal_load_subscription(file_path):
 
         decoded = decoded.strip()
 
+        # ----------------------------------------------
         # Base64 → YAML
+        # ----------------------------------------------
+
         try:
 
             data = yaml.safe_load(
@@ -623,6 +919,7 @@ def universal_load_subscription(file_path):
                                 "server"
                             )
                         ):
+
                             valid.append(
                                 node
                             )
@@ -630,18 +927,25 @@ def universal_load_subscription(file_path):
                     if valid:
 
                         print(
-                            f"【识别成功】当前文件为：Base64 YAML，"
-                            f"成功提取 {len(valid)} 个有效节点。"
+                            f"【识别成功】当前文件为："
+                            f"Base64 YAML，"
+                            f"成功提取 "
+                            f"{len(valid)} 个有效节点。"
                         )
 
-                        data["proxies"] = valid
+                        data[
+                            "proxies"
+                        ] = valid
 
                         return data
 
         except Exception:
             pass
 
+        # ----------------------------------------------
         # Base64 → 明文协议
+        # ----------------------------------------------
+
         proxies = []
 
         for line in decoded.splitlines():
@@ -652,6 +956,7 @@ def universal_load_subscription(file_path):
                 (
                     "vmess://",
                     "vless://",
+                    "trojan://",
                 )
             ):
 
@@ -660,6 +965,7 @@ def universal_load_subscription(file_path):
                 )
 
                 if proxy:
+
                     proxies.append(
                         proxy
                     )
@@ -667,8 +973,10 @@ def universal_load_subscription(file_path):
         if proxies:
 
             print(
-                f"【识别成功】当前文件为：Base64 明文链接，"
-                f"成功提取 {len(proxies)} 个有效节点。"
+                f"【识别成功】当前文件为："
+                f"Base64 明文链接，"
+                f"成功提取 "
+                f"{len(proxies)} 个有效节点。"
             )
 
             return {
@@ -693,7 +1001,7 @@ def adapt_node_for_test(
     port
 ):
     """
-    把一个原始节点改造成：
+    将一个原始节点改造成：
 
         server = 指定 CF IP
         port   = 指定测试端口
@@ -715,13 +1023,14 @@ def adapt_node_for_test(
         or "Template"
     )
 
-    # 保存原始 SNI / Host
-    original_servername = (
-        proxy.get("servername")
-        or proxy.get("sni")
+    # 原始 SNI
+    original_sni = (
+        proxy.get("sni")
+        or proxy.get("servername")
         or ""
     )
 
+    # 原始 WS Host
     ws_opts = proxy.get(
         "ws-opts"
     )
@@ -741,22 +1050,28 @@ def adapt_node_for_test(
             headers,
             dict
         ):
+
             original_ws_host = (
-                headers.get("Host")
-                or headers.get("host")
+                headers.get(
+                    "Host"
+                )
+                or headers.get(
+                    "host"
+                )
                 or ""
             )
 
     # ==================================================
-    # 替换 server / port
+    # 替换 Server / Port
     # ==================================================
 
-    proxy["server"] = server
-    proxy["port"] = port
+    proxy[
+        "server"
+    ] = server
 
-    # ==================================================
-    # TLS 端口
-    # ==================================================
+    proxy[
+        "port"
+    ] = port
 
     tls_ports = (
         443,
@@ -767,21 +1082,45 @@ def adapt_node_for_test(
         2096,
     )
 
+    # ==================================================
+    # TLS 端口
+    # ==================================================
+
     if port in tls_ports:
 
-        proxy["tls"] = True
+        proxy[
+            "tls"
+        ] = True
 
-        # 优先保留原来的 SNI
+        # 保留原始 SNI
+        #
+        # 对 Trojan：
+        #   sni
+        #
+        # 对 VLESS/VMess：
+        #   servername / sni
+        #
         servername = (
-            original_servername
+            original_sni
             or original_ws_host
             or original_server
         )
 
         if servername:
-            proxy["servername"] = (
-                servername
-            )
+
+            if proxy.get(
+                "type"
+            ) == "trojan":
+
+                proxy[
+                    "sni"
+                ] = servername
+
+            else:
+
+                proxy[
+                    "servername"
+                ] = servername
 
         proxy[
             "skip-cert-verify"
@@ -793,9 +1132,11 @@ def adapt_node_for_test(
 
     elif port == 80:
 
-        proxy["tls"] = False
+        proxy[
+            "tls"
+        ] = False
 
-        # 80 明文测试时删除 TLS / Reality
+        # 明文 80 删除 TLS 相关字段
         proxy.pop(
             "client-fingerprint",
             None
@@ -832,22 +1173,19 @@ def adapt_node_for_test(
         )
 
     # ==================================================
-    # 保留 WS
+    # 保留 WS path / Host
     # ==================================================
 
-    # WS 的 path / Host 不改变。
-    #
-    # 例如：
+    # 不改变原来的：
     #
     # ws-opts:
-    #   path: /abc
+    #   path:
     #   headers:
-    #     Host: xxx.workers.dev
+    #     Host:
     #
-    # 这里仍然保留。
+    # 只替换 server / port。
 
-    # 某些配置里可能存在顶层 host，
-    # 避免它干扰 server 替换。
+    # 删除可能干扰 server 的顶层 host
     proxy.pop(
         "host",
         None
@@ -857,7 +1195,9 @@ def adapt_node_for_test(
     # 节点名称
     # ==================================================
 
-    proxy["name"] = (
+    proxy[
+        "name"
+    ] = (
         f"{original_name} | "
         f"IP={server} | "
         f"PORT={port}"
@@ -872,16 +1212,26 @@ def generate_test_file(
     ip_url
 ):
     """
-    生成一个 IP 来源对应的测试文件。
+    为一个 IP 来源生成测试 YAML。
     """
 
     print()
     print()
-    print("#" * 80)
+    print(
+        "#" * 80
+    )
+
     print(
         f"开始处理：{source_name}"
     )
-    print("#" * 80)
+
+    print(
+        "#" * 80
+    )
+
+    # ==================================================
+    # 获取 IP
+    # ==================================================
 
     ips = fetch_ips(
         ip_url
@@ -890,50 +1240,58 @@ def generate_test_file(
     if not ips:
 
         print(
-            f"{source_name} 没有可用 IP，跳过。"
+            f"{source_name} "
+            f"没有可用 IP，跳过。"
         )
 
         return False
 
     # ==================================================
-    # 获取模板节点
+    # 获取模板
     # ==================================================
 
-    all_proxies = template_data.get(
-        "proxies",
-        []
+    all_proxies = (
+        template_data.get(
+            "proxies",
+            []
+        )
     )
 
     if not all_proxies:
 
         print(
-            "gem.yaml 中没有有效节点，退出。"
+            "模板没有有效节点，跳过。"
         )
 
         return False
 
     # ==================================================
-    # 新逻辑：
-    #
-    # 不再判断 CF 节点。
-    #
-    # 直接取第一个有效节点作为母模板。
+    # 只取第一个节点
     # ==================================================
 
-    base_proxy = all_proxies[0]
+    base_proxy = (
+        all_proxies[0]
+    )
 
     print()
     print(
-        f"模板总节点：{len(all_proxies)}"
+        f"模板总节点："
+        f"{len(all_proxies)}"
     )
 
     print(
-        "测试模板：第 1 个有效节点"
+        "实际测试模板："
+        "第 1 个有效节点"
     )
 
     print(
         f"模板名称："
         f"{base_proxy.get('name', '未命名')}"
+    )
+
+    print(
+        f"模板类型："
+        f"{base_proxy.get('type', '未知')}"
     )
 
     print(
@@ -947,11 +1305,13 @@ def generate_test_file(
     )
 
     print(
-        f"测试 IP：{len(ips)}"
+        f"测试 IP："
+        f"{len(ips)}"
     )
 
     print(
-        f"测试端口：{len(TEST_PORTS)}"
+        f"测试端口："
+        f"{len(TEST_PORTS)}"
     )
 
     theoretical = (
@@ -960,13 +1320,14 @@ def generate_test_file(
     )
 
     print(
-        f"理论最大组合数量："
-        f"{len(ips)} × {len(TEST_PORTS)} "
-        f"= {theoretical}"
+        f"理论组合数量："
+        f"{len(ips)} × "
+        f"{len(TEST_PORTS)} = "
+        f"{theoretical}"
     )
 
     # ==================================================
-    # 开始生成
+    # 生成
     # ==================================================
 
     new_proxies = []
@@ -977,19 +1338,22 @@ def generate_test_file(
 
         for port in TEST_PORTS:
 
-            # None = 不限制
             if (
                 MAX_TOTAL_NODES is not None
                 and len(new_proxies)
                 >= MAX_TOTAL_NODES
             ):
+
                 stop_all = True
+
                 break
 
-            new_proxy = adapt_node_for_test(
-                base_proxy,
-                ip,
-                port
+            new_proxy = (
+                adapt_node_for_test(
+                    base_proxy,
+                    ip,
+                    port
+                )
             )
 
             new_proxies.append(
@@ -1000,35 +1364,45 @@ def generate_test_file(
             break
 
     # ==================================================
-    # 输出
+    # 输出数据
     # ==================================================
 
     output_data = copy.deepcopy(
         template_data
     )
 
-    output_data["proxies"] = (
-        new_proxies
-    )
+    output_data[
+        "proxies"
+    ] = new_proxies
 
     # ==================================================
-    # 只建立一个测试代理组
+    # 测试代理组
     # ==================================================
 
-    output_data["proxy-groups"] = [
+    output_data[
+        "proxy-groups"
+    ] = [
         {
             "name": "CF-Port-Test",
             "type": "select",
             "proxies": [
-                proxy["name"]
+                proxy[
+                    "name"
+                ]
                 for proxy in new_proxies
             ],
         }
     ]
 
-    output_data["rules"] = [
+    output_data[
+        "rules"
+    ] = [
         "MATCH,CF-Port-Test"
     ]
+
+    # ==================================================
+    # 文件名
+    # ==================================================
 
     output_file = (
         f"{OUTPUT_PREFIX}"
@@ -1064,28 +1438,36 @@ def generate_test_file(
     # ==================================================
 
     print()
-    print("=" * 70)
     print(
-        f"【生成完成】{output_file}"
-    )
-    print("=" * 70)
-
-    print(
-        f"IP 数量：{len(ips)}"
+        "=" * 70
     )
 
     print(
-        f"模板节点：1"
+        f"【生成完成】"
+        f"{output_file}"
     )
 
     print(
-        f"测试端口：{len(TEST_PORTS)}"
+        "=" * 70
+    )
+
+    print(
+        f"IP 数量："
+        f"{len(ips)}"
+    )
+
+    print(
+        "模板节点：1"
+    )
+
+    print(
+        f"测试端口："
+        f"{len(TEST_PORTS)}"
     )
 
     print(
         f"理论组合："
-        f"{len(ips)} × {len(TEST_PORTS)} "
-        f"= {theoretical}"
+        f"{theoretical}"
     )
 
     print(
@@ -1093,15 +1475,10 @@ def generate_test_file(
         f"{len(new_proxies)}"
     )
 
-    if MAX_TOTAL_NODES is not None:
-        print(
-            f"节点上限："
-            f"{MAX_TOTAL_NODES}"
-        )
-    else:
-        print(
-            "节点上限：无限制"
-        )
+    print(
+        f"节点上限："
+        f"{MAX_TOTAL_NODES}"
+    )
 
     print()
     print(
@@ -1112,6 +1489,7 @@ def generate_test_file(
         new_proxies[:10],
         1
     ):
+
         print(
             f"{i:3d}. "
             f"{proxy.get('name', '')}"
@@ -1123,13 +1501,21 @@ def generate_test_file(
 def main():
 
     print()
-    print("=" * 80)
     print(
-        " Cloudflare 优选 IP 多端口批量对照测试生成器"
+        "=" * 80
     )
-    print("=" * 80)
+
+    print(
+        " Cloudflare 优选 IP "
+        "多端口批量对照测试生成器"
+    )
+
+    print(
+        "=" * 80
+    )
 
     print()
+
     print(
         "测试端口："
         + ", ".join(
@@ -1149,6 +1535,7 @@ def main():
     )
 
     print()
+
     print(
         "【当前模式】"
     )
@@ -1158,22 +1545,31 @@ def main():
     )
 
     print(
-        "直接使用 gem.yaml 第 1 个有效节点作为模板"
+        "直接使用 gem.yaml "
+        "第 1 个有效节点作为模板"
+    )
+
+    print(
+        "支持 VMess / VLESS / Trojan"
     )
 
     print()
 
     # ==================================================
-    # 加载模板
+    # 加载 gem.yaml
     # ==================================================
 
-    template_data = universal_load_subscription(
-        TEMPLATE_FILE
+    template_data = (
+        universal_load_subscription(
+            TEMPLATE_FILE
+        )
     )
 
-    all_proxies = template_data.get(
-        "proxies",
-        []
+    all_proxies = (
+        template_data.get(
+            "proxies",
+            []
+        )
     )
 
     if not all_proxies:
@@ -1185,6 +1581,7 @@ def main():
         return
 
     print()
+
     print(
         f"模板总节点："
         f"{len(all_proxies)}"
@@ -1200,8 +1597,13 @@ def main():
         f"{all_proxies[0].get('name', '未命名')}"
     )
 
+    print(
+        f"母模板类型："
+        f"{all_proxies[0].get('type', '未知')}"
+    )
+
     # ==================================================
-    # 开始处理 5 个 IP 来源
+    # 处理五个 IP 来源
     # ==================================================
 
     success_count = 0
@@ -1224,11 +1626,17 @@ def main():
     # ==================================================
 
     print()
-    print("=" * 80)
+    print(
+        "=" * 80
+    )
+
     print(
         "全部处理完成"
     )
-    print("=" * 80)
+
+    print(
+        "=" * 80
+    )
 
     print(
         f"成功生成："
@@ -1255,17 +1663,7 @@ def main():
 
     print()
     print(
-        "说明："
-    )
-
-    print(
-        "每个来源文件都会使用同一个母模板，"
-        "将其 server 替换为优选 IP，"
-        "再按测试端口生成候选节点。"
-    )
-
-    print(
-        "原 gem.yaml 不会被修改。"
+        "原 gem.yaml 未修改。"
     )
 
 

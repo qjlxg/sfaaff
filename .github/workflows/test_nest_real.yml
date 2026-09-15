@@ -52,9 +52,9 @@ jobs:
           LOG_FILE = RESULT_DIR / "test_log.txt"
           FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
           XRAY_BIN = "xray"
-          TEST_URL = "http://www.gstatic.com/generate_204"
+          TEST_URL = "http://cp.cloudflare.com"
           TIMEOUT = int(os.environ.get("NODE_TIMEOUT", "7"))
-          MAX_WORKERS = int(os.environ.get("WORKERS", "5"))
+          MAX_WORKERS = int(os.environ.get("WORKERS", "15"))
 
           def find_free_port(start=20000):
               port = start

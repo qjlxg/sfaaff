@@ -110,7 +110,7 @@ jobs:
                   if not started:
                       print("❌ Mihomo 核心启动失败")
                       return [], {"file": yaml_path.name, "total": total, "alive": 0,
-                                  "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+                                   "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 
                   print("✅ Mihomo 核心已就绪，开始并发测速...")
 

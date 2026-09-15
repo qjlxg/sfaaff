@@ -1,0 +1,121 @@
+name: test_nest_real
+
+on:
+  # 脚本或工作流变动时自动运行
+  push:
+    paths:
+      - 'test_nest_real.py'
+      - '.github/workflows/test_nest_real.yml'
+      - 'cf_nest_*.yaml'
+      - 'generate_nest.py'   # 可选，生成脚本变动也触发
+
+  # 北京时间定时运行（当前设置为每天北京时间 02:00）
+  schedule:
+    - cron: '0 18 * * *'   # UTC 18:00 = 北京时间次日 02:00
+
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: '并发数'
+        required: false
+        default: '5'
+      timeout:
+        description: '单节点超时（秒）'
+        required: false
+        default: '8'
+      force:
+        description: '强制重新测试所有文件（true/false）'
+        required: false
+        default: 'false'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360          # 最大运行时间，可按需调整
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check if there are files to test
+        id: check
+        run: |
+          count=$(ls cf_nest_*.yaml 2>/dev/null | wc -l)
+          echo "yaml_count=$count" >> $GITHUB_OUTPUT
+          if [ "$count" -eq 0 ]; then
+            echo "没有找到 cf_nest_*.yaml 文件，跳过测试"
+          else
+            echo "找到 $count 个待测文件"
+            ls -1 cf_nest_*.yaml
+          fi
+
+      - name: Set up Python
+        if: steps.check.outputs.yaml_count != '0'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        if: steps.check.outputs.yaml_count != '0'
+        run: |
+          pip install pyyaml requests
+
+      - name: Install Xray
+        if: steps.check.outputs.yaml_count != '0'
+        run: |
+          wget -q https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -qo Xray-linux-64.zip xray
+          chmod +x xray
+          sudo mv xray /usr/local/bin/xray
+          xray version
+
+      - name: Run real connectivity test
+        if: steps.check.outputs.yaml_count != '0'
+        env:
+          WORKERS: ${{ github.event.inputs.workers || '5' }}
+          TIMEOUT: ${{ github.event.inputs.timeout || '8' }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          echo "并发数: $WORKERS"
+          echo "超时: $TIMEOUT 秒"
+          echo "强制重测: $FORCE"
+
+          if [ "$FORCE" = "true" ]; then
+            python test_nest_real.py --workers "$WORKERS" --timeout "$TIMEOUT" --force
+          else
+            python test_nest_real.py --workers "$WORKERS" --timeout "$TIMEOUT"
+          fi
+
+      - name: Upload results
+        if: steps.check.outputs.yaml_count != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: nest-test-results
+          path: |
+            cf_nest_alive.yaml
+            test_nest_progress.json
+            alive_*.yaml
+          if-no-files-found: ignore
+
+      - name: Show summary
+        if: steps.check.outputs.yaml_count != '0'
+        run: |
+          echo "========== 测试结果摘要 =========="
+          if [ -f cf_nest_alive.yaml ]; then
+            echo "存活节点文件: cf_nest_alive.yaml"
+            python3 -c "
+          import yaml
+          with open('cf_nest_alive.yaml', encoding='utf-8') as f:
+              data = yaml.safe_load(f) or {}
+          print(f'存活节点数量: {len(data.get(\"proxies\", []))}')
+          "
+          else
+            echo "未生成存活节点文件"
+          fi
+
+          if [ -f test_nest_progress.json ]; then
+            echo ""
+            echo "进度文件内容:"
+            cat test_nest_progress.json
+          fi

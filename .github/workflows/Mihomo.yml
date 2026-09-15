@@ -1,0 +1,218 @@
+name: Mihomo Native Proxy Test (Auto Run on Push)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'cf_nest_*.yaml'
+  workflow_dispatch:
+
+jobs:
+  test-mihomo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Download and Install Mihomo
+        run: |
+          wget -q https://github.com/MetaCubeX/mihomo/releases/download/v1.19.17/mihomo-linux-amd64-compatible-v1.19.17.gz
+          gunzip mihomo-linux-amd64-compatible-v1.19.17.gz
+          chmod +x mihomo-linux-amd64-compatible-v1.19.17
+          sudo mv mihomo-linux-amd64-compatible-v1.19.17 /usr/local/bin/mihomo
+
+      - name: Run Mihomo Native Test & Merge
+        run: |
+          python3 << 'SCRIPT'
+          import yaml, json, subprocess, time, requests, os
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from datetime import datetime
+
+          INPUT_PATTERN = "cf_nest_*.yaml"
+          RESULT_DIR = Path("test_results")
+          LOG_FILE = RESULT_DIR / "test_log.txt"
+          FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
+          MIHOMO_BIN = "mihomo"
+          API_BASE = "http://127.0.0.1:9090"
+          TEST_URL = "http://cp.cloudflare.com/"
+          MAX_WORKERS = 10  # API 并发测试线程数
+
+          def test_file_with_mihomo(yaml_path):
+              print(f"\n{'='*60}\n开始测试文件：{yaml_path.name}\n{'='*60}")
+              with open(yaml_path, encoding="utf-8") as f:
+                  data = yaml.safe_load(f)
+              proxies = data.get("proxies", [])
+              total = len(proxies)
+              print(f"本文件节点数：{total}")
+              if total == 0:
+                  return [], {"total": 0, "alive": 0, "file": yaml_path.name}
+
+              # 构造 Mihomo 临时配置文件
+              config = {
+                  "mixed-port": 7890,
+                  "external-controller": "127.0.0.1:9090",
+                  "mode": "rule",
+                  "proxies": proxies
+              }
+              
+              config_file = "temp_mihomo_config.yaml"
+              with open(config_file, "w", encoding="utf-8") as f:
+                  yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+
+              # 启动 Mihomo 进程
+              proc = subprocess.Popen(
+                  [MIHOMO_BIN, "-d", ".", "-f", config_file],
+                  stdout=subprocess.DEVNULL,
+                  stderr=subprocess.DEVNULL
+              )
+
+              # 等待 API 启动
+              alive = []
+              try:
+                  started = False
+                  for _ in range(15):
+                      try:
+                          r = requests.get(f"{API_BASE}/version", timeout=1)
+                          if r.status_code == 200:
+                              started = True
+                              break
+                      except:
+                          pass
+                      time.sleep(0.5)
+                  
+                  if not started:
+                      print("❌ Mihomo 核心启动失败")
+                      return [], {"file": yaml_path.name, "total": total, "alive": 0, "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+                  print("✅ Mihomo 核心已就绪，开始并发测速...")
+
+                  def test_proxy(proxy):
+                      name = proxy.get("name")
+                      if not name:
+                          return False, proxy, 0
+                      # 调用 Mihomo 自带的测速 API
+                      encoded_name = requests.utils.quote(name, safe='')
+                      delay_url = f"{API_BASE}/proxies/{encoded_name}/delay"
+                      try:
+                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=6)
+                          if res.status_code == 200:
+                              delay = res.json().get("delay", 0)
+                              if 0 < delay < 5000:
+                                  return True, proxy, delay
+                      except:
+                          pass
+                      return False, proxy, 0
+
+                  tested = 0
+                  with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                      futures = {executor.submit(test_proxy, p): p for p in proxies}
+                      for fut in as_completed(futures):
+                          tested += 1
+                          ok, proxy, delay = fut.result()
+                          if ok:
+                              alive.append(proxy)
+                              print(f"[{tested}/{total}] ✅ {delay}ms  {(proxy.get('name') or '')[:50]}")
+                          elif tested % 100 == 0 or tested == total:
+                              print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
+
+              finally:
+                  # 关闭 Mihomo 进程并清理临时文件
+                  proc.terminate()
+                  try:
+                      proc.wait(timeout=3)
+                  except:
+                      proc.kill()
+                  if os.path.exists(config_file):
+                      os.remove(config_file)
+
+              return alive, {"file": yaml_path.name, "total": total, "alive": len(alive), "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+          def save_result(yaml_path, alive, stats):
+              RESULT_DIR.mkdir(exist_ok=True)
+              stem = yaml_path.stem
+              alive_file = RESULT_DIR / f"alive_{stem}.yaml"
+              if alive:
+                  out = {"proxies": alive, "proxy-groups": [{"name": "Alive", "type": "select", "proxies": [p["name"] for p in alive]}], "rules": ["MATCH,Alive"]}
+                  with open(alive_file, "w", encoding="utf-8") as f:
+                      yaml.dump(out, f, allow_unicode=True, sort_keys=False, width=1000)
+                  print(f"存活节点已保存：{alive_file} （{len(alive)} 个）")
+              else:
+                  with open(alive_file, "w", encoding="utf-8") as f:
+                      yaml.dump({"proxies": [], "note": "no alive nodes"}, f, allow_unicode=True)
+                  print(f"本文件无存活节点，已记录：{alive_file}")
+              with open(LOG_FILE, "a", encoding="utf-8") as f:
+                  f.write(f"[{stats['time']}] 文件: {stats['file']} | 总数: {stats['total']} | 存活: {stats['alive']}\n")
+
+          def merge_all_alive():
+              alive_files = sorted(RESULT_DIR.glob("alive_*.yaml"))
+              if not alive_files:
+                  print("没有存活结果，跳过合并")
+                  return
+              all_proxies = []
+              for f in alive_files:
+                  try:
+                      with open(f, encoding="utf-8") as fp:
+                          data = yaml.safe_load(fp) or {}
+                      proxies = data.get("proxies", [])
+                      if proxies:
+                          all_proxies.extend(proxies)
+                          print(f"  合并 {f.name}: +{len(proxies)}")
+                  except Exception as e:
+                      print(f"  读取失败 {f.name}: {e}")
+              if not all_proxies:
+                  return
+              seen = set()
+              unique = []
+              for p in all_proxies:
+                  name = p.get("name")
+                  if name and name not in seen:
+                      seen.add(name)
+                      unique.append(p)
+              final = {"proxies": unique, "proxy-groups": [{"name": "CF-Nest-Alive-All", "type": "select", "proxies": [p["name"] for p in unique]}], "rules": ["MATCH,CF-Nest-Alive-All"]}
+              with open(FINAL_ALIVE_FILE, "w", encoding="utf-8") as f:
+                  yaml.dump(final, f, allow_unicode=True, sort_keys=False, width=1000)
+              print(f"\n最终合并完成：{FINAL_ALIVE_FILE} （去重后 {len(unique)} 个）")
+
+          # ========== 主流程 ==========
+          files = sorted(Path(".").glob(INPUT_PATTERN))
+          if not files:
+              print("没有找到 cf_nest_*.yaml 文件")
+              exit(0)
+
+          RESULT_DIR.mkdir(exist_ok=True)
+          print(f"共发现 {len(files)} 个文件")
+
+          for idx, fpath in enumerate(files, 1):
+              result_file = RESULT_DIR / f"alive_{fpath.stem}.yaml"
+              if result_file.exists():
+                  print(f"\n[{idx}/{len(files)}] ⏭ 跳过已测文件：{fpath.name}")
+                  continue
+              print(f"\n>>>>>>> 进度：{idx}/{len(files)} <<<<<<<")
+              alive, stats = test_file_with_mihomo(fpath)
+              save_result(fpath, alive, stats)
+
+          print("\n所有文件处理结束，开始合并...")
+          merge_all_alive()
+          print("全部完成")
+          SCRIPT
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nest-test-results
+          path: |
+            test_results/
+            test_results/cf_nest_alive_all.yaml

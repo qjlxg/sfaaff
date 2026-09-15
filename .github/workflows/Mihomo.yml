@@ -8,16 +8,23 @@ on:
     paths:
       - 'cf_nest_*.yaml'
       - '.github/workflows/Mihomo.yml'
+    # 注意：这里故意不包含 test_results/**，防止结果提交后再次触发
   workflow_dispatch:
+
+permissions:
+  contents: write   # 必须有，否则无法 push 结果
 
 jobs:
   test-mihomo:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 300          # 5 小时，可按需要再调
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # 必须要有写权限才能后续 push
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,8 +40,9 @@ jobs:
           gunzip mihomo-linux-amd64-compatible-v1.19.17.gz
           chmod +x mihomo-linux-amd64-compatible-v1.19.17
           sudo mv mihomo-linux-amd64-compatible-v1.19.17 /usr/local/bin/mihomo
+          mihomo -v
 
-      - name: Run Mihomo Native Test & Merge
+      - name: Run Mihomo Native Test (Skip already tested + Auto Commit)
         run: |
           python3 << 'SCRIPT'
           import yaml, json, subprocess, time, requests, os
@@ -48,8 +56,8 @@ jobs:
           FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
           MIHOMO_BIN = "mihomo"
           API_BASE = "http://127.0.0.1:9090"
-          TEST_URL = "http://www.gstatic.com/generate_204"  # 更稳妥的测速地址
-          MAX_WORKERS = 15  # 稍微加大并发
+          TEST_URL = "http://www.gstatic.com/generate_204"
+          MAX_WORKERS = 8          # GitHub Runner 建议先用 8，稳定后再加
 
           def test_file_with_mihomo(yaml_path):
               print(f"\n{'='*60}\n开始测试文件：{yaml_path.name}\n{'='*60}")
@@ -61,41 +69,35 @@ jobs:
               if total == 0:
                   return [], {"total": 0, "alive": 0, "file": yaml_path.name}
 
-              # 【核心修复】加上完整的 DNS 解析和优化的配置
               config = {
                   "mixed-port": 7890,
                   "external-controller": "127.0.0.1:9090",
                   "mode": "rule",
+                  "log-level": "error",
                   "dns": {
                       "enable": True,
                       "ipv6": False,
                       "enhanced-mode": "redir-host",
-                      "nameserver": [
-                          "223.5.5.5",
-                          "119.29.29.29",
-                          "8.8.8.8",
-                          "1.1.1.1"
-                      ]
+                      "nameserver": ["223.5.5.5", "119.29.29.29", "8.8.8.8", "1.1.1.1"]
                   },
                   "proxies": proxies
               }
-              
+
               config_file = "temp_mihomo_config.yaml"
               with open(config_file, "w", encoding="utf-8") as f:
                   yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
-              # 启动 Mihomo 进程
               proc = subprocess.Popen(
                   [MIHOMO_BIN, "-d", ".", "-f", config_file],
                   stdout=subprocess.DEVNULL,
                   stderr=subprocess.DEVNULL
               )
 
-              # 等待 API 启动
               alive = []
               try:
+                  # 等待 API 就绪
                   started = False
-                  for _ in range(20):
+                  for _ in range(30):
                       try:
                           r = requests.get(f"{API_BASE}/version", timeout=1)
                           if r.status_code == 200:
@@ -104,10 +106,11 @@ jobs:
                       except:
                           pass
                       time.sleep(0.5)
-                  
+
                   if not started:
                       print("❌ Mihomo 核心启动失败")
-                      return [], {"file": yaml_path.name, "total": total, "alive": 0, "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+                      return [], {"file": yaml_path.name, "total": total, "alive": 0,
+                                  "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 
                   print("✅ Mihomo 核心已就绪，开始并发测速...")
 
@@ -118,7 +121,7 @@ jobs:
                       encoded_name = requests.utils.quote(name, safe='')
                       delay_url = f"{API_BASE}/proxies/{encoded_name}/delay"
                       try:
-                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=7)
+                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=8)
                           if res.status_code == 200:
                               delay = res.json().get("delay", 0)
                               if 0 < delay < 5000:
@@ -135,10 +138,9 @@ jobs:
                           ok, proxy, delay = fut.result()
                           if ok:
                               alive.append(proxy)
-                              print(f"[{tested}/{total}] ✅ {delay}ms  {(proxy.get('name') or '')[:50]}")
+                              print(f"[{tested}/{total}] ✅ {delay}ms  {(proxy.get('name') or '')[:55]}")
                           elif tested % 200 == 0 or tested == total:
                               print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
-
               finally:
                   proc.terminate()
                   try:
@@ -148,14 +150,28 @@ jobs:
                   if os.path.exists(config_file):
                       os.remove(config_file)
 
-              return alive, {"file": yaml_path.name, "total": total, "alive": len(alive), "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+              return alive, {
+                  "file": yaml_path.name,
+                  "total": total,
+                  "alive": len(alive),
+                  "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+              }
 
           def save_result(yaml_path, alive, stats):
               RESULT_DIR.mkdir(exist_ok=True)
               stem = yaml_path.stem
               alive_file = RESULT_DIR / f"alive_{stem}.yaml"
+
               if alive:
-                  out = {"proxies": alive, "proxy-groups": [{"name": "Alive", "type": "select", "proxies": [p["name"] for p in alive]}], "rules": ["MATCH,Alive"]}
+                  out = {
+                      "proxies": alive,
+                      "proxy-groups": [{
+                          "name": "Alive",
+                          "type": "select",
+                          "proxies": [p["name"] for p in alive]
+                      }],
+                      "rules": ["MATCH,Alive"]
+                  }
                   with open(alive_file, "w", encoding="utf-8") as f:
                       yaml.dump(out, f, allow_unicode=True, sort_keys=False, width=1000)
                   print(f"存活节点已保存：{alive_file} （{len(alive)} 个）")
@@ -163,6 +179,7 @@ jobs:
                   with open(alive_file, "w", encoding="utf-8") as f:
                       yaml.dump({"proxies": [], "note": "no alive nodes"}, f, allow_unicode=True)
                   print(f"本文件无存活节点，已记录：{alive_file}")
+
               with open(LOG_FILE, "a", encoding="utf-8") as f:
                   f.write(f"[{stats['time']}] 文件: {stats['file']} | 总数: {stats['total']} | 存活: {stats['alive']}\n")
 
@@ -171,6 +188,7 @@ jobs:
               if not alive_files:
                   print("没有存活结果，跳过合并")
                   return
+
               all_proxies = []
               for f in alive_files:
                   try:
@@ -182,8 +200,10 @@ jobs:
                           print(f"  合并 {f.name}: +{len(proxies)}")
                   except Exception as e:
                       print(f"  读取失败 {f.name}: {e}")
+
               if not all_proxies:
                   return
+
               seen = set()
               unique = []
               for p in all_proxies:
@@ -191,12 +211,21 @@ jobs:
                   if name and name not in seen:
                       seen.add(name)
                       unique.append(p)
-              final = {"proxies": unique, "proxy-groups": [{"name": "CF-Nest-Alive-All", "type": "select", "proxies": [p["name"] for p in unique]}], "rules": ["MATCH,CF-Nest-Alive-All"]}
+
+              final = {
+                  "proxies": unique,
+                  "proxy-groups": [{
+                      "name": "CF-Nest-Alive-All",
+                      "type": "select",
+                      "proxies": [p["name"] for p in unique]
+                  }],
+                  "rules": ["MATCH,CF-Nest-Alive-All"]
+              }
               with open(FINAL_ALIVE_FILE, "w", encoding="utf-8") as f:
                   yaml.dump(final, f, allow_unicode=True, sort_keys=False, width=1000)
               print(f"\n最终合并完成：{FINAL_ALIVE_FILE} （去重后 {len(unique)} 个）")
 
-          # ========== 主流程 ==========
+          # ==================== 主流程 ====================
           files = sorted(Path(".").glob(INPUT_PATTERN))
           if not files:
               print("没有找到 cf_nest_*.yaml 文件")
@@ -205,24 +234,46 @@ jobs:
           RESULT_DIR.mkdir(exist_ok=True)
           print(f"共发现 {len(files)} 个文件")
 
+          has_new_result = False
+
           for idx, fpath in enumerate(files, 1):
               result_file = RESULT_DIR / f"alive_{fpath.stem}.yaml"
               if result_file.exists():
                   print(f"\n[{idx}/{len(files)}] ⏭ 跳过已测文件：{fpath.name}")
                   continue
+
               print(f"\n>>>>>>> 进度：{idx}/{len(files)} <<<<<<<")
               alive, stats = test_file_with_mihomo(fpath)
               save_result(fpath, alive, stats)
+              has_new_result = True
 
           print("\n所有文件处理结束，开始合并...")
           merge_all_alive()
           print("全部完成")
+
+          # 把是否有新结果写出来，供后续步骤判断是否需要 commit
+          with open("has_new_result.txt", "w") as f:
+              f.write("yes" if has_new_result else "no")
           SCRIPT
 
-      - name: Upload results
-        uses: actions/upload-artifact@v4
-        with:
-          name: nest-test-results
-          path: |
-            test_results/
-            test_results/cf_nest_alive_all.yaml
+      - name: Commit & Push results (真正实现断点续测)
+        if: success()
+        run: |
+          if [ ! -f has_new_result.txt ] || [ "$(cat has_new_result.txt)" != "yes" ]; then
+            echo "本次没有新的测试结果，跳过提交"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add test_results/
+          git status
+
+          if git diff --staged --quiet; then
+            echo "没有实际变更，跳过提交"
+            exit 0
+          fi
+
+          git commit -m "chore: update proxy test results [skip ci]"
+          git push

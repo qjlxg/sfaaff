@@ -101,6 +101,108 @@ proxies:
     path: /tr?ed=2560
     headers:
       Host: hu1.pages.dev
+- name: BPB-hu1.pages.dev | IP=104.17.123.231 | PORT=443
+  server: 104.17.123.231
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: hu1.pages.dev
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: hu1.pages.dev
+- name: BPB-hu1.pages.dev | IP=104.17.123.231 | PORT=8443
+  server: 104.17.123.231
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: hu1.pages.dev
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: hu1.pages.dev
+- name: BPB-hu1.pages.dev | IP=104.17.123.44 | PORT=443
+  server: 104.17.123.44
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: hu1.pages.dev
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: hu1.pages.dev
+- name: BPB-hu1.pages.dev | IP=104.17.123.44 | PORT=8443
+  server: 104.17.123.44
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: hu1.pages.dev
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: hu1.pages.dev
+- name: BPB-hu1.pages.dev | IP=104.17.218.213 | PORT=443
+  server: 104.17.218.213
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: hu1.pages.dev
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: hu1.pages.dev
+- name: BPB-hu1.pages.dev | IP=104.17.218.213 | PORT=8443
+  server: 104.17.218.213
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: hu1.pages.dev
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: hu1.pages.dev
 - name: BPB-hu1.pages.dev | IP=109.66.88.118 | PORT=443
   server: 109.66.88.118
   port: 443
@@ -781,108 +883,6 @@ proxies:
     path: /tr?ed=2560
     headers:
       Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=162.159.237.174 | PORT=443
-  server: 162.159.237.174
-  port: 443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: hu1.pages.dev
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=162.159.237.174 | PORT=8443
-  server: 162.159.237.174
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: hu1.pages.dev
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=162.159.237.32 | PORT=443
-  server: 162.159.237.32
-  port: 443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: hu1.pages.dev
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=162.159.237.32 | PORT=8443
-  server: 162.159.237.32
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: hu1.pages.dev
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=162.159.60.59 | PORT=443
-  server: 162.159.60.59
-  port: 443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: hu1.pages.dev
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=162.159.60.59 | PORT=8443
-  server: 162.159.60.59
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: hu1.pages.dev
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: hu1.pages.dev
 - name: BPB-hu1.pages.dev | IP=168.107.0.210 | PORT=443
   server: 168.107.0.210
   port: 443
@@ -985,8 +985,8 @@ proxies:
     path: /tr?ed=2560
     headers:
       Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=172.64.147.110 | PORT=443
-  server: 172.64.147.110
+- name: BPB-hu1.pages.dev | IP=172.64.156.99 | PORT=443
+  server: 172.64.156.99
   port: 443
   type: trojan
   password: bpb-trojan
@@ -1002,8 +1002,8 @@ proxies:
     path: /tr?ed=2560
     headers:
       Host: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=172.64.147.110 | PORT=8443
-  server: 172.64.147.110
+- name: BPB-hu1.pages.dev | IP=172.64.156.99 | PORT=8443
+  server: 172.64.156.99
   port: 8443
   type: trojan
   password: bpb-trojan
@@ -4769,6 +4769,12 @@ proxy-groups:
   - BPB-hu1.pages.dev | IP=103.15.91.174 | PORT=8443
   - BPB-hu1.pages.dev | IP=103.224.84.70 | PORT=443
   - BPB-hu1.pages.dev | IP=103.224.84.70 | PORT=8443
+  - BPB-hu1.pages.dev | IP=104.17.123.231 | PORT=443
+  - BPB-hu1.pages.dev | IP=104.17.123.231 | PORT=8443
+  - BPB-hu1.pages.dev | IP=104.17.123.44 | PORT=443
+  - BPB-hu1.pages.dev | IP=104.17.123.44 | PORT=8443
+  - BPB-hu1.pages.dev | IP=104.17.218.213 | PORT=443
+  - BPB-hu1.pages.dev | IP=104.17.218.213 | PORT=8443
   - BPB-hu1.pages.dev | IP=109.66.88.118 | PORT=443
   - BPB-hu1.pages.dev | IP=109.66.88.118 | PORT=8443
   - BPB-hu1.pages.dev | IP=114.32.9.249 | PORT=443
@@ -4809,20 +4815,14 @@ proxy-groups:
   - BPB-hu1.pages.dev | IP=157.22.128.7 | PORT=8443
   - BPB-hu1.pages.dev | IP=157.85.105.126 | PORT=443
   - BPB-hu1.pages.dev | IP=157.85.105.126 | PORT=8443
-  - BPB-hu1.pages.dev | IP=162.159.237.174 | PORT=443
-  - BPB-hu1.pages.dev | IP=162.159.237.174 | PORT=8443
-  - BPB-hu1.pages.dev | IP=162.159.237.32 | PORT=443
-  - BPB-hu1.pages.dev | IP=162.159.237.32 | PORT=8443
-  - BPB-hu1.pages.dev | IP=162.159.60.59 | PORT=443
-  - BPB-hu1.pages.dev | IP=162.159.60.59 | PORT=8443
   - BPB-hu1.pages.dev | IP=168.107.0.210 | PORT=443
   - BPB-hu1.pages.dev | IP=168.107.0.210 | PORT=8443
   - BPB-hu1.pages.dev | IP=170.64.232.210 | PORT=443
   - BPB-hu1.pages.dev | IP=170.64.232.210 | PORT=8443
   - BPB-hu1.pages.dev | IP=170.64.237.192 | PORT=443
   - BPB-hu1.pages.dev | IP=170.64.237.192 | PORT=8443
-  - BPB-hu1.pages.dev | IP=172.64.147.110 | PORT=443
-  - BPB-hu1.pages.dev | IP=172.64.147.110 | PORT=8443
+  - BPB-hu1.pages.dev | IP=172.64.156.99 | PORT=443
+  - BPB-hu1.pages.dev | IP=172.64.156.99 | PORT=8443
   - BPB-hu1.pages.dev | IP=172.98.207.58 | PORT=443
   - BPB-hu1.pages.dev | IP=172.98.207.58 | PORT=8443
   - BPB-hu1.pages.dev | IP=173.242.63.235 | PORT=443

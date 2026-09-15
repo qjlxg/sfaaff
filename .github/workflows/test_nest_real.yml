@@ -1,4 +1,4 @@
-name: Sequential Real Proxy Test (With Logs)
+name: Sequential Real Proxy Test (Fix SOCKS Error)
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
           chmod +x xray
           sudo mv xray /usr/local/bin/xray
 
-      - name: Run sequential test with error logging
+      - name: Run sequential test with HTTP inbound
         env:
           WORKERS: '5'
           NODE_TIMEOUT: '7'
@@ -114,9 +114,16 @@ jobs:
                   return False, proxy, 0.0, "Unsupported protocol"
               
               port = find_free_port(20000 + (idx % 500))
+              
+              # 【核心修改】将 inbounds 从 socks 改为 http，规避 SOCKS 依赖缺失问题
               conf = {
                   "log": {"loglevel": "warning"},
-                  "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": True}}],
+                  "inbounds": [{
+                      "port": port, 
+                      "listen": "127.0.0.1", 
+                      "protocol": "http", 
+                      "settings": {}
+                  }],
                   "outbounds": [outbound, {"protocol": "freedom", "tag": "direct"}],
                   "routing": {"rules": [{"type": "field", "outboundTag": "proxy", "network": "tcp,udp"}]}
               }
@@ -128,20 +135,20 @@ jobs:
                       json.dump(conf, f)
                       conf_file = f.name
                   
-                  # 开启 stderr 捕获以获取报错日志
                   proc = subprocess.Popen(
                       [XRAY_BIN, "run", "-c", conf_file], 
                       stdout=subprocess.DEVNULL, 
                       stderr=subprocess.PIPE
                   )
-                  time.sleep(0.6)
+                  time.sleep(0.5)
                   
-                  proxies_dict = {"http": f"socks5://127.0.0.1:{port}", "https": f"socks5://127.0.0.1:{port}"}
+                  # 使用 HTTP 代理方式进行测试
+                  proxies_dict = {"http": f"http://127.0.0.1:{port}", "https": f"http://127.0.0.1:{port}"}
                   r = requests.get(TEST_URL, proxies=proxies_dict, timeout=TIMEOUT)
                   
                   success = r.status_code in (200, 204)
                   err_msg = ""
-                  if not success and idx < 5: # 如果前5个节点失败，顺便把错误抓出来打印
+                  if not success and idx < 3:
                       try:
                           err_msg = proc.stderr.read().decode('utf-8', errors='ignore').strip()
                       except:
@@ -178,9 +185,8 @@ jobs:
                           alive.append(proxy)
                           print(f"[{tested}/{total}] ✅ {elapsed:.1f}s  {(proxy.get('name') or '')[:50]}")
                       else:
-                          # 打印前几个失败节点的详细错误，方便排查
-                          if tested <= 5 and err_msg:
-                              print(f"[{tested}/{total}] ❌ 失败 (IP: {proxy.get('server')}): {err_msg[:150]}...")
+                          if tested <= 3 and err_msg:
+                              print(f"[{tested}/{total}] ❌ 失败: {err_msg[:120]}...")
                           elif tested % 100 == 0 or tested == total:
                               print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
               return alive, {"file": yaml_path.name, "total": total, "alive": len(alive), "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
@@ -215,8 +221,8 @@ jobs:
                       if proxies:
                           all_proxies.extend(proxies)
                           print(f"  合并 {f.name}: +{len(proxies)}")
-                  except Exception as e:
-                      print(f"  读取失败 {f.name}: {e}")
+                      except Exception as e:
+                          print(f"  读取失败 {f.name}: {e}")
               if not all_proxies:
                   return
               seen = set()

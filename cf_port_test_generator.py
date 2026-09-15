@@ -67,7 +67,7 @@ import yaml
 # 配置
 # ============================================================
 
-SOURCE_FILE = Path("gem.txt")
+SOURCE_FILE = Path("gem.yaml")
 
 IP_SOURCES = {
     "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",

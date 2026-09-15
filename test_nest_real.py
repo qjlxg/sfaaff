@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-test_nest_real.py
-对套娃生成的 YAML 进行真实连通性测试（Xray-core）
-支持断点续测：记录已完成的 yaml 文件，二次运行从上次位置继续
+逐文件真实测试套娃节点
+一次只测一个 YAML 文件（最多 5000 节点），测完保存结果再测下一个
 """
 
-import argparse
 import yaml
 import json
 import subprocess
@@ -15,103 +13,73 @@ import os
 import time
 import socket
 import requests
+import shutil
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import shutil
-from typing import List, Dict, Tuple, Optional, Set
+from datetime import datetime
 
-# ===================== 默认配置 =====================
-DEFAULT_INPUT_GLOB = "cf_nest_*.yaml"
-DEFAULT_OUTPUT = "cf_nest_alive.yaml"
-PROGRESS_FILE = "test_nest_progress.json"   # 进度记录文件
-XRAY_BIN = "xray"
+# ===================== 配置 =====================
+INPUT_PATTERN = "cf_nest_*.yaml"       # 要测试的文件
+RESULT_DIR = Path("test_results")      # 结果保存目录
+LOG_FILE = RESULT_DIR / "test_log.txt" # 总日志
+XRAY_BIN = "xray"                      # xray 路径
 TEST_URL = "http://www.gstatic.com/generate_204"
-DEFAULT_TIMEOUT = 8
-DEFAULT_WORKERS = 6
-LOCAL_PORT_BASE = 18000
-# ==================================================
+TIMEOUT = 7                            # 单节点超时（秒）
+MAX_WORKERS = 5                        # 单文件内并发数（建议 4\~6）
+# ===============================================
 
 
-def load_progress() -> Set[str]:
-    """读取已完成的文件列表"""
-    if not Path(PROGRESS_FILE).exists():
-        return set()
-    try:
-        with open(PROGRESS_FILE, encoding="utf-8") as f:
-            data = json.load(f)
-        return set(data.get("completed", []))
-    except Exception:
-        return set()
-
-
-def save_progress(completed: Set[str]):
-    """保存进度"""
-    data = {
-        "completed": sorted(list(completed)),
-        "updated_at": time.strftime("%Y-%m-%d %H:%M:%S")
-    }
-    with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-
-def find_free_port(start: int = LOCAL_PORT_BASE) -> int:
+def find_free_port(start=20000):
     port = start
-    while port < start + 1000:
+    while port < start + 800:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             try:
                 s.bind(("127.0.0.1", port))
                 return port
             except OSError:
                 port += 1
-    raise RuntimeError("找不到可用端口")
+    raise RuntimeError("无可用端口")
 
 
-def clash_to_xray_outbound(proxy: dict) -> Optional[dict]:
+def clash_to_xray_outbound(proxy: dict):
     ptype = proxy.get("type", "").lower()
-    server = proxy.get("server")
-    port = int(proxy.get("port", 443))
-    if not server:
-        return None
+    server = proxy["server"]
+    port = int(proxy["port"])
 
-    tag = "proxy"
-    network = proxy.get("network", "ws")
-    tls = bool(proxy.get("tls"))
-    servername = proxy.get("servername") or proxy.get("sni") or server
-
-    stream = {
-        "network": network,
-        "security": "tls" if tls else "none",
-    }
-    if tls:
-        stream["tlsSettings"] = {
-            "serverName": servername,
-            "allowInsecure": True
+    def make_stream():
+        stream = {
+            "network": proxy.get("network", "ws"),
+            "security": "tls" if proxy.get("tls") else "none",
         }
-
-    if network == "ws":
-        ws = proxy.get("ws-opts") or {}
-        stream["wsSettings"] = {
-            "path": ws.get("path", "/"),
-            "headers": ws.get("headers") or {}
-        }
+        if proxy.get("tls"):
+            stream["tlsSettings"] = {
+                "serverName": proxy.get("servername") or proxy.get("sni") or server,
+                "allowInsecure": True
+            }
+        if proxy.get("network") == "ws":
+            ws = proxy.get("ws-opts", {})
+            stream["wsSettings"] = {
+                "path": ws.get("path", "/"),
+                "headers": ws.get("headers", {})
+            }
+        return stream
 
     if ptype == "trojan":
         return {
-            "tag": tag,
+            "tag": "proxy",
             "protocol": "trojan",
             "settings": {
                 "servers": [{
                     "address": server,
                     "port": port,
-                    "password": proxy.get("password", ""),
-                    "email": "t@t.tt"
+                    "password": proxy.get("password", "")
                 }]
             },
-            "streamSettings": stream
+            "streamSettings": make_stream()
         }
     elif ptype == "vless":
         return {
-            "tag": tag,
+            "tag": "proxy",
             "protocol": "vless",
             "settings": {
                 "vnext": [{
@@ -124,11 +92,11 @@ def clash_to_xray_outbound(proxy: dict) -> Optional[dict]:
                     }]
                 }]
             },
-            "streamSettings": stream
+            "streamSettings": make_stream()
         }
     elif ptype == "vmess":
         return {
-            "tag": tag,
+            "tag": "proxy",
             "protocol": "vmess",
             "settings": {
                 "vnext": [{
@@ -136,23 +104,23 @@ def clash_to_xray_outbound(proxy: dict) -> Optional[dict]:
                     "port": port,
                     "users": [{
                         "id": proxy.get("uuid"),
-                        "alterId": int(proxy.get("alterId", 0)),
+                        "alterId": proxy.get("alterId", 0),
                         "security": proxy.get("cipher", "auto")
                     }]
                 }]
             },
-            "streamSettings": stream
+            "streamSettings": make_stream()
         }
     return None
 
 
-def test_one_proxy(proxy: dict, idx: int, timeout: int) -> Tuple[bool, dict, float]:
+def test_one(proxy, idx):
     outbound = clash_to_xray_outbound(proxy)
     if not outbound:
         return False, proxy, 0.0
 
-    port = find_free_port(LOCAL_PORT_BASE + (idx % 300))
-    xray_conf = {
+    port = find_free_port(20000 + (idx % 500))
+    conf = {
         "log": {"loglevel": "none"},
         "inbounds": [{
             "port": port,
@@ -170,8 +138,8 @@ def test_one_proxy(proxy: dict, idx: int, timeout: int) -> Tuple[bool, dict, flo
     proc = None
     start = time.time()
     try:
-        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as f:
-            json.dump(xray_conf, f, ensure_ascii=False)
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(conf, f)
             conf_file = f.name
 
         proc = subprocess.Popen(
@@ -179,14 +147,14 @@ def test_one_proxy(proxy: dict, idx: int, timeout: int) -> Tuple[bool, dict, flo
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
         )
-        time.sleep(0.55)
+        time.sleep(0.45)
 
         proxies = {
-            "http": f"socks5h://127.0.0.1:{port}",
-            "https": f"socks5h://127.0.0.1:{port}"
+            "http": f"socks5://127.0.0.1:{port}",
+            "https": f"socks5://127.0.0.1:{port}"
         }
-        resp = requests.get(TEST_URL, proxies=proxies, timeout=timeout)
-        ok = resp.status_code in (200, 204)
+        r = requests.get(TEST_URL, proxies=proxies, timeout=TIMEOUT)
+        ok = r.status_code in (200, 204)
         return ok, proxy, time.time() - start
     except Exception:
         return False, proxy, time.time() - start
@@ -204,132 +172,112 @@ def test_one_proxy(proxy: dict, idx: int, timeout: int) -> Tuple[bool, dict, flo
                 pass
 
 
-def test_file(file_path: Path, workers: int, timeout: int) -> List[dict]:
-    """测试单个 yaml 文件，返回存活节点"""
-    with open(file_path, encoding="utf-8") as fp:
-        data = yaml.safe_load(fp) or {}
+def test_single_file(yaml_path: Path):
+    """测试单个文件，返回存活列表和统计"""
+    print(f"\n{'='*60}")
+    print(f"开始测试文件：{yaml_path.name}")
+    print(f"{'='*60}")
+
+    with open(yaml_path, encoding="utf-8") as f:
+        data = yaml.safe_load(f)
+
     proxies = data.get("proxies", [])
     total = len(proxies)
-    if total == 0:
-        print(f"  {file_path.name} 没有节点，跳过")
-        return []
+    print(f"本文件节点数：{total}")
 
-    print(f"\n开始测试文件：{file_path.name}（{total} 个节点）")
+    if total == 0:
+        return [], {"total": 0, "alive": 0, "file": yaml_path.name}
+
     alive = []
     tested = 0
 
-    with ThreadPoolExecutor(max_workers=workers) as executor:
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {
-            executor.submit(test_one_proxy, proxy, i, timeout): proxy
-            for i, proxy in enumerate(proxies)
+            executor.submit(test_one, p, i): p
+            for i, p in enumerate(proxies)
         }
-        for future in as_completed(futures):
+        for fut in as_completed(futures):
             tested += 1
-            ok, proxy, elapsed = future.result()
-            name = str(proxy.get("name", "unknown"))[:70]
+            ok, proxy, elapsed = fut.result()
+            name = (proxy.get("name") or "unknown")[:55]
             if ok:
                 alive.append(proxy)
-                print(f"  [{tested}/{total}] ✅ 存活  {elapsed:.1f}s  {name}")
+                print(f"[{tested}/{total}] ✅ {elapsed:.1f}s  {name}")
             else:
-                print(f"  [{tested}/{total}] ❌ 失败  {elapsed:.1f}s  {name}")
+                # 失败也打印进度，但少刷屏
+                if tested % 100 == 0 or tested == total:
+                    print(f"[{tested}/{total}] 进度更新... 当前存活 {len(alive)}")
 
-    print(f"  文件 {file_path.name} 完成：存活 {len(alive)} / {total}")
-    return alive
-
-
-def save_alive(alive: List[dict], output: str):
-    if not alive:
-        print("没有存活节点，不生成文件")
-        return
-    data = {
-        "proxies": alive,
-        "proxy-groups": [{
-            "name": "CF-Nest-Alive",
-            "type": "select",
-            "proxies": [p.get("name", f"node-{i}") for i, p in enumerate(alive)]
-        }],
-        "rules": ["MATCH,CF-Nest-Alive"]
+    stats = {
+        "file": yaml_path.name,
+        "total": total,
+        "alive": len(alive),
+        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
-    with open(output, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, sort_keys=False, width=1200)
-    print(f"已保存存活节点到：{output}（共 {len(alive)} 个）")
+    return alive, stats
+
+
+def save_result(yaml_path: Path, alive: list, stats: dict):
+    """无论是否有存活节点，都保存结果"""
+    RESULT_DIR.mkdir(exist_ok=True)
+
+    # 1. 保存存活节点（如果有）
+    stem = yaml_path.stem
+    alive_file = RESULT_DIR / f"alive_{stem}.yaml"
+    if alive:
+        out = {
+            "proxies": alive,
+            "proxy-groups": [{
+                "name": "Alive",
+                "type": "select",
+                "proxies": [p["name"] for p in alive]
+            }],
+            "rules": ["MATCH,Alive"]
+        }
+        with open(alive_file, "w", encoding="utf-8") as f:
+            yaml.dump(out, f, allow_unicode=True, sort_keys=False, width=1000)
+        print(f"存活节点已保存：{alive_file} （{len(alive)} 个）")
+    else:
+        # 即使没有存活，也写一个空标记文件，方便知道测过了
+        with open(alive_file, "w", encoding="utf-8") as f:
+            yaml.dump({"proxies": [], "note": "no alive nodes"}, f, allow_unicode=True)
+        print(f"本文件无存活节点，已记录：{alive_file}")
+
+    # 2. 写总日志
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"[{stats['time']}] 文件: {stats['file']} | "
+                f"总数: {stats['total']} | 存活: {stats['alive']}\n")
+
+    print(f"日志已更新：{LOG_FILE}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="真实测试套娃节点（支持断点续测）")
-    parser.add_argument("--batch", help="只测试指定的单个 yaml 文件（GitHub Actions 用）")
-    parser.add_argument("--input-glob", default=DEFAULT_INPUT_GLOB, help="本地全量时的文件匹配")
-    parser.add_argument("--output", default=DEFAULT_OUTPUT, help="最终合并输出文件名")
-    parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS, help="并发数")
-    parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT, help="单节点超时秒数")
-    parser.add_argument("--force", action="store_true", help="忽略进度，强制重新测试所有文件")
-    parser.add_argument("--reset-progress", action="store_true", help="清空进度记录后退出")
-    args = parser.parse_args()
-
-    # 重置进度
-    if args.reset_progress:
-        if Path(PROGRESS_FILE).exists():
-            os.remove(PROGRESS_FILE)
-            print(f"已清空进度文件：{PROGRESS_FILE}")
-        else:
-            print("进度文件不存在，无需清空")
-        return
-
-    # 检查 xray
     if not shutil.which(XRAY_BIN) and not Path(XRAY_BIN).exists():
-        print(f"错误：找不到 Xray 可执行文件「{XRAY_BIN}」")
-        print("请从 https://github.com/XTLS/Xray-core/releases 下载")
-        exit(1)
-
-    # 单文件模式（GitHub Actions 分批）
-    if args.batch:
-        file_path = Path(args.batch)
-        if not file_path.exists():
-            print(f"文件不存在：{args.batch}")
-            return
-        alive = test_file(file_path, args.workers, args.timeout)
-        output = f"alive_{file_path.stem}.yaml"
-        save_alive(alive, output)
+        print(f"错误：找不到 {XRAY_BIN}，请先把 Xray 二进制放到当前目录或 PATH")
         return
 
-    # 本地全量模式 + 断点续测
-    all_files = sorted(Path(".").glob(args.input_glob))
-    if not all_files:
-        print(f"没找到任何 {args.input_glob} 文件")
+    files = sorted(Path(".").glob(INPUT_PATTERN))
+    if not files:
+        print(f"当前目录没有找到 {INPUT_PATTERN} 文件")
         return
 
-    completed = set() if args.force else load_progress()
-    print(f"进度文件：{PROGRESS_FILE}")
-    print(f"已完成文件数：{len(completed)}")
-    if completed:
-        print("已完成：", ", ".join(sorted(completed)))
-
-    pending = [f for f in all_files if f.name not in completed]
-    if not pending:
-        print("\n所有文件都已测试完成！如需重新测试请加 --force")
-        return
-
-    print(f"\n待测试文件（{len(pending)} 个）：")
-    for f in pending:
+    print(f"共发现 {len(files)} 个待测试文件：")
+    for f in files:
         print(f"  - {f.name}")
 
-    all_alive = []
-    # 先把之前已经完成的存活结果尝试合并（如果有的话）
-    # 这里简单处理：只合并本次新测的，最终输出本次+之前可用的话可自行扩展
+    RESULT_DIR.mkdir(exist_ok=True)
 
-    for file_path in pending:
-        alive = test_file(file_path, args.workers, args.timeout)
-        all_alive.extend(alive)
+    for idx, fpath in enumerate(files, 1):
+        print(f"\n\n>>>>>>> 进度：{idx}/{len(files)} <<<<<<<")
+        alive, stats = test_single_file(fpath)
+        save_result(fpath, alive, stats)
+        print(f"文件 {fpath.name} 处理完成，准备下一个...\n")
 
-        # 标记该文件已完成
-        completed.add(file_path.name)
-        save_progress(completed)
-        print(f"  进度已更新，当前已完成 {len(completed)} 个文件")
-
-    # 最终合并输出
-    print("\n" + "=" * 50)
-    save_alive(all_alive, args.output)
-    print("全部待测文件处理完成！")
+    print("\n" + "="*60)
+    print("全部文件测试完成！")
+    print(f"结果目录：{RESULT_DIR}")
+    print(f"总日志：{LOG_FILE}")
+    print("="*60)
 
 
 if __name__ == "__main__":

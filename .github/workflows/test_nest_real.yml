@@ -1,19 +1,17 @@
 name: test_nest_real
 
 on:
-  # 脚本或工作流变动时自动运行
   push:
     paths:
       - 'test_nest_real.py'
       - '.github/workflows/test_nest_real.yml'
       - 'cf_nest_*.yaml'
-      - 'generate_nest.py'   # 可选，生成脚本变动也触发
+      - 'generate_nest.py'
+      # 注意：不要把结果文件加到触发路径，避免循环触发
 
-  # 北京时间定时运行（当前设置为每天北京时间 02:00）
   schedule:
-    - cron: '0 18 * * *'   # UTC 18:00 = 北京时间次日 02:00
+    - cron: '0 18 * * *'   # 北京时间每天 02:00
 
-  # 手动触发
   workflow_dispatch:
     inputs:
       workers:
@@ -29,19 +27,26 @@ on:
         required: false
         default: 'false'
 
+permissions:
+  contents: write          # 必须有写权限才能提交
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 360          # 最大运行时间，可按需调整
+    timeout-minutes: 360
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # 必须加这个，否则后续 push 可能会失败
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
       - name: Check if there are files to test
         id: check
         run: |
-          count=$(ls cf_nest_*.yaml 2>/dev/null | wc -l)
+          count=$(ls cf_nest_*.yaml 2>/dev/null | wc -l || true)
           echo "yaml_count=$count" >> $GITHUB_OUTPUT
           if [ "$count" -eq 0 ]; then
             echo "没有找到 cf_nest_*.yaml 文件，跳过测试"
@@ -58,8 +63,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.check.outputs.yaml_count != '0'
-        run: |
-          pip install pyyaml requests
+        run: pip install pyyaml requests
 
       - name: Install Xray
         if: steps.check.outputs.yaml_count != '0'
@@ -87,7 +91,27 @@ jobs:
             python test_nest_real.py --workers "$WORKERS" --timeout "$TIMEOUT"
           fi
 
-      - name: Upload results
+      - name: Commit and push alive results
+        if: steps.check.outputs.yaml_count != '0'
+        run: |
+          # 配置 Git 身份
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 只添加结果相关文件
+          git add cf_nest_alive.yaml test_nest_progress.json alive_*.yaml 2>/dev/null || true
+
+          # 判断是否有实际变更
+          if git diff --staged --quiet; then
+            echo "没有新的存活结果需要提交"
+          else
+            # 提交（带 [skip ci] 防止再次触发工作流）
+            git commit -m "chore: update alive proxies and progress [skip ci]"
+            git push
+            echo "已成功提交存活结果到仓库"
+          fi
+
+      - name: Upload artifacts (backup)
         if: steps.check.outputs.yaml_count != '0'
         uses: actions/upload-artifact@v4
         with:
@@ -103,7 +127,6 @@ jobs:
         run: |
           echo "========== 测试结果摘要 =========="
           if [ -f cf_nest_alive.yaml ]; then
-            echo "存活节点文件: cf_nest_alive.yaml"
             python3 -c "
           import yaml
           with open('cf_nest_alive.yaml', encoding='utf-8') as f:
@@ -111,11 +134,11 @@ jobs:
           print(f'存活节点数量: {len(data.get(\"proxies\", []))}')
           "
           else
-            echo "未生成存活节点文件"
+            echo "未生成 cf_nest_alive.yaml"
           fi
 
           if [ -f test_nest_progress.json ]; then
             echo ""
-            echo "进度文件内容:"
+            echo "当前进度："
             cat test_nest_progress.json
           fi

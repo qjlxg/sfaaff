@@ -1,144 +1,217 @@
-name: test_nest_real
+name: Sequential Real Proxy Test (One File After Another)
 
 on:
-  push:
-    paths:
-      - 'test_nest_real.py'
-      - '.github/workflows/test_nest_real.yml'
-      - 'cf_nest_*.yaml'
-      - 'generate_nest.py'
-      # 注意：不要把结果文件加到触发路径，避免循环触发
-
-  schedule:
-    - cron: '0 18 * * *'   # 北京时间每天 02:00
-
   workflow_dispatch:
     inputs:
       workers:
-        description: '并发数'
-        required: false
+        description: '每个文件的并发数'
+        required: true
         default: '5'
-      timeout:
-        description: '单节点超时（秒）'
-        required: false
-        default: '8'
-      force:
-        description: '强制重新测试所有文件（true/false）'
-        required: false
-        default: 'false'
-
-permissions:
-  contents: write          # 必须有写权限才能提交
+      timeout_per_node:
+        description: '单节点超时秒数'
+        required: true
+        default: '7'
 
 jobs:
-  test:
+  test-sequential:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 360          # 最长 6 小时，可按需调整
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # 必须加这个，否则后续 push 可能会失败
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
-
-      - name: Check if there are files to test
-        id: check
-        run: |
-          count=$(ls cf_nest_*.yaml 2>/dev/null | wc -l || true)
-          echo "yaml_count=$count" >> $GITHUB_OUTPUT
-          if [ "$count" -eq 0 ]; then
-            echo "没有找到 cf_nest_*.yaml 文件，跳过测试"
-          else
-            echo "找到 $count 个待测文件"
-            ls -1 cf_nest_*.yaml
-          fi
 
       - name: Set up Python
-        if: steps.check.outputs.yaml_count != '0'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        if: steps.check.outputs.yaml_count != '0'
         run: pip install pyyaml requests
 
       - name: Install Xray
-        if: steps.check.outputs.yaml_count != '0'
         run: |
           wget -q https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          unzip -qo Xray-linux-64.zip xray
+          unzip -q Xray-linux-64.zip xray
           chmod +x xray
           sudo mv xray /usr/local/bin/xray
-          xray version
 
-      - name: Run real connectivity test
-        if: steps.check.outputs.yaml_count != '0'
+      - name: Run sequential test (skip already tested + merge at end)
         env:
           WORKERS: ${{ github.event.inputs.workers || '5' }}
-          TIMEOUT: ${{ github.event.inputs.timeout || '8' }}
-          FORCE: ${{ github.event.inputs.force || 'false' }}
+          NODE_TIMEOUT: ${{ github.event.inputs.timeout_per_node || '7' }}
         run: |
-          echo "并发数: $WORKERS"
-          echo "超时: $TIMEOUT 秒"
-          echo "强制重测: $FORCE"
+          python3 << 'SCRIPT'
+          import yaml, json, subprocess, tempfile, os, time, socket, requests, shutil
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from datetime import datetime
 
-          if [ "$FORCE" = "true" ]; then
-            python test_nest_real.py --workers "$WORKERS" --timeout "$TIMEOUT" --force
-          else
-            python test_nest_real.py --workers "$WORKERS" --timeout "$TIMEOUT"
-          fi
+          INPUT_PATTERN = "cf_nest_*.yaml"
+          RESULT_DIR = Path("test_results")
+          LOG_FILE = RESULT_DIR / "test_log.txt"
+          FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
+          XRAY_BIN = "xray"
+          TEST_URL = "http://www.gstatic.com/generate_204"
+          TIMEOUT = int(os.environ.get("NODE_TIMEOUT", "7"))
+          MAX_WORKERS = int(os.environ.get("WORKERS", "5"))
 
-      - name: Commit and push alive results
-        if: steps.check.outputs.yaml_count != '0'
-        run: |
-          # 配置 Git 身份
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          def find_free_port(start=20000):
+              port = start
+              while port < start + 800:
+                  with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                      try:
+                          s.bind(("127.0.0.1", port))
+                          return port
+                      except OSError:
+                          port += 1
+              raise RuntimeError("no free port")
 
-          # 只添加结果相关文件
-          git add cf_nest_alive.yaml test_nest_progress.json alive_*.yaml 2>/dev/null || true
+          def clash_to_xray_outbound(proxy):
+              ptype = proxy.get("type", "").lower()
+              server = proxy["server"]
+              port = int(proxy["port"])
+              def make_stream():
+                  stream = {"network": proxy.get("network", "ws"), "security": "tls" if proxy.get("tls") else "none"}
+                  if proxy.get("tls"):
+                      stream["tlsSettings"] = {"serverName": proxy.get("servername") or proxy.get("sni") or server, "allowInsecure": True}
+                  if proxy.get("network") == "ws":
+                      ws = proxy.get("ws-opts", {})
+                      stream["wsSettings"] = {"path": ws.get("path", "/"), "headers": ws.get("headers", {})}
+                  return stream
+              if ptype == "trojan":
+                  return {"tag": "proxy", "protocol": "trojan", "settings": {"servers": [{"address": server, "port": port, "password": proxy.get("password", "")}]}, "streamSettings": make_stream()}
+              elif ptype == "vless":
+                  return {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": server, "port": port, "users": [{"id": proxy.get("uuid"), "encryption": "none", "flow": proxy.get("flow", "")}]}]}, "streamSettings": make_stream()}
+              elif ptype == "vmess":
+                  return {"tag": "proxy", "protocol": "vmess", "settings": {"vnext": [{"address": server, "port": port, "users": [{"id": proxy.get("uuid"), "alterId": proxy.get("alterId", 0), "security": proxy.get("cipher", "auto")}]}]}, "streamSettings": make_stream()}
+              return None
 
-          # 判断是否有实际变更
-          if git diff --staged --quiet; then
-            echo "没有新的存活结果需要提交"
-          else
-            # 提交（带 [skip ci] 防止再次触发工作流）
-            git commit -m "chore: update alive proxies and progress [skip ci]"
-            git push
-            echo "已成功提交存活结果到仓库"
-          fi
+          def test_one(proxy, idx):
+              outbound = clash_to_xray_outbound(proxy)
+              if not outbound:
+                  return False, proxy, 0.0
+              port = find_free_port(20000 + (idx % 500))
+              conf = {"log": {"loglevel": "none"}, "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": True}}], "outbounds": [outbound, {"protocol": "freedom", "tag": "direct"}], "routing": {"rules": [{"type": "field", "outboundTag": "proxy", "network": "tcp,udp"}]}}
+              conf_file = None
+              proc = None
+              start = time.time()
+              try:
+                  with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+                      json.dump(conf, f)
+                      conf_file = f.name
+                  proc = subprocess.Popen([XRAY_BIN, "run", "-c", conf_file], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                  time.sleep(0.45)
+                  proxies = {"http": f"socks5://127.0.0.1:{port}", "https": f"socks5://127.0.0.1:{port}"}
+                  r = requests.get(TEST_URL, proxies=proxies, timeout=TIMEOUT)
+                  return r.status_code in (200, 204), proxy, time.time() - start
+              except Exception:
+                  return False, proxy, time.time() - start
+              finally:
+                  if proc:
+                      proc.terminate()
+                      try: proc.wait(timeout=2)
+                      except: proc.kill()
+                  if conf_file and os.path.exists(conf_file):
+                      try: os.unlink(conf_file)
+                      except: pass
 
-      - name: Upload artifacts (backup)
-        if: steps.check.outputs.yaml_count != '0'
+          def test_single_file(yaml_path):
+              print(f"\n{'='*60}\n开始测试文件：{yaml_path.name}\n{'='*60}")
+              with open(yaml_path, encoding="utf-8") as f:
+                  data = yaml.safe_load(f)
+              proxies = data.get("proxies", [])
+              total = len(proxies)
+              print(f"本文件节点数：{total}")
+              if total == 0:
+                  return [], {"total": 0, "alive": 0, "file": yaml_path.name}
+              alive = []
+              tested = 0
+              with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                  futures = {executor.submit(test_one, p, i): p for i, p in enumerate(proxies)}
+                  for fut in as_completed(futures):
+                      tested += 1
+                      ok, proxy, elapsed = fut.result()
+                      if ok:
+                          alive.append(proxy)
+                          print(f"[{tested}/{total}] ✅ {elapsed:.1f}s  {(proxy.get('name') or '')[:50]}")
+                      elif tested % 100 == 0 or tested == total:
+                          print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
+              return alive, {"file": yaml_path.name, "total": total, "alive": len(alive), "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+          def save_result(yaml_path, alive, stats):
+              RESULT_DIR.mkdir(exist_ok=True)
+              stem = yaml_path.stem
+              alive_file = RESULT_DIR / f"alive_{stem}.yaml"
+              if alive:
+                  out = {"proxies": alive, "proxy-groups": [{"name": "Alive", "type": "select", "proxies": [p["name"] for p in alive]}], "rules": ["MATCH,Alive"]}
+                  with open(alive_file, "w", encoding="utf-8") as f:
+                      yaml.dump(out, f, allow_unicode=True, sort_keys=False, width=1000)
+                  print(f"存活节点已保存：{alive_file} （{len(alive)} 个）")
+              else:
+                  with open(alive_file, "w", encoding="utf-8") as f:
+                      yaml.dump({"proxies": [], "note": "no alive nodes"}, f, allow_unicode=True)
+                  print(f"本文件无存活节点，已记录：{alive_file}")
+              with open(LOG_FILE, "a", encoding="utf-8") as f:
+                  f.write(f"[{stats['time']}] 文件: {stats['file']} | 总数: {stats['total']} | 存活: {stats['alive']}\n")
+
+          def merge_all_alive():
+              alive_files = sorted(RESULT_DIR.glob("alive_*.yaml"))
+              if not alive_files:
+                  print("没有存活结果，跳过合并")
+                  return
+              all_proxies = []
+              for f in alive_files:
+                  try:
+                      with open(f, encoding="utf-8") as fp:
+                          data = yaml.safe_load(fp) or {}
+                      proxies = data.get("proxies", [])
+                      if proxies:
+                          all_proxies.extend(proxies)
+                          print(f"  合并 {f.name}: +{len(proxies)}")
+                  except Exception as e:
+                      print(f"  读取失败 {f.name}: {e}")
+              if not all_proxies:
+                  return
+              seen = set()
+              unique = []
+              for p in all_proxies:
+                  name = p.get("name")
+                  if name and name not in seen:
+                      seen.add(name)
+                      unique.append(p)
+              final = {"proxies": unique, "proxy-groups": [{"name": "CF-Nest-Alive-All", "type": "select", "proxies": [p["name"] for p in unique]}], "rules": ["MATCH,CF-Nest-Alive-All"]}
+              with open(FINAL_ALIVE_FILE, "w", encoding="utf-8") as f:
+                  yaml.dump(final, f, allow_unicode=True, sort_keys=False, width=1000)
+              print(f"\n最终合并完成：{FINAL_ALIVE_FILE} （去重后 {len(unique)} 个）")
+
+          # ========== 主流程 ==========
+          files = sorted(Path(".").glob(INPUT_PATTERN))
+          if not files:
+              print("没有找到 cf_nest_*.yaml 文件")
+              exit(0)
+
+          RESULT_DIR.mkdir(exist_ok=True)
+          print(f"共发现 {len(files)} 个文件")
+
+          for idx, fpath in enumerate(files, 1):
+              result_file = RESULT_DIR / f"alive_{fpath.stem}.yaml"
+              if result_file.exists():
+                  print(f"\n[{idx}/{len(files)}] ⏭ 跳过已测文件：{fpath.name}")
+                  continue
+              print(f"\n>>>>>>> 进度：{idx}/{len(files)} <<<<<<<")
+              alive, stats = test_single_file(fpath)
+              save_result(fpath, alive, stats)
+
+          print("\n所有文件处理结束，开始合并...")
+          merge_all_alive()
+          print("全部完成")
+          SCRIPT
+
+      - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: nest-test-results
           path: |
-            cf_nest_alive.yaml
-            test_nest_progress.json
-            alive_*.yaml
-          if-no-files-found: ignore
-
-      - name: Show summary
-        if: steps.check.outputs.yaml_count != '0'
-        run: |
-          echo "========== 测试结果摘要 =========="
-          if [ -f cf_nest_alive.yaml ]; then
-            python3 -c "
-          import yaml
-          with open('cf_nest_alive.yaml', encoding='utf-8') as f:
-              data = yaml.safe_load(f) or {}
-          print(f'存活节点数量: {len(data.get(\"proxies\", []))}')
-          "
-          else
-            echo "未生成 cf_nest_alive.yaml"
-          fi
-
-          if [ -f test_nest_progress.json ]; then
-            echo ""
-            echo "当前进度："
-            cat test_nest_progress.json
-          fi
+            test_results/
+            test_results/cf_nest_alive_all.yaml

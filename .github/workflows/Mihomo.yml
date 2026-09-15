@@ -7,6 +7,7 @@ on:
       - master
     paths:
       - 'cf_nest_*.yaml'
+      - '.github/workflows/Mihomo.yml'
   workflow_dispatch:
 
 jobs:

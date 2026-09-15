@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-逐文件真实测试套娃节点
-一次只测一个 YAML 文件（最多 5000 节点），测完保存结果再测下一个
+逐文件真实测试套娃节点（支持跳过已测 + 最终自动合并）
 """
 
 import yaml
@@ -19,13 +18,14 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 # ===================== 配置 =====================
-INPUT_PATTERN = "cf_nest_*.yaml"       # 要测试的文件
-RESULT_DIR = Path("test_results")      # 结果保存目录
-LOG_FILE = RESULT_DIR / "test_log.txt" # 总日志
-XRAY_BIN = "xray"                      # xray 路径
+INPUT_PATTERN = "cf_nest_*.yaml"
+RESULT_DIR = Path("test_results")
+LOG_FILE = RESULT_DIR / "test_log.txt"
+FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"   # 最终合并文件
+XRAY_BIN = "xray"
 TEST_URL = "http://www.gstatic.com/generate_204"
-TIMEOUT = 7                            # 单节点超时（秒）
-MAX_WORKERS = 5                        # 单文件内并发数（建议 4\~6）
+TIMEOUT = 7
+MAX_WORKERS = 5
 # ===============================================
 
 
@@ -173,7 +173,6 @@ def test_one(proxy, idx):
 
 
 def test_single_file(yaml_path: Path):
-    """测试单个文件，返回存活列表和统计"""
     print(f"\n{'='*60}")
     print(f"开始测试文件：{yaml_path.name}")
     print(f"{'='*60}")
@@ -192,10 +191,7 @@ def test_single_file(yaml_path: Path):
     tested = 0
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {
-            executor.submit(test_one, p, i): p
-            for i, p in enumerate(proxies)
-        }
+        futures = {executor.submit(test_one, p, i): p for i, p in enumerate(proxies)}
         for fut in as_completed(futures):
             tested += 1
             ok, proxy, elapsed = fut.result()
@@ -204,9 +200,8 @@ def test_single_file(yaml_path: Path):
                 alive.append(proxy)
                 print(f"[{tested}/{total}] ✅ {elapsed:.1f}s  {name}")
             else:
-                # 失败也打印进度，但少刷屏
                 if tested % 100 == 0 or tested == total:
-                    print(f"[{tested}/{total}] 进度更新... 当前存活 {len(alive)}")
+                    print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
 
     stats = {
         "file": yaml_path.name,
@@ -218,12 +213,10 @@ def test_single_file(yaml_path: Path):
 
 
 def save_result(yaml_path: Path, alive: list, stats: dict):
-    """无论是否有存活节点，都保存结果"""
     RESULT_DIR.mkdir(exist_ok=True)
-
-    # 1. 保存存活节点（如果有）
     stem = yaml_path.stem
     alive_file = RESULT_DIR / f"alive_{stem}.yaml"
+
     if alive:
         out = {
             "proxies": alive,
@@ -238,45 +231,95 @@ def save_result(yaml_path: Path, alive: list, stats: dict):
             yaml.dump(out, f, allow_unicode=True, sort_keys=False, width=1000)
         print(f"存活节点已保存：{alive_file} （{len(alive)} 个）")
     else:
-        # 即使没有存活，也写一个空标记文件，方便知道测过了
         with open(alive_file, "w", encoding="utf-8") as f:
             yaml.dump({"proxies": [], "note": "no alive nodes"}, f, allow_unicode=True)
         print(f"本文件无存活节点，已记录：{alive_file}")
 
-    # 2. 写总日志
     with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(f"[{stats['time']}] 文件: {stats['file']} | "
-                f"总数: {stats['total']} | 存活: {stats['alive']}\n")
-
+        f.write(f"[{stats['time']}] 文件: {stats['file']} | 总数: {stats['total']} | 存活: {stats['alive']}\n")
     print(f"日志已更新：{LOG_FILE}")
+
+
+def merge_all_alive():
+    """把所有 alive_*.yaml 合并成一个总文件"""
+    alive_files = sorted(RESULT_DIR.glob("alive_*.yaml"))
+    if not alive_files:
+        print("没有找到任何存活结果文件，跳过合并")
+        return
+
+    all_proxies = []
+    for f in alive_files:
+        try:
+            with open(f, encoding="utf-8") as fp:
+                data = yaml.safe_load(fp) or {}
+            proxies = data.get("proxies", [])
+            if proxies:
+                all_proxies.extend(proxies)
+                print(f"  合并 {f.name}: +{len(proxies)} 个")
+        except Exception as e:
+            print(f"  读取 {f.name} 失败: {e}")
+
+    if not all_proxies:
+        print("合并后没有存活节点")
+        return
+
+    # 简单去重（按 name）
+    seen = set()
+    unique = []
+    for p in all_proxies:
+        name = p.get("name")
+        if name and name not in seen:
+            seen.add(name)
+            unique.append(p)
+
+    final = {
+        "proxies": unique,
+        "proxy-groups": [{
+            "name": "CF-Nest-Alive-All",
+            "type": "select",
+            "proxies": [p["name"] for p in unique]
+        }],
+        "rules": ["MATCH,CF-Nest-Alive-All"]
+    }
+    with open(FINAL_ALIVE_FILE, "w", encoding="utf-8") as f:
+        yaml.dump(final, f, allow_unicode=True, sort_keys=False, width=1000)
+
+    print(f"\n最终合并完成：{FINAL_ALIVE_FILE}")
+    print(f"去重后总存活节点：{len(unique)}")
 
 
 def main():
     if not shutil.which(XRAY_BIN) and not Path(XRAY_BIN).exists():
-        print(f"错误：找不到 {XRAY_BIN}，请先把 Xray 二进制放到当前目录或 PATH")
+        print(f"错误：找不到 {XRAY_BIN}")
         return
 
     files = sorted(Path(".").glob(INPUT_PATTERN))
     if not files:
-        print(f"当前目录没有找到 {INPUT_PATTERN} 文件")
+        print(f"没有找到 {INPUT_PATTERN} 文件")
         return
-
-    print(f"共发现 {len(files)} 个待测试文件：")
-    for f in files:
-        print(f"  - {f.name}")
 
     RESULT_DIR.mkdir(exist_ok=True)
 
+    print(f"共发现 {len(files)} 个待测试文件")
+    for f in files:
+        print(f"  - {f.name}")
+
     for idx, fpath in enumerate(files, 1):
+        result_file = RESULT_DIR / f"alive_{fpath.stem}.yaml"
+
+        # ========== 自动跳过已测文件 ==========
+        if result_file.exists():
+            print(f"\n[{idx}/{len(files)}] ⏭ 跳过已测文件：{fpath.name}")
+            continue
+
         print(f"\n\n>>>>>>> 进度：{idx}/{len(files)} <<<<<<<")
         alive, stats = test_single_file(fpath)
         save_result(fpath, alive, stats)
-        print(f"文件 {fpath.name} 处理完成，准备下一个...\n")
+        print(f"文件 {fpath.name} 处理完成\n")
 
     print("\n" + "="*60)
-    print("全部文件测试完成！")
-    print(f"结果目录：{RESULT_DIR}")
-    print(f"总日志：{LOG_FILE}")
+    print("所有文件处理结束，开始合并结果...")
+    merge_all_alive()
     print("="*60)
 
 

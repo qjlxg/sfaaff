@@ -48,8 +48,8 @@ jobs:
           FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
           MIHOMO_BIN = "mihomo"
           API_BASE = "http://127.0.0.1:9090"
-          TEST_URL = "http://cp.cloudflare.com/"
-          MAX_WORKERS = 10  # API 并发测试线程数
+          TEST_URL = "http://www.gstatic.com/generate_204"  # 更稳妥的测速地址
+          MAX_WORKERS = 15  # 稍微加大并发
 
           def test_file_with_mihomo(yaml_path):
               print(f"\n{'='*60}\n开始测试文件：{yaml_path.name}\n{'='*60}")
@@ -61,11 +61,22 @@ jobs:
               if total == 0:
                   return [], {"total": 0, "alive": 0, "file": yaml_path.name}
 
-              # 构造 Mihomo 临时配置文件
+              # 【核心修复】加上完整的 DNS 解析和优化的配置
               config = {
                   "mixed-port": 7890,
                   "external-controller": "127.0.0.1:9090",
                   "mode": "rule",
+                  "dns": {
+                      "enable": True,
+                      "ipv6": False,
+                      "enhanced-mode": "redir-host",
+                      "nameserver": [
+                          "223.5.5.5",
+                          "119.29.29.29",
+                          "8.8.8.8",
+                          "1.1.1.1"
+                      ]
+                  },
                   "proxies": proxies
               }
               
@@ -84,7 +95,7 @@ jobs:
               alive = []
               try:
                   started = False
-                  for _ in range(15):
+                  for _ in range(20):
                       try:
                           r = requests.get(f"{API_BASE}/version", timeout=1)
                           if r.status_code == 200:
@@ -104,11 +115,10 @@ jobs:
                       name = proxy.get("name")
                       if not name:
                           return False, proxy, 0
-                      # 调用 Mihomo 自带的测速 API
                       encoded_name = requests.utils.quote(name, safe='')
                       delay_url = f"{API_BASE}/proxies/{encoded_name}/delay"
                       try:
-                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=6)
+                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=7)
                           if res.status_code == 200:
                               delay = res.json().get("delay", 0)
                               if 0 < delay < 5000:
@@ -126,11 +136,10 @@ jobs:
                           if ok:
                               alive.append(proxy)
                               print(f"[{tested}/{total}] ✅ {delay}ms  {(proxy.get('name') or '')[:50]}")
-                          elif tested % 100 == 0 or tested == total:
+                          elif tested % 200 == 0 or tested == total:
                               print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
 
               finally:
-                  # 关闭 Mihomo 进程并清理临时文件
                   proc.terminate()
                   try:
                       proc.wait(timeout=3)

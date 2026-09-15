@@ -1,61 +1,273 @@
-name: cf_port_test_generator Sub
+name: Sequential Real Proxy Test (Auto Run on Push)
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - master
     paths:
-      - 'cf_port_test_generator.py'
-      - 'gem.yaml'
-      - '.github/workflows/cf_port_test_generator.yml'
-  schedule:
-    # 北京时间每天早上 8:00（UTC 00:00）
-    - cron: '0 0 * * *'
-  workflow_dispatch:   # 支持手动触发
-
-permissions:
-  contents: write     # 必须，否则无法 push 回仓库
+      - 'cf_nest_*.yaml'   # 只有当上传或修改了 cf_nest_ 开头的 yaml 文件时才自动触发
+  workflow_dispatch:       # 保留手动触发按钮以防万一
 
 jobs:
-  build:
-    name: Build WARP Subscription
+  test-sequential:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 360          # 最长 6 小时，可按需调整
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # 保证后续能正确 push
-          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'   # 3.10/3.11/3.12 都可以
+          python-version: '3.11'
 
       - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Install Xray
         run: |
-          python -m pip install --upgrade pip
-          pip install cryptography requests pyyaml
+          wget -q https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -q Xray-linux-64.zip xray
+          chmod +x xray
+          sudo mv xray /usr/local/bin/xray
 
-      - name: Run generate.py
-        id: generate
+      - name: Run sequential test (skip already tested + merge at end)
+        env:
+          WORKERS: '5'
+          NODE_TIMEOUT: '7'
         run: |
-          python cf_port_test_generator.py
-        continue-on-error: false   # 注册失败就让整个任务失败，方便排查
+          python3 << 'SCRIPT'
+          import yaml, json, subprocess, tempfile, os, time, socket, requests
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from datetime import datetime
 
-      - name: Commit and push if changed
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          INPUT_PATTERN = "cf_nest_*.yaml"
+          RESULT_DIR = Path("test_results")
+          LOG_FILE = RESULT_DIR / "test_log.txt"
+          FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
+          XRAY_BIN = "xray"
+          TEST_URL = "http://cp.cloudflare.com/"
+          TIMEOUT = int(os.environ.get("NODE_TIMEOUT", "7"))
+          MAX_WORKERS = int(os.environ.get("WORKERS", "5"))
 
-          git add *.yaml  || true
+          def find_free_port(start=20000):
+              port = start
+              while port < start + 800:
+                  with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                      try:
+                          s.bind(("127.0.0.1", port))
+                          return port
+                      except OSError:
+                          port += 1
+              raise RuntimeError("no free port")
 
-          # 只有文件真正变化时才提交
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Auto-update WARP subscription [skip ci]"
-            git push
-            echo "Subscription updated and pushed."
-          fi
+          def clash_to_xray_outbound(proxy):
+              ptype = proxy.get("type", "").lower()
+              server = proxy["server"]
+              port = int(proxy["port"])
+              
+              # 针对你的 Trojan + WS + TLS 节点精确转换
+              if ptype == "trojan":
+                  # 解析 TLS 设置
+                  sni = proxy.get("servername") or proxy.get("sni") or server
+                  allow_insecure = proxy.get("skip-cert-verify", True)
+                  
+                  stream = {
+                      "network": proxy.get("network", "ws"),
+                      "security": "tls" if proxy.get("tls") else "none",
+                      "tlsSettings": {
+                          "serverName": sni,
+                          "allowInsecure": allow_insecure
+                      }
+                  }
+                  
+                  # 解析 WebSocket 专属参数（path 和 headers/Host）
+                  if proxy.get("network") == "ws":
+                      ws_opts = proxy.get("ws-opts", {})
+                      ws_path = ws_opts.get("path", "/")
+                      ws_headers = ws_opts.get("headers", {})
+                      
+                      # 如果 yaml 里没有显式写 headers 但有 Host，尝试补全
+                      if "Host" not in ws_headers and "servername" in proxy:
+                          ws_headers["Host"] = proxy["servername"]
+                          
+                      stream["wsSettings"] = {
+                          "path": ws_path,
+                          "headers": ws_headers
+                      }
+
+                  return {
+                      "tag": "proxy",
+                      "protocol": "trojan",
+                      "settings": {
+                          "servers": [{
+                              "address": server,
+                              "port": port,
+                              "password": proxy.get("password", "")
+                          }]
+                      },
+                      "streamSettings": stream
+                  }
+              
+              # 预留 vless / vmes 基础解析
+              elif ptype == "vless":
+                  sni = proxy.get("servername") or proxy.get("sni") or server
+                  stream = {
+                      "network": proxy.get("network", "ws"),
+                      "security": "tls" if proxy.get("tls") else "none",
+                      "tlsSettings": {"serverName": sni, "allowInsecure": proxy.get("skip-cert-verify", True)}
+                  }
+                  if proxy.get("network") == "ws":
+                      ws_opts = proxy.get("ws-opts", {})
+                      stream["wsSettings"] = {"path": ws_opts.get("path", "/"), "headers": ws_opts.get("headers", {})}
+                  return {
+                      "tag": "proxy",
+                      "protocol": "vless",
+                      "settings": {
+                          "vnext": [{
+                              "address": server,
+                              "port": port,
+                              "users": [{"id": proxy.get("uuid"), "encryption": "none", "flow": proxy.get("flow", "")}]
+                          }]
+                      },
+                      "streamSettings": stream
+                  }
+              return None
+
+          def test_one(proxy, idx):
+              outbound = clash_to_xray_outbound(proxy)
+              if not outbound:
+                  return False, proxy, 0.0
+              port = find_free_port(20000 + (idx % 500))
+              conf = {
+                  "log": {"loglevel": "warning"}, # 改为 warning 方便在需要时看日志
+                  "inbounds": [{"port": port, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": True}}],
+                  "outbounds": [outbound, {"protocol": "freedom", "tag": "direct"}],
+                  "routing": {"rules": [{"type": "field", "outboundTag": "proxy", "network": "tcp,udp"}]}
+              }
+              conf_file = None
+              proc = None
+              start = time.time()
+              try:
+                  with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+                      json.dump(conf, f)
+                      conf_file = f.name
+                  # 开启 stderr 收集，如果再连不上可以在本地调试时打印出来
+                  proc = subprocess.Popen([XRAY_BIN, "run", "-c", conf_file], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                  time.sleep(0.6) # 稍微给 WS 握手留一点时间
+                  proxies_dict = {"http": f"socks5://127.0.0.1:{port}", "https": f"socks5://127.0.0.1:{port}"}
+                  r = requests.get(TEST_URL, proxies=proxies_dict, timeout=TIMEOUT)
+                  return r.status_code in (200, 204), proxy, time.time() - start
+              except Exception:
+                  return False, proxy, time.time() - start
+              finally:
+                  if proc:
+                      proc.terminate()
+                      try: proc.wait(timeout=2)
+                      except: proc.kill()
+                  if conf_file and os.path.exists(conf_file):
+                      try: os.unlink(conf_file)
+                      except: pass
+
+          def test_single_file(yaml_path):
+              print(f"\n{'='*60}\n开始测试文件：{yaml_path.name}\n{'='*60}")
+              with open(yaml_path, encoding="utf-8") as f:
+                  data = yaml.safe_load(f)
+              proxies = data.get("proxies", [])
+              total = len(proxies)
+              print(f"本文件节点数：{total}")
+              if total == 0:
+                  return [], {"total": 0, "alive": 0, "file": yaml_path.name}
+              alive = []
+              tested = 0
+              with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                  futures = {executor.submit(test_one, p, i): p for i, p in enumerate(proxies)}
+                  for fut in as_completed(futures):
+                      tested += 1
+                      ok, proxy, elapsed = fut.result()
+                      if ok:
+                          alive.append(proxy)
+                          print(f"[{tested}/{total}] ✅ {elapsed:.1f}s  {(proxy.get('name') or '')[:50]}")
+                      elif tested % 100 == 0 or tested == total:
+                          print(f"[{tested}/{total}] 进度... 当前存活 {len(alive)}")
+              return alive, {"file": yaml_path.name, "total": total, "alive": len(alive), "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+
+          def save_result(yaml_path, alive, stats):
+              RESULT_DIR.mkdir(exist_ok=True)
+              stem = yaml_path.stem
+              alive_file = RESULT_DIR / f"alive_{stem}.yaml"
+              if alive:
+                  out = {"proxies": alive, "proxy-groups": [{"name": "Alive", "type": "select", "proxies": [p["name"] for p in alive]}], "rules": ["MATCH,Alive"]}
+                  with open(alive_file, "w", encoding="utf-8") as f:
+                      yaml.dump(out, f, allow_unicode=True, sort_keys=False, width=1000)
+                  print(f"存活节点已保存：{alive_file} （{len(alive)} 个）")
+              else:
+                  with open(alive_file, "w", encoding="utf-8") as f:
+                      yaml.dump({"proxies": [], "note": "no alive nodes"}, f, allow_unicode=True)
+                  print(f"本文件无存活节点，已记录：{alive_file}")
+              with open(LOG_FILE, "a", encoding="utf-8") as f:
+                  f.write(f"[{stats['time']}] 文件: {stats['file']} | 总数: {stats['total']} | 存活: {stats['alive']}\n")
+
+          def merge_all_alive():
+              alive_files = sorted(RESULT_DIR.glob("alive_*.yaml"))
+              if not alive_files:
+                  print("没有存活结果，跳过合并")
+                  return
+              all_proxies = []
+              for f in alive_files:
+                  try:
+                      with open(f, encoding="utf-8") as fp:
+                          data = yaml.safe_load(fp) or {}
+                      proxies = data.get("proxies", [])
+                      if proxies:
+                          all_proxies.extend(proxies)
+                          print(f"  合并 {f.name}: +{len(proxies)}")
+                  except Exception as e:
+                      print(f"  读取失败 {f.name}: {e}")
+              if not all_proxies:
+                  return
+              seen = set()
+              unique = []
+              for p in all_proxies:
+                  name = p.get("name")
+                  if name and name not in seen:
+                      seen.add(name)
+                      unique.append(p)
+              final = {"proxies": unique, "proxy-groups": [{"name": "CF-Nest-Alive-All", "type": "select", "proxies": [p["name"] for p in unique]}], "rules": ["MATCH,CF-Nest-Alive-All"]}
+              with open(FINAL_ALIVE_FILE, "w", encoding="utf-8") as f:
+                  yaml.dump(final, f, allow_unicode=True, sort_keys=False, width=1000)
+              print(f"\n最终合并完成：{FINAL_ALIVE_FILE} （去重后 {len(unique)} 个）")
+
+          # ========== 主流程 ==========
+          files = sorted(Path(".").glob(INPUT_PATTERN))
+          if not files:
+              print("没有找到 cf_nest_*.yaml 文件")
+              exit(0)
+
+          RESULT_DIR.mkdir(exist_ok=True)
+          print(f"共发现 {len(files)} 个文件")
+
+          for idx, fpath in enumerate(files, 1):
+              result_file = RESULT_DIR / f"alive_{fpath.stem}.yaml"
+              if result_file.exists():
+                  print(f"\n[{idx}/{len(files)}] ⏭ 跳过已测文件：{fpath.name}")
+                  continue
+              print(f"\n>>>>>>> 进度：{idx}/{len(files)} <<<<<<<")
+              alive, stats = test_single_file(fpath)
+              save_result(fpath, alive, stats)
+
+          print("\n所有文件处理结束，开始合并...")
+          merge_all_alive()
+          print("全部完成")
+          SCRIPT
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nest-test-results
+          path: |
+            test_results/
+            test_results/cf_nest_alive_all.yaml

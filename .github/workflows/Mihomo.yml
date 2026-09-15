@@ -121,7 +121,7 @@ jobs:
                       encoded_name = requests.utils.quote(name, safe='')
                       delay_url = f"{API_BASE}/proxies/{encoded_name}/delay"
                       try:
-                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=8)
+                          res = requests.get(delay_url, params={"url": TEST_URL, "timeout": 5000}, timeout=18)
                           if res.status_code == 200:
                               delay = res.json().get("delay", 0)
                               if 0 < delay < 5000:

@@ -84,7 +84,7 @@ OUTPUT_PREFIX = "cf_port_test_ir"
 # None = 不限制
 # 来源文件里有多少个 IP 就测试多少个
 #
-TEST_IP_LIMIT = 10
+TEST_IP_LIMIT = None
 
 # 要测试的端口
 TEST_PORTS = [80, 443, 8443, 2053, 2083, 2087, 2096]

@@ -1,16 +1,13 @@
-name: Sequential Real Proxy Test (One File After Another)
+name: Sequential Real Proxy Test (Auto Run on Push)
 
 on:
-  workflow_dispatch:
-    inputs:
-      workers:
-        description: '每个文件的并发数'
-        required: true
-        default: '5'
-      timeout_per_node:
-        description: '单节点超时秒数'
-        required: true
-        default: '7'
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'cf_nest_*.yaml'   # 只有当上传或修改了 cf_nest_ 开头的 yaml 文件时才自动触发
+  workflow_dispatch:       # 保留手动触发按钮以防万一
 
 jobs:
   test-sequential:
@@ -38,8 +35,8 @@ jobs:
 
       - name: Run sequential test (skip already tested + merge at end)
         env:
-          WORKERS: ${{ github.event.inputs.workers || '5' }}
-          NODE_TIMEOUT: ${{ github.event.inputs.timeout_per_node || '7' }}
+          WORKERS: '5'
+          NODE_TIMEOUT: '7'
         run: |
           python3 << 'SCRIPT'
           import yaml, json, subprocess, tempfile, os, time, socket, requests, shutil
@@ -52,9 +49,9 @@ jobs:
           LOG_FILE = RESULT_DIR / "test_log.txt"
           FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
           XRAY_BIN = "xray"
-          TEST_URL = "http://cp.cloudflare.com"
+          TEST_URL = "http://cp.cloudflare.com/"  # 针对 Cloudflare 优选 IP 优化的官方连通性探测地址
           TIMEOUT = int(os.environ.get("NODE_TIMEOUT", "7"))
-          MAX_WORKERS = int(os.environ.get("WORKERS", "15"))
+          MAX_WORKERS = int(os.environ.get("WORKERS", "5"))
 
           def find_free_port(start=20000):
               port = start

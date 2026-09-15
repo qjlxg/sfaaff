@@ -27,11 +27,11 @@ IP_SOURCES = {
 
 TEMPLATE_FILE = Path("gem.yaml")          # 你的节点模板
 OUTPUT_PREFIX = "cf_nest_"                # 输出文件前缀
-TEST_IP_LIMIT = 50                        # 每个 IP 源最多取多少个（建议 30~80）
-TEST_PORTS = [443,80,]                        # 强烈建议先只测 443，成功率最高
+TEST_IP_LIMIT = 5000                       # 每个 IP 源最多取多少个（建议 30~80）
+TEST_PORTS = [80,443, 8443,2053,2083,2087,2096,]                        # 强烈建议先只测 443，成功率最高
 # TEST_PORTS = [443, 80, 8443, 2053]      # 需要多端口时再打开
 
-MAX_NODES_PER_FILE = 4000                 # 每个 yaml 最多多少节点，超过自动拆分
+MAX_NODES_PER_FILE = 5000                 # 每个 yaml 最多多少节点，超过自动拆分
 PROGRESS_EVERY = 200                      # 每生成多少个打印一次进度
 
 # ======================================================

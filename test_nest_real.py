@@ -23,7 +23,7 @@ RESULT_DIR = Path("test_results")
 LOG_FILE = RESULT_DIR / "test_log.txt"
 FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"   # 最终合并文件
 XRAY_BIN = "xray"
-TEST_URL = "http://www.gstatic.com/generate_204"
+TEST_URL = "http://cp.cloudflare.com"
 TIMEOUT = 7
 MAX_WORKERS = 5
 # ===============================================

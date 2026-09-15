@@ -1,4 +1,4 @@
-name: Sequential Real Proxy Test (Fix SOCKS Error)
+name: Sequential Real Proxy Test (Fixed Syntax)
 
 on:
   push:
@@ -115,7 +115,6 @@ jobs:
               
               port = find_free_port(20000 + (idx % 500))
               
-              # 【核心修改】将 inbounds 从 socks 改为 http，规避 SOCKS 依赖缺失问题
               conf = {
                   "log": {"loglevel": "warning"},
                   "inbounds": [{
@@ -142,7 +141,6 @@ jobs:
                   )
                   time.sleep(0.5)
                   
-                  # 使用 HTTP 代理方式进行测试
                   proxies_dict = {"http": f"http://127.0.0.1:{port}", "https": f"http://127.0.0.1:{port}"}
                   r = requests.get(TEST_URL, proxies=proxies_dict, timeout=TIMEOUT)
                   
@@ -221,8 +219,8 @@ jobs:
                       if proxies:
                           all_proxies.extend(proxies)
                           print(f"  合并 {f.name}: +{len(proxies)}")
-                      except Exception as e:
-                          print(f"  读取失败 {f.name}: {e}")
+                  except Exception as e:
+                      print(f"  读取失败 {f.name}: {e}")
               if not all_proxies:
                   return
               seen = set()

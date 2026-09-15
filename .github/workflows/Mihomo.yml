@@ -56,8 +56,8 @@ jobs:
           FINAL_ALIVE_FILE = RESULT_DIR / "cf_nest_alive_all.yaml"
           MIHOMO_BIN = "mihomo"
           API_BASE = "http://127.0.0.1:9090"
-          TEST_URL = "http://www.gstatic.com/generate_204"
-          MAX_WORKERS = 8          # GitHub Runner 建议先用 8，稳定后再加
+          TEST_URL = "http://cp.cloudflare.com"
+          MAX_WORKERS = 10          # GitHub Runner 建议先用 8，稳定后再加
 
           def test_file_with_mihomo(yaml_path):
               print(f"\n{'='*60}\n开始测试文件：{yaml_path.name}\n{'='*60}")

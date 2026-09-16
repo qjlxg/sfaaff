@@ -1,0 +1,143 @@
+proxies:
+- name: BPB-xx.tvos.cloudns.be | IP=95.215.244.116 | PORT=443
+  server: 95.215.244.116
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: xx.tvos.cloudns.be
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=95.215.244.116 | PORT=8443
+  server: 95.215.244.116
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: xx.tvos.cloudns.be
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=95.40.227.67 | PORT=80
+  server: 95.40.227.67
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=95.40.227.67 | PORT=443
+  server: 95.40.227.67
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: xx.tvos.cloudns.be
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=95.40.227.67 | PORT=8443
+  server: 95.40.227.67
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: xx.tvos.cloudns.be
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=ipv4.list.updated.at | PORT=80
+  server: ipv4.list.updated.at
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=ipv4.list.updated.at | PORT=443
+  server: ipv4.list.updated.at
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: xx.tvos.cloudns.be
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+- name: BPB-xx.tvos.cloudns.be | IP=ipv4.list.updated.at | PORT=8443
+  server: ipv4.list.updated.at
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: xx.tvos.cloudns.be
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: xx.tvos.cloudns.be
+proxy-groups:
+- name: CF-Nest-Test
+  type: select
+  proxies:
+  - BPB-xx.tvos.cloudns.be | IP=95.215.244.116 | PORT=443
+  - BPB-xx.tvos.cloudns.be | IP=95.215.244.116 | PORT=8443
+  - BPB-xx.tvos.cloudns.be | IP=95.40.227.67 | PORT=80
+  - BPB-xx.tvos.cloudns.be | IP=95.40.227.67 | PORT=443
+  - BPB-xx.tvos.cloudns.be | IP=95.40.227.67 | PORT=8443
+  - BPB-xx.tvos.cloudns.be | IP=ipv4.list.updated.at | PORT=80
+  - BPB-xx.tvos.cloudns.be | IP=ipv4.list.updated.at | PORT=443
+  - BPB-xx.tvos.cloudns.be | IP=ipv4.list.updated.at | PORT=8443
+rules:
+- MATCH,CF-Nest-Test

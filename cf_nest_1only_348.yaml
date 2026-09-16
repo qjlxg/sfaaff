@@ -1,0 +1,43 @@
+proxies:
+- name: BPB-little-wh0re.twilightparadox.com | IP=ipv4.list.updated.at | PORT=443
+  server: ipv4.list.updated.at
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: little-wh0re.twilightparadox.com
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: little-wh0re.twilightparadox.com
+- name: BPB-little-wh0re.twilightparadox.com | IP=ipv4.list.updated.at | PORT=8443
+  server: ipv4.list.updated.at
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: little-wh0re.twilightparadox.com
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: little-wh0re.twilightparadox.com
+proxy-groups:
+- name: CF-Nest-Test
+  type: select
+  proxies:
+  - BPB-little-wh0re.twilightparadox.com | IP=ipv4.list.updated.at | PORT=443
+  - BPB-little-wh0re.twilightparadox.com | IP=ipv4.list.updated.at | PORT=8443
+rules:
+- MATCH,CF-Nest-Test

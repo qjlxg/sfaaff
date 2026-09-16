@@ -1,0 +1,4243 @@
+proxies:
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.185.81.54 | PORT=443
+  server: 89.185.81.54
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.185.81.54 | PORT=8443
+  server: 89.185.81.54
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.23.36.8 | PORT=80
+  server: 89.23.36.8
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.23.36.8 | PORT=443
+  server: 89.23.36.8
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.23.36.8 | PORT=8443
+  server: 89.23.36.8
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.236.192 | PORT=80
+  server: 89.28.236.192
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.236.192 | PORT=443
+  server: 89.28.236.192
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.236.192 | PORT=8443
+  server: 89.28.236.192
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.171 | PORT=80
+  server: 89.28.239.171
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.171 | PORT=443
+  server: 89.28.239.171
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.171 | PORT=8443
+  server: 89.28.239.171
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.58 | PORT=80
+  server: 89.28.239.58
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.58 | PORT=443
+  server: 89.28.239.58
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.58 | PORT=8443
+  server: 89.28.239.58
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.67 | PORT=80
+  server: 89.28.239.67
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.67 | PORT=443
+  server: 89.28.239.67
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.67 | PORT=8443
+  server: 89.28.239.67
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.37.192.32 | PORT=80
+  server: 89.37.192.32
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.37.192.32 | PORT=443
+  server: 89.37.192.32
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.37.192.32 | PORT=8443
+  server: 89.37.192.32
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.44.197.64 | PORT=80
+  server: 89.44.197.64
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.44.197.64 | PORT=443
+  server: 89.44.197.64
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.44.197.64 | PORT=8443
+  server: 89.44.197.64
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.14 | PORT=80
+  server: 89.46.235.14
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.14 | PORT=443
+  server: 89.46.235.14
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.14 | PORT=8443
+  server: 89.46.235.14
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.32 | PORT=80
+  server: 89.46.235.32
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.32 | PORT=443
+  server: 89.46.235.32
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.32 | PORT=8443
+  server: 89.46.235.32
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.236.118 | PORT=80
+  server: 89.46.236.118
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.236.118 | PORT=443
+  server: 89.46.236.118
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.236.118 | PORT=8443
+  server: 89.46.236.118
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.70.144 | PORT=80
+  server: 89.46.70.144
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.70.144 | PORT=443
+  server: 89.46.70.144
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.70.144 | PORT=8443
+  server: 89.46.70.144
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.16.199 | PORT=80
+  server: 89.58.16.199
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.16.199 | PORT=443
+  server: 89.58.16.199
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.16.199 | PORT=8443
+  server: 89.58.16.199
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.28.105 | PORT=80
+  server: 89.58.28.105
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.28.105 | PORT=443
+  server: 89.58.28.105
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.28.105 | PORT=8443
+  server: 89.58.28.105
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.189.152 | PORT=80
+  server: 91.108.189.152
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.189.152 | PORT=443
+  server: 91.108.189.152
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.189.152 | PORT=8443
+  server: 91.108.189.152
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.237.23 | PORT=80
+  server: 91.108.237.23
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.237.23 | PORT=443
+  server: 91.108.237.23
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.237.23 | PORT=8443
+  server: 91.108.237.23
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.242.71 | PORT=80
+  server: 91.108.242.71
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.242.71 | PORT=443
+  server: 91.108.242.71
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.242.71 | PORT=8443
+  server: 91.108.242.71
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.173 | PORT=80
+  server: 91.110.174.173
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.173 | PORT=443
+  server: 91.110.174.173
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.173 | PORT=8443
+  server: 91.110.174.173
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.204 | PORT=80
+  server: 91.110.174.204
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.204 | PORT=443
+  server: 91.110.174.204
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.204 | PORT=8443
+  server: 91.110.174.204
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.210 | PORT=80
+  server: 91.110.174.210
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.210 | PORT=443
+  server: 91.110.174.210
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.210 | PORT=8443
+  server: 91.110.174.210
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.93.153 | PORT=80
+  server: 91.132.93.153
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.93.153 | PORT=443
+  server: 91.132.93.153
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.93.153 | PORT=8443
+  server: 91.132.93.153
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.94.151 | PORT=80
+  server: 91.132.94.151
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.94.151 | PORT=443
+  server: 91.132.94.151
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.94.151 | PORT=8443
+  server: 91.132.94.151
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.142.90.97 | PORT=80
+  server: 91.142.90.97
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.142.90.97 | PORT=443
+  server: 91.142.90.97
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.142.90.97 | PORT=8443
+  server: 91.142.90.97
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.184.244.230 | PORT=80
+  server: 91.184.244.230
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.184.244.230 | PORT=443
+  server: 91.184.244.230
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.184.244.230 | PORT=8443
+  server: 91.184.244.230
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.190.155.173 | PORT=80
+  server: 91.190.155.173
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.190.155.173 | PORT=443
+  server: 91.190.155.173
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.190.155.173 | PORT=8443
+  server: 91.190.155.173
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.170 | PORT=80
+  server: 91.192.102.170
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.170 | PORT=443
+  server: 91.192.102.170
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.170 | PORT=8443
+  server: 91.192.102.170
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.91 | PORT=80
+  server: 91.192.102.91
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.91 | PORT=443
+  server: 91.192.102.91
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.91 | PORT=8443
+  server: 91.192.102.91
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.193.18.144 | PORT=80
+  server: 91.193.18.144
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.193.18.144 | PORT=443
+  server: 91.193.18.144
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.193.18.144 | PORT=8443
+  server: 91.193.18.144
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.196.161.21 | PORT=80
+  server: 91.196.161.21
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.196.161.21 | PORT=443
+  server: 91.196.161.21
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.196.161.21 | PORT=8443
+  server: 91.196.161.21
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.198.108.211 | PORT=80
+  server: 91.198.108.211
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.198.108.211 | PORT=443
+  server: 91.198.108.211
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.198.108.211 | PORT=8443
+  server: 91.198.108.211
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.200.148.120 | PORT=80
+  server: 91.200.148.120
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.200.148.120 | PORT=443
+  server: 91.200.148.120
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.200.148.120 | PORT=8443
+  server: 91.200.148.120
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.216.104.209 | PORT=80
+  server: 91.216.104.209
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.216.104.209 | PORT=443
+  server: 91.216.104.209
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.216.104.209 | PORT=8443
+  server: 91.216.104.209
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.218.183.32 | PORT=80
+  server: 91.218.183.32
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.218.183.32 | PORT=443
+  server: 91.218.183.32
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.218.183.32 | PORT=8443
+  server: 91.218.183.32
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.219.236.136 | PORT=80
+  server: 91.219.236.136
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.219.236.136 | PORT=443
+  server: 91.219.236.136
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.219.236.136 | PORT=8443
+  server: 91.219.236.136
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.220.8.170 | PORT=80
+  server: 91.220.8.170
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.220.8.170 | PORT=443
+  server: 91.220.8.170
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.220.8.170 | PORT=8443
+  server: 91.220.8.170
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.47 | PORT=80
+  server: 91.239.6.47
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.47 | PORT=443
+  server: 91.239.6.47
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.47 | PORT=8443
+  server: 91.239.6.47
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.51 | PORT=80
+  server: 91.239.6.51
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.51 | PORT=443
+  server: 91.239.6.51
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.51 | PORT=8443
+  server: 91.239.6.51
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.151 | PORT=80
+  server: 91.250.248.151
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.151 | PORT=443
+  server: 91.250.248.151
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.151 | PORT=8443
+  server: 91.250.248.151
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.68 | PORT=80
+  server: 91.250.248.68
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.68 | PORT=443
+  server: 91.250.248.68
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.68 | PORT=8443
+  server: 91.250.248.68
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.90.193.54 | PORT=80
+  server: 91.90.193.54
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.90.193.54 | PORT=443
+  server: 91.90.193.54
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.90.193.54 | PORT=8443
+  server: 91.90.193.54
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.136.216 | PORT=80
+  server: 91.92.136.216
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.136.216 | PORT=443
+  server: 91.92.136.216
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.136.216 | PORT=8443
+  server: 91.92.136.216
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.46.42 | PORT=80
+  server: 91.92.46.42
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.46.42 | PORT=443
+  server: 91.92.46.42
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.46.42 | PORT=8443
+  server: 91.92.46.42
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.99.1.38 | PORT=80
+  server: 91.99.1.38
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.99.1.38 | PORT=443
+  server: 91.99.1.38
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=91.99.1.38 | PORT=8443
+  server: 91.99.1.38
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.112.48.149 | PORT=80
+  server: 92.112.48.149
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.112.48.149 | PORT=443
+  server: 92.112.48.149
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.112.48.149 | PORT=8443
+  server: 92.112.48.149
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.145.132 | PORT=80
+  server: 92.113.145.132
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.145.132 | PORT=443
+  server: 92.113.145.132
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.145.132 | PORT=8443
+  server: 92.113.145.132
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.149.59 | PORT=80
+  server: 92.113.149.59
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.149.59 | PORT=443
+  server: 92.113.149.59
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.149.59 | PORT=8443
+  server: 92.113.149.59
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.118.124.18 | PORT=80
+  server: 92.118.124.18
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.118.124.18 | PORT=443
+  server: 92.118.124.18
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.118.124.18 | PORT=8443
+  server: 92.118.124.18
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.178.109.187 | PORT=80
+  server: 92.178.109.187
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.178.109.187 | PORT=443
+  server: 92.178.109.187
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.178.109.187 | PORT=8443
+  server: 92.178.109.187
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.222.71.48 | PORT=80
+  server: 92.222.71.48
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.222.71.48 | PORT=443
+  server: 92.222.71.48
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.222.71.48 | PORT=8443
+  server: 92.222.71.48
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.223.2.12 | PORT=80
+  server: 92.223.2.12
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.223.2.12 | PORT=443
+  server: 92.223.2.12
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.223.2.12 | PORT=8443
+  server: 92.223.2.12
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.136.90 | PORT=80
+  server: 92.246.136.90
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.136.90 | PORT=443
+  server: 92.246.136.90
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.136.90 | PORT=8443
+  server: 92.246.136.90
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.138.183 | PORT=80
+  server: 92.246.138.183
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.138.183 | PORT=443
+  server: 92.246.138.183
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.138.183 | PORT=8443
+  server: 92.246.138.183
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.240.120 | PORT=80
+  server: 93.115.240.120
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.240.120 | PORT=443
+  server: 93.115.240.120
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.240.120 | PORT=8443
+  server: 93.115.240.120
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.25.111 | PORT=80
+  server: 93.115.25.111
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.25.111 | PORT=443
+  server: 93.115.25.111
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.25.111 | PORT=8443
+  server: 93.115.25.111
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.113.47 | PORT=80
+  server: 93.123.113.47
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.113.47 | PORT=443
+  server: 93.123.113.47
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.113.47 | PORT=8443
+  server: 93.123.113.47
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.39.11 | PORT=80
+  server: 93.123.39.11
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.39.11 | PORT=443
+  server: 93.123.39.11
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.39.11 | PORT=8443
+  server: 93.123.39.11
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.152.223.168 | PORT=80
+  server: 93.152.223.168
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.152.223.168 | PORT=443
+  server: 93.152.223.168
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.152.223.168 | PORT=8443
+  server: 93.152.223.168
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.185.165.175 | PORT=80
+  server: 93.185.165.175
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.185.165.175 | PORT=443
+  server: 93.185.165.175
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.185.165.175 | PORT=8443
+  server: 93.185.165.175
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.85.236.9 | PORT=80
+  server: 93.85.236.9
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.85.236.9 | PORT=443
+  server: 93.85.236.9
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.85.236.9 | PORT=8443
+  server: 93.85.236.9
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.92.112.187 | PORT=80
+  server: 93.92.112.187
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.92.112.187 | PORT=443
+  server: 93.92.112.187
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.92.112.187 | PORT=8443
+  server: 93.92.112.187
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.93.119.91 | PORT=80
+  server: 93.93.119.91
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.93.119.91 | PORT=443
+  server: 93.93.119.91
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=93.93.119.91 | PORT=8443
+  server: 93.93.119.91
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.108.136 | PORT=80
+  server: 94.131.108.136
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.108.136 | PORT=443
+  server: 94.131.108.136
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.108.136 | PORT=8443
+  server: 94.131.108.136
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.16.25 | PORT=80
+  server: 94.131.16.25
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.16.25 | PORT=443
+  server: 94.131.16.25
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.16.25 | PORT=8443
+  server: 94.131.16.25
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.5 | PORT=80
+  server: 94.131.83.5
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.5 | PORT=443
+  server: 94.131.83.5
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.5 | PORT=8443
+  server: 94.131.83.5
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.94 | PORT=80
+  server: 94.131.83.94
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.94 | PORT=443
+  server: 94.131.83.94
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.94 | PORT=8443
+  server: 94.131.83.94
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.92.95 | PORT=80
+  server: 94.131.92.95
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.92.95 | PORT=443
+  server: 94.131.92.95
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.92.95 | PORT=8443
+  server: 94.131.92.95
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.140.112.35 | PORT=80
+  server: 94.140.112.35
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.140.112.35 | PORT=443
+  server: 94.140.112.35
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.140.112.35 | PORT=8443
+  server: 94.140.112.35
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.143.138.159 | PORT=80
+  server: 94.143.138.159
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.143.138.159 | PORT=443
+  server: 94.143.138.159
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.143.138.159 | PORT=8443
+  server: 94.143.138.159
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.154.128.132 | PORT=80
+  server: 94.154.128.132
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.154.128.132 | PORT=443
+  server: 94.154.128.132
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.154.128.132 | PORT=8443
+  server: 94.154.128.132
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.156.250.187 | PORT=80
+  server: 94.156.250.187
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.156.250.187 | PORT=443
+  server: 94.156.250.187
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.156.250.187 | PORT=8443
+  server: 94.156.250.187
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.159.112.28 | PORT=80
+  server: 94.159.112.28
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.159.112.28 | PORT=443
+  server: 94.159.112.28
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.159.112.28 | PORT=8443
+  server: 94.159.112.28
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.176.235.22 | PORT=80
+  server: 94.176.235.22
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.176.235.22 | PORT=443
+  server: 94.176.235.22
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.176.235.22 | PORT=8443
+  server: 94.176.235.22
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.177.8.237 | PORT=80
+  server: 94.177.8.237
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.177.8.237 | PORT=443
+  server: 94.177.8.237
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.177.8.237 | PORT=8443
+  server: 94.177.8.237
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.183.183.71 | PORT=80
+  server: 94.183.183.71
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.183.183.71 | PORT=443
+  server: 94.183.183.71
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.183.183.71 | PORT=8443
+  server: 94.183.183.71
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.20.154.66 | PORT=80
+  server: 94.20.154.66
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.20.154.66 | PORT=443
+  server: 94.20.154.66
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.20.154.66 | PORT=8443
+  server: 94.20.154.66
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.232.43.53 | PORT=80
+  server: 94.232.43.53
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.232.43.53 | PORT=443
+  server: 94.232.43.53
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.232.43.53 | PORT=8443
+  server: 94.232.43.53
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.242.59.38 | PORT=80
+  server: 94.242.59.38
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.242.59.38 | PORT=443
+  server: 94.242.59.38
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=94.242.59.38 | PORT=8443
+  server: 94.242.59.38
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.130.84.36 | PORT=80
+  server: 95.130.84.36
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.130.84.36 | PORT=443
+  server: 95.130.84.36
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.130.84.36 | PORT=8443
+  server: 95.130.84.36
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.179 | PORT=80
+  server: 95.174.68.179
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.179 | PORT=443
+  server: 95.174.68.179
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.179 | PORT=8443
+  server: 95.174.68.179
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.209 | PORT=80
+  server: 95.174.68.209
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.209 | PORT=443
+  server: 95.174.68.209
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.209 | PORT=8443
+  server: 95.174.68.209
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.179.160.153 | PORT=80
+  server: 95.179.160.153
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.179.160.153 | PORT=443
+  server: 95.179.160.153
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.179.160.153 | PORT=8443
+  server: 95.179.160.153
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.188.72.67 | PORT=80
+  server: 95.188.72.67
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.188.72.67 | PORT=443
+  server: 95.188.72.67
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.188.72.67 | PORT=8443
+  server: 95.188.72.67
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.215.244.116 | PORT=80
+  server: 95.215.244.116
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.215.244.116 | PORT=443
+  server: 95.215.244.116
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.215.244.116 | PORT=8443
+  server: 95.215.244.116
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.40.227.67 | PORT=80
+  server: 95.40.227.67
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.40.227.67 | PORT=443
+  server: 95.40.227.67
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=95.40.227.67 | PORT=8443
+  server: 95.40.227.67
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=ipv4.list.updated.at | PORT=80
+  server: ipv4.list.updated.at
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=ipv4.list.updated.at | PORT=443
+  server: ipv4.list.updated.at
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+- name: BPB-www.opensignal.com.nno.mgmg.site | IP=ipv4.list.updated.at | PORT=8443
+  server: ipv4.list.updated.at
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: www.opensignal.com.nno.mgmg.site
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: www.opensignal.com.nno.mgmg.site
+proxy-groups:
+- name: CF-Nest-Test
+  type: select
+  proxies:
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.185.81.54 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.185.81.54 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.23.36.8 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.23.36.8 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.23.36.8 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.236.192 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.236.192 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.236.192 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.171 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.171 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.171 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.58 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.58 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.58 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.67 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.67 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.28.239.67 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.37.192.32 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.37.192.32 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.37.192.32 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.44.197.64 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.44.197.64 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.44.197.64 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.14 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.14 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.14 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.32 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.32 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.235.32 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.236.118 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.236.118 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.236.118 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.70.144 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.70.144 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.46.70.144 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.16.199 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.16.199 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.16.199 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.28.105 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.28.105 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=89.58.28.105 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.189.152 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.189.152 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.189.152 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.237.23 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.237.23 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.237.23 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.242.71 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.242.71 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.108.242.71 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.173 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.173 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.173 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.204 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.204 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.204 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.210 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.210 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.110.174.210 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.93.153 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.93.153 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.93.153 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.94.151 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.94.151 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.132.94.151 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.142.90.97 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.142.90.97 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.142.90.97 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.184.244.230 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.184.244.230 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.184.244.230 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.190.155.173 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.190.155.173 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.190.155.173 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.170 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.170 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.170 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.91 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.91 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.192.102.91 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.193.18.144 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.193.18.144 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.193.18.144 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.196.161.21 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.196.161.21 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.196.161.21 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.198.108.211 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.198.108.211 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.198.108.211 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.200.148.120 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.200.148.120 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.200.148.120 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.216.104.209 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.216.104.209 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.216.104.209 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.218.183.32 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.218.183.32 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.218.183.32 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.219.236.136 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.219.236.136 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.219.236.136 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.220.8.170 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.220.8.170 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.220.8.170 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.47 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.47 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.47 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.51 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.51 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.239.6.51 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.151 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.151 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.151 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.68 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.68 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.250.248.68 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.90.193.54 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.90.193.54 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.90.193.54 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.136.216 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.136.216 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.136.216 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.46.42 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.46.42 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.92.46.42 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.99.1.38 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.99.1.38 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=91.99.1.38 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.112.48.149 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.112.48.149 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.112.48.149 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.145.132 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.145.132 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.145.132 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.149.59 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.149.59 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.113.149.59 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.118.124.18 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.118.124.18 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.118.124.18 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.178.109.187 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.178.109.187 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.178.109.187 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.222.71.48 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.222.71.48 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.222.71.48 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.223.2.12 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.223.2.12 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.223.2.12 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.136.90 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.136.90 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.136.90 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.138.183 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.138.183 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=92.246.138.183 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.240.120 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.240.120 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.240.120 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.25.111 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.25.111 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.115.25.111 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.113.47 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.113.47 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.113.47 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.39.11 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.39.11 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.123.39.11 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.152.223.168 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.152.223.168 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.152.223.168 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.185.165.175 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.185.165.175 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.185.165.175 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.85.236.9 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.85.236.9 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.85.236.9 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.92.112.187 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.92.112.187 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.92.112.187 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.93.119.91 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.93.119.91 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=93.93.119.91 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.108.136 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.108.136 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.108.136 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.16.25 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.16.25 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.16.25 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.5 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.5 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.5 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.94 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.94 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.83.94 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.92.95 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.92.95 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.131.92.95 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.140.112.35 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.140.112.35 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.140.112.35 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.143.138.159 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.143.138.159 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.143.138.159 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.154.128.132 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.154.128.132 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.154.128.132 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.156.250.187 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.156.250.187 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.156.250.187 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.159.112.28 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.159.112.28 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.159.112.28 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.176.235.22 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.176.235.22 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.176.235.22 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.177.8.237 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.177.8.237 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.177.8.237 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.183.183.71 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.183.183.71 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.183.183.71 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.20.154.66 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.20.154.66 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.20.154.66 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.232.43.53 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.232.43.53 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.232.43.53 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.242.59.38 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.242.59.38 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=94.242.59.38 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.130.84.36 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.130.84.36 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.130.84.36 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.179 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.179 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.179 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.209 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.209 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.174.68.209 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.179.160.153 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.179.160.153 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.179.160.153 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.188.72.67 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.188.72.67 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.188.72.67 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.215.244.116 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.215.244.116 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.215.244.116 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.40.227.67 | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.40.227.67 | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=95.40.227.67 | PORT=8443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=ipv4.list.updated.at | PORT=80
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=ipv4.list.updated.at | PORT=443
+  - BPB-www.opensignal.com.nno.mgmg.site | IP=ipv4.list.updated.at | PORT=8443
+rules:
+- MATCH,CF-Nest-Test

@@ -1,0 +1,8343 @@
+proxies:
+- name: BPB-sgjsc.eu | IP=31.57.28.22 | PORT=443
+  server: 31.57.28.22
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.57.28.22 | PORT=8443
+  server: 31.57.28.22
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.76.27 | PORT=80
+  server: 31.58.76.27
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.76.27 | PORT=443
+  server: 31.58.76.27
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.76.27 | PORT=8443
+  server: 31.58.76.27
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.150 | PORT=80
+  server: 31.58.77.150
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.150 | PORT=443
+  server: 31.58.77.150
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.150 | PORT=8443
+  server: 31.58.77.150
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.174 | PORT=80
+  server: 31.58.77.174
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.174 | PORT=443
+  server: 31.58.77.174
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.174 | PORT=8443
+  server: 31.58.77.174
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.194 | PORT=80
+  server: 31.58.77.194
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.194 | PORT=443
+  server: 31.58.77.194
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.194 | PORT=8443
+  server: 31.58.77.194
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.225 | PORT=80
+  server: 31.58.77.225
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.225 | PORT=443
+  server: 31.58.77.225
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.58.77.225 | PORT=8443
+  server: 31.58.77.225
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.102.96 | PORT=80
+  server: 31.59.102.96
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.102.96 | PORT=443
+  server: 31.59.102.96
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.102.96 | PORT=8443
+  server: 31.59.102.96
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.105.119 | PORT=80
+  server: 31.59.105.119
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.105.119 | PORT=443
+  server: 31.59.105.119
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.105.119 | PORT=8443
+  server: 31.59.105.119
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.45.136 | PORT=80
+  server: 31.59.45.136
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.45.136 | PORT=443
+  server: 31.59.45.136
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.59.45.136 | PORT=8443
+  server: 31.59.45.136
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.226.238 | PORT=80
+  server: 31.76.226.238
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.226.238 | PORT=443
+  server: 31.76.226.238
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.226.238 | PORT=8443
+  server: 31.76.226.238
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.35.56 | PORT=80
+  server: 31.76.35.56
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.35.56 | PORT=443
+  server: 31.76.35.56
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.35.56 | PORT=8443
+  server: 31.76.35.56
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.97.163 | PORT=80
+  server: 31.76.97.163
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.97.163 | PORT=443
+  server: 31.76.97.163
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.76.97.163 | PORT=8443
+  server: 31.76.97.163
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.77.183.100 | PORT=80
+  server: 31.77.183.100
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.77.183.100 | PORT=443
+  server: 31.77.183.100
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.77.183.100 | PORT=8443
+  server: 31.77.183.100
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.77.183.13 | PORT=80
+  server: 31.77.183.13
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.77.183.13 | PORT=443
+  server: 31.77.183.13
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=31.77.183.13 | PORT=8443
+  server: 31.77.183.13
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=34.175.202.195 | PORT=80
+  server: 34.175.202.195
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=34.175.202.195 | PORT=443
+  server: 34.175.202.195
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=34.175.202.195 | PORT=8443
+  server: 34.175.202.195
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.154.184.88 | PORT=80
+  server: 35.154.184.88
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.154.184.88 | PORT=443
+  server: 35.154.184.88
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.154.184.88 | PORT=8443
+  server: 35.154.184.88
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.210.99.51 | PORT=80
+  server: 35.210.99.51
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.210.99.51 | PORT=443
+  server: 35.210.99.51
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.210.99.51 | PORT=8443
+  server: 35.210.99.51
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.241.172.224 | PORT=80
+  server: 35.241.172.224
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.241.172.224 | PORT=443
+  server: 35.241.172.224
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.241.172.224 | PORT=8443
+  server: 35.241.172.224
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.42.169.95 | PORT=80
+  server: 35.42.169.95
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.42.169.95 | PORT=443
+  server: 35.42.169.95
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=35.42.169.95 | PORT=8443
+  server: 35.42.169.95
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.205.15.169 | PORT=80
+  server: 37.205.15.169
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.205.15.169 | PORT=443
+  server: 37.205.15.169
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.205.15.169 | PORT=8443
+  server: 37.205.15.169
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.221.210.113 | PORT=80
+  server: 37.221.210.113
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.221.210.113 | PORT=443
+  server: 37.221.210.113
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.221.210.113 | PORT=8443
+  server: 37.221.210.113
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.221.66.2 | PORT=80
+  server: 37.221.66.2
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.221.66.2 | PORT=443
+  server: 37.221.66.2
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.221.66.2 | PORT=8443
+  server: 37.221.66.2
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.32.46.68 | PORT=80
+  server: 37.32.46.68
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.32.46.68 | PORT=443
+  server: 37.32.46.68
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.32.46.68 | PORT=8443
+  server: 37.32.46.68
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.46.211.176 | PORT=80
+  server: 37.46.211.176
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.46.211.176 | PORT=443
+  server: 37.46.211.176
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.46.211.176 | PORT=8443
+  server: 37.46.211.176
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.9.171.189 | PORT=80
+  server: 37.9.171.189
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.9.171.189 | PORT=443
+  server: 37.9.171.189
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=37.9.171.189 | PORT=8443
+  server: 37.9.171.189
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.107.234.39 | PORT=80
+  server: 38.107.234.39
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.107.234.39 | PORT=443
+  server: 38.107.234.39
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.107.234.39 | PORT=8443
+  server: 38.107.234.39
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.100.80 | PORT=80
+  server: 38.180.100.80
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.100.80 | PORT=443
+  server: 38.180.100.80
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.100.80 | PORT=8443
+  server: 38.180.100.80
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.108.148 | PORT=80
+  server: 38.180.108.148
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.108.148 | PORT=443
+  server: 38.180.108.148
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.108.148 | PORT=8443
+  server: 38.180.108.148
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.109.174 | PORT=80
+  server: 38.180.109.174
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.109.174 | PORT=443
+  server: 38.180.109.174
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.109.174 | PORT=8443
+  server: 38.180.109.174
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.18.43 | PORT=80
+  server: 38.180.18.43
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.18.43 | PORT=443
+  server: 38.180.18.43
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.18.43 | PORT=8443
+  server: 38.180.18.43
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.196.40 | PORT=80
+  server: 38.180.196.40
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.196.40 | PORT=443
+  server: 38.180.196.40
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.196.40 | PORT=8443
+  server: 38.180.196.40
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.239.173 | PORT=80
+  server: 38.180.239.173
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.239.173 | PORT=443
+  server: 38.180.239.173
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.239.173 | PORT=8443
+  server: 38.180.239.173
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.240.91 | PORT=80
+  server: 38.180.240.91
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.240.91 | PORT=443
+  server: 38.180.240.91
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.240.91 | PORT=8443
+  server: 38.180.240.91
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.48.182 | PORT=80
+  server: 38.180.48.182
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.48.182 | PORT=443
+  server: 38.180.48.182
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.180.48.182 | PORT=8443
+  server: 38.180.48.182
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.181.52.16 | PORT=80
+  server: 38.181.52.16
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.181.52.16 | PORT=443
+  server: 38.181.52.16
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.181.52.16 | PORT=8443
+  server: 38.181.52.16
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.207.174.111 | PORT=80
+  server: 38.207.174.111
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.207.174.111 | PORT=443
+  server: 38.207.174.111
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.207.174.111 | PORT=8443
+  server: 38.207.174.111
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.207.184.202 | PORT=80
+  server: 38.207.184.202
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.207.184.202 | PORT=443
+  server: 38.207.184.202
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.207.184.202 | PORT=8443
+  server: 38.207.184.202
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.213.228.91 | PORT=80
+  server: 38.213.228.91
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.213.228.91 | PORT=443
+  server: 38.213.228.91
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.213.228.91 | PORT=8443
+  server: 38.213.228.91
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.116.31 | PORT=80
+  server: 38.54.116.31
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.116.31 | PORT=443
+  server: 38.54.116.31
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.116.31 | PORT=8443
+  server: 38.54.116.31
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.45.184 | PORT=80
+  server: 38.54.45.184
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.45.184 | PORT=443
+  server: 38.54.45.184
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.45.184 | PORT=8443
+  server: 38.54.45.184
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.64.204 | PORT=80
+  server: 38.54.64.204
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.64.204 | PORT=443
+  server: 38.54.64.204
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=38.54.64.204 | PORT=8443
+  server: 38.54.64.204
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=42.193.173.86 | PORT=80
+  server: 42.193.173.86
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=42.193.173.86 | PORT=443
+  server: 42.193.173.86
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=42.193.173.86 | PORT=8443
+  server: 42.193.173.86
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.108.46.150 | PORT=80
+  server: 43.108.46.150
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.108.46.150 | PORT=443
+  server: 43.108.46.150
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.108.46.150 | PORT=8443
+  server: 43.108.46.150
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.128.135.99 | PORT=80
+  server: 43.128.135.99
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.128.135.99 | PORT=443
+  server: 43.128.135.99
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.128.135.99 | PORT=8443
+  server: 43.128.135.99
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.129.217.38 | PORT=80
+  server: 43.129.217.38
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.129.217.38 | PORT=443
+  server: 43.129.217.38
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.129.217.38 | PORT=8443
+  server: 43.129.217.38
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.129.80.179 | PORT=80
+  server: 43.129.80.179
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.129.80.179 | PORT=443
+  server: 43.129.80.179
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.129.80.179 | PORT=8443
+  server: 43.129.80.179
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.131.225.115 | PORT=80
+  server: 43.131.225.115
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.131.225.115 | PORT=443
+  server: 43.131.225.115
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.131.225.115 | PORT=8443
+  server: 43.131.225.115
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.131.242.223 | PORT=80
+  server: 43.131.242.223
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.131.242.223 | PORT=443
+  server: 43.131.242.223
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.131.242.223 | PORT=8443
+  server: 43.131.242.223
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.132.231.159 | PORT=80
+  server: 43.132.231.159
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.132.231.159 | PORT=443
+  server: 43.132.231.159
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.132.231.159 | PORT=8443
+  server: 43.132.231.159
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.155.205.141 | PORT=80
+  server: 43.155.205.141
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.155.205.141 | PORT=443
+  server: 43.155.205.141
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.155.205.141 | PORT=8443
+  server: 43.155.205.141
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.156.142.191 | PORT=80
+  server: 43.156.142.191
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.156.142.191 | PORT=443
+  server: 43.156.142.191
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.156.142.191 | PORT=8443
+  server: 43.156.142.191
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.160.220.72 | PORT=80
+  server: 43.160.220.72
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.160.220.72 | PORT=443
+  server: 43.160.220.72
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.160.220.72 | PORT=8443
+  server: 43.160.220.72
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.160.246.223 | PORT=80
+  server: 43.160.246.223
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.160.246.223 | PORT=443
+  server: 43.160.246.223
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.160.246.223 | PORT=8443
+  server: 43.160.246.223
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.161.236.173 | PORT=80
+  server: 43.161.236.173
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.161.236.173 | PORT=443
+  server: 43.161.236.173
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.161.236.173 | PORT=8443
+  server: 43.161.236.173
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.161.254.71 | PORT=80
+  server: 43.161.254.71
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.161.254.71 | PORT=443
+  server: 43.161.254.71
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.161.254.71 | PORT=8443
+  server: 43.161.254.71
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.164.137.118 | PORT=80
+  server: 43.164.137.118
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.164.137.118 | PORT=443
+  server: 43.164.137.118
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.164.137.118 | PORT=8443
+  server: 43.164.137.118
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.169.18.179 | PORT=80
+  server: 43.169.18.179
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.169.18.179 | PORT=443
+  server: 43.169.18.179
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.169.18.179 | PORT=8443
+  server: 43.169.18.179
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.169.19.179 | PORT=80
+  server: 43.169.19.179
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.169.19.179 | PORT=443
+  server: 43.169.19.179
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.169.19.179 | PORT=8443
+  server: 43.169.19.179
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.174.218.1 | PORT=80
+  server: 43.174.218.1
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.174.218.1 | PORT=443
+  server: 43.174.218.1
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.174.218.1 | PORT=8443
+  server: 43.174.218.1
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.213.230.249 | PORT=80
+  server: 43.213.230.249
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.213.230.249 | PORT=443
+  server: 43.213.230.249
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.213.230.249 | PORT=8443
+  server: 43.213.230.249
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.229.254.182 | PORT=80
+  server: 43.229.254.182
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.229.254.182 | PORT=443
+  server: 43.229.254.182
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.229.254.182 | PORT=8443
+  server: 43.229.254.182
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.229.254.71 | PORT=80
+  server: 43.229.254.71
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.229.254.71 | PORT=443
+  server: 43.229.254.71
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=43.229.254.71 | PORT=8443
+  server: 43.229.254.71
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.143.25 | PORT=80
+  server: 45.12.143.25
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.143.25 | PORT=443
+  server: 45.12.143.25
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.143.25 | PORT=8443
+  server: 45.12.143.25
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.28.129 | PORT=80
+  server: 45.12.28.129
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.28.129 | PORT=443
+  server: 45.12.28.129
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.28.129 | PORT=8443
+  server: 45.12.28.129
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.68.99 | PORT=80
+  server: 45.12.68.99
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.68.99 | PORT=443
+  server: 45.12.68.99
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.12.68.99 | PORT=8443
+  server: 45.12.68.99
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.129.126.241 | PORT=80
+  server: 45.129.126.241
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.129.126.241 | PORT=443
+  server: 45.129.126.241
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.129.126.241 | PORT=8443
+  server: 45.129.126.241
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.13.237.193 | PORT=80
+  server: 45.13.237.193
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.13.237.193 | PORT=443
+  server: 45.13.237.193
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.13.237.193 | PORT=8443
+  server: 45.13.237.193
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.131.179.106 | PORT=80
+  server: 45.131.179.106
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.131.179.106 | PORT=443
+  server: 45.131.179.106
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.131.179.106 | PORT=8443
+  server: 45.131.179.106
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.133.17.106 | PORT=80
+  server: 45.133.17.106
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.133.17.106 | PORT=443
+  server: 45.133.17.106
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.133.17.106 | PORT=8443
+  server: 45.133.17.106
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.141.139.209 | PORT=80
+  server: 45.141.139.209
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.141.139.209 | PORT=443
+  server: 45.141.139.209
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.141.139.209 | PORT=8443
+  server: 45.141.139.209
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.141.234.138 | PORT=80
+  server: 45.141.234.138
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.141.234.138 | PORT=443
+  server: 45.141.234.138
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.141.234.138 | PORT=8443
+  server: 45.141.234.138
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.142.31.20 | PORT=80
+  server: 45.142.31.20
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.142.31.20 | PORT=443
+  server: 45.142.31.20
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.142.31.20 | PORT=8443
+  server: 45.142.31.20
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.144.172.33 | PORT=80
+  server: 45.144.172.33
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.144.172.33 | PORT=443
+  server: 45.144.172.33
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.144.172.33 | PORT=8443
+  server: 45.144.172.33
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.145.56.191 | PORT=80
+  server: 45.145.56.191
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.145.56.191 | PORT=443
+  server: 45.145.56.191
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.145.56.191 | PORT=8443
+  server: 45.145.56.191
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.147.250.39 | PORT=80
+  server: 45.147.250.39
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.147.250.39 | PORT=443
+  server: 45.147.250.39
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.147.250.39 | PORT=8443
+  server: 45.147.250.39
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.147.49.183 | PORT=80
+  server: 45.147.49.183
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.147.49.183 | PORT=443
+  server: 45.147.49.183
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.147.49.183 | PORT=8443
+  server: 45.147.49.183
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.148.31.227 | PORT=80
+  server: 45.148.31.227
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.148.31.227 | PORT=443
+  server: 45.148.31.227
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.148.31.227 | PORT=8443
+  server: 45.148.31.227
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.150.128.159 | PORT=80
+  server: 45.150.128.159
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.150.128.159 | PORT=443
+  server: 45.150.128.159
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.150.128.159 | PORT=8443
+  server: 45.150.128.159
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.150.236.135 | PORT=80
+  server: 45.150.236.135
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.150.236.135 | PORT=443
+  server: 45.150.236.135
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.150.236.135 | PORT=8443
+  server: 45.150.236.135
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.151.183.187 | PORT=80
+  server: 45.151.183.187
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.151.183.187 | PORT=443
+  server: 45.151.183.187
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.151.183.187 | PORT=8443
+  server: 45.151.183.187
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.153.130.61 | PORT=80
+  server: 45.153.130.61
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.153.130.61 | PORT=443
+  server: 45.153.130.61
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.153.130.61 | PORT=8443
+  server: 45.153.130.61
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.202.246.126 | PORT=80
+  server: 45.202.246.126
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.202.246.126 | PORT=443
+  server: 45.202.246.126
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.202.246.126 | PORT=8443
+  server: 45.202.246.126
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.202.246.91 | PORT=80
+  server: 45.202.246.91
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.202.246.91 | PORT=443
+  server: 45.202.246.91
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.202.246.91 | PORT=8443
+  server: 45.202.246.91
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.191.198 | PORT=80
+  server: 45.32.191.198
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.191.198 | PORT=443
+  server: 45.32.191.198
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.191.198 | PORT=8443
+  server: 45.32.191.198
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.241.82 | PORT=80
+  server: 45.32.241.82
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.241.82 | PORT=443
+  server: 45.32.241.82
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.241.82 | PORT=8443
+  server: 45.32.241.82
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.243.13 | PORT=80
+  server: 45.32.243.13
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.243.13 | PORT=443
+  server: 45.32.243.13
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.243.13 | PORT=8443
+  server: 45.32.243.13
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.248.233 | PORT=80
+  server: 45.32.248.233
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.248.233 | PORT=443
+  server: 45.32.248.233
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.32.248.233 | PORT=8443
+  server: 45.32.248.233
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.39.241.116 | PORT=80
+  server: 45.39.241.116
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.39.241.116 | PORT=443
+  server: 45.39.241.116
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.39.241.116 | PORT=8443
+  server: 45.39.241.116
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.39.255.27 | PORT=80
+  server: 45.39.255.27
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.39.255.27 | PORT=443
+  server: 45.39.255.27
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.39.255.27 | PORT=8443
+  server: 45.39.255.27
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.86.228.104 | PORT=80
+  server: 45.86.228.104
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.86.228.104 | PORT=443
+  server: 45.86.228.104
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.86.228.104 | PORT=8443
+  server: 45.86.228.104
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.219.174 | PORT=80
+  server: 45.89.219.174
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.219.174 | PORT=443
+  server: 45.89.219.174
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.219.174 | PORT=8443
+  server: 45.89.219.174
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.220.218 | PORT=80
+  server: 45.89.220.218
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.220.218 | PORT=443
+  server: 45.89.220.218
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.220.218 | PORT=8443
+  server: 45.89.220.218
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.228.81 | PORT=80
+  server: 45.89.228.81
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.228.81 | PORT=443
+  server: 45.89.228.81
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.228.81 | PORT=8443
+  server: 45.89.228.81
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.232.128 | PORT=80
+  server: 45.89.232.128
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.232.128 | PORT=443
+  server: 45.89.232.128
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.232.128 | PORT=8443
+  server: 45.89.232.128
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.52.247 | PORT=80
+  server: 45.89.52.247
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.52.247 | PORT=443
+  server: 45.89.52.247
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.52.247 | PORT=8443
+  server: 45.89.52.247
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.52.85 | PORT=80
+  server: 45.89.52.85
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.52.85 | PORT=443
+  server: 45.89.52.85
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.89.52.85 | PORT=8443
+  server: 45.89.52.85
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.90.57.139 | PORT=80
+  server: 45.90.57.139
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.90.57.139 | PORT=443
+  server: 45.90.57.139
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.90.57.139 | PORT=8443
+  server: 45.90.57.139
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.93.31.131 | PORT=80
+  server: 45.93.31.131
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.93.31.131 | PORT=443
+  server: 45.93.31.131
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.93.31.131 | PORT=8443
+  server: 45.93.31.131
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.93.31.34 | PORT=80
+  server: 45.93.31.34
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.93.31.34 | PORT=443
+  server: 45.93.31.34
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.93.31.34 | PORT=8443
+  server: 45.93.31.34
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.95.169.128 | PORT=80
+  server: 45.95.169.128
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.95.169.128 | PORT=443
+  server: 45.95.169.128
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=45.95.169.128 | PORT=8443
+  server: 45.95.169.128
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.70.105 | PORT=80
+  server: 46.28.70.105
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.70.105 | PORT=443
+  server: 46.28.70.105
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.70.105 | PORT=8443
+  server: 46.28.70.105
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.70.200 | PORT=80
+  server: 46.28.70.200
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.70.200 | PORT=443
+  server: 46.28.70.200
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.70.200 | PORT=8443
+  server: 46.28.70.200
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.71.145 | PORT=80
+  server: 46.28.71.145
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.71.145 | PORT=443
+  server: 46.28.71.145
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.28.71.145 | PORT=8443
+  server: 46.28.71.145
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.29.162.139 | PORT=80
+  server: 46.29.162.139
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.29.162.139 | PORT=443
+  server: 46.29.162.139
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.29.162.139 | PORT=8443
+  server: 46.29.162.139
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.29.238.112 | PORT=80
+  server: 46.29.238.112
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.29.238.112 | PORT=443
+  server: 46.29.238.112
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.29.238.112 | PORT=8443
+  server: 46.29.238.112
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.8.178.102 | PORT=80
+  server: 46.8.178.102
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.8.178.102 | PORT=443
+  server: 46.8.178.102
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.8.178.102 | PORT=8443
+  server: 46.8.178.102
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.8.194.76 | PORT=80
+  server: 46.8.194.76
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.8.194.76 | PORT=443
+  server: 46.8.194.76
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=46.8.194.76 | PORT=8443
+  server: 46.8.194.76
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.100.208.186 | PORT=80
+  server: 47.100.208.186
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.100.208.186 | PORT=443
+  server: 47.100.208.186
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.100.208.186 | PORT=8443
+  server: 47.100.208.186
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.236.119.109 | PORT=80
+  server: 47.236.119.109
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.236.119.109 | PORT=443
+  server: 47.236.119.109
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.236.119.109 | PORT=8443
+  server: 47.236.119.109
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.242.28.106 | PORT=80
+  server: 47.242.28.106
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.242.28.106 | PORT=443
+  server: 47.242.28.106
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.242.28.106 | PORT=8443
+  server: 47.242.28.106
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.250.212.59 | PORT=80
+  server: 47.250.212.59
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.250.212.59 | PORT=443
+  server: 47.250.212.59
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.250.212.59 | PORT=8443
+  server: 47.250.212.59
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.250.81.46 | PORT=80
+  server: 47.250.81.46
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.250.81.46 | PORT=443
+  server: 47.250.81.46
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.250.81.46 | PORT=8443
+  server: 47.250.81.46
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.76.171.37 | PORT=80
+  server: 47.76.171.37
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.76.171.37 | PORT=443
+  server: 47.76.171.37
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.76.171.37 | PORT=8443
+  server: 47.76.171.37
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.83.139.13 | PORT=80
+  server: 47.83.139.13
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.83.139.13 | PORT=443
+  server: 47.83.139.13
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=47.83.139.13 | PORT=8443
+  server: 47.83.139.13
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=49.51.169.107 | PORT=80
+  server: 49.51.169.107
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=49.51.169.107 | PORT=443
+  server: 49.51.169.107
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=49.51.169.107 | PORT=8443
+  server: 49.51.169.107
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.134.119.210 | PORT=80
+  server: 5.134.119.210
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.134.119.210 | PORT=443
+  server: 5.134.119.210
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.134.119.210 | PORT=8443
+  server: 5.134.119.210
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.144.179.124 | PORT=80
+  server: 5.144.179.124
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.144.179.124 | PORT=443
+  server: 5.144.179.124
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.144.179.124 | PORT=8443
+  server: 5.144.179.124
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.144.179.208 | PORT=80
+  server: 5.144.179.208
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.144.179.208 | PORT=443
+  server: 5.144.179.208
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.144.179.208 | PORT=8443
+  server: 5.144.179.208
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.157.30.2 | PORT=80
+  server: 5.157.30.2
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.157.30.2 | PORT=443
+  server: 5.157.30.2
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.157.30.2 | PORT=8443
+  server: 5.157.30.2
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.175.178.254 | PORT=80
+  server: 5.175.178.254
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.175.178.254 | PORT=443
+  server: 5.175.178.254
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.175.178.254 | PORT=8443
+  server: 5.175.178.254
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.175.236.58 | PORT=80
+  server: 5.175.236.58
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.175.236.58 | PORT=443
+  server: 5.175.236.58
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.175.236.58 | PORT=8443
+  server: 5.175.236.58
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.180.20.134 | PORT=80
+  server: 5.180.20.134
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.180.20.134 | PORT=443
+  server: 5.180.20.134
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.180.20.134 | PORT=8443
+  server: 5.180.20.134
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.181.202.75 | PORT=80
+  server: 5.181.202.75
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.181.202.75 | PORT=443
+  server: 5.181.202.75
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.181.202.75 | PORT=8443
+  server: 5.181.202.75
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.181.77.132 | PORT=80
+  server: 5.181.77.132
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.181.77.132 | PORT=443
+  server: 5.181.77.132
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.181.77.132 | PORT=8443
+  server: 5.181.77.132
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.28.109 | PORT=80
+  server: 5.253.28.109
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.28.109 | PORT=443
+  server: 5.253.28.109
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.28.109 | PORT=8443
+  server: 5.253.28.109
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.29.241 | PORT=80
+  server: 5.253.29.241
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.29.241 | PORT=443
+  server: 5.253.29.241
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.29.241 | PORT=8443
+  server: 5.253.29.241
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.30.171 | PORT=80
+  server: 5.253.30.171
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.30.171 | PORT=443
+  server: 5.253.30.171
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.253.30.171 | PORT=8443
+  server: 5.253.30.171
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.34.180.230 | PORT=80
+  server: 5.34.180.230
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.34.180.230 | PORT=443
+  server: 5.34.180.230
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.34.180.230 | PORT=8443
+  server: 5.34.180.230
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.34.220.81 | PORT=80
+  server: 5.34.220.81
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.34.220.81 | PORT=443
+  server: 5.34.220.81
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.34.220.81 | PORT=8443
+  server: 5.34.220.81
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.39.253.208 | PORT=80
+  server: 5.39.253.208
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.39.253.208 | PORT=443
+  server: 5.39.253.208
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.39.253.208 | PORT=8443
+  server: 5.39.253.208
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.39.253.54 | PORT=80
+  server: 5.39.253.54
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.39.253.54 | PORT=443
+  server: 5.39.253.54
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=5.39.253.54 | PORT=8443
+  server: 5.39.253.54
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.105.75 | PORT=80
+  server: 51.15.105.75
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.105.75 | PORT=443
+  server: 51.15.105.75
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.105.75 | PORT=8443
+  server: 51.15.105.75
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.236.52 | PORT=80
+  server: 51.15.236.52
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.236.52 | PORT=443
+  server: 51.15.236.52
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.236.52 | PORT=8443
+  server: 51.15.236.52
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.50.45 | PORT=80
+  server: 51.15.50.45
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.50.45 | PORT=443
+  server: 51.15.50.45
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.50.45 | PORT=8443
+  server: 51.15.50.45
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.56.136 | PORT=80
+  server: 51.15.56.136
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.56.136 | PORT=443
+  server: 51.15.56.136
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.56.136 | PORT=8443
+  server: 51.15.56.136
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.96.108 | PORT=80
+  server: 51.15.96.108
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.96.108 | PORT=443
+  server: 51.15.96.108
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.15.96.108 | PORT=8443
+  server: 51.15.96.108
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.159.6.227 | PORT=80
+  server: 51.159.6.227
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.159.6.227 | PORT=443
+  server: 51.159.6.227
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.159.6.227 | PORT=8443
+  server: 51.159.6.227
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.75.32.106 | PORT=80
+  server: 51.75.32.106
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.75.32.106 | PORT=443
+  server: 51.75.32.106
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.75.32.106 | PORT=8443
+  server: 51.75.32.106
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.83.98.78 | PORT=80
+  server: 51.83.98.78
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.83.98.78 | PORT=443
+  server: 51.83.98.78
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.83.98.78 | PORT=8443
+  server: 51.83.98.78
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.91.40.26 | PORT=80
+  server: 51.91.40.26
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.91.40.26 | PORT=443
+  server: 51.91.40.26
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=51.91.40.26 | PORT=8443
+  server: 51.91.40.26
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=52.19.138.237 | PORT=80
+  server: 52.19.138.237
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=52.19.138.237 | PORT=443
+  server: 52.19.138.237
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=52.19.138.237 | PORT=8443
+  server: 52.19.138.237
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=52.66.200.252 | PORT=80
+  server: 52.66.200.252
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=52.66.200.252 | PORT=443
+  server: 52.66.200.252
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=52.66.200.252 | PORT=8443
+  server: 52.66.200.252
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.169.57.101 | PORT=80
+  server: 54.169.57.101
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.169.57.101 | PORT=443
+  server: 54.169.57.101
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.169.57.101 | PORT=8443
+  server: 54.169.57.101
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.179.213.8 | PORT=80
+  server: 54.179.213.8
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.179.213.8 | PORT=443
+  server: 54.179.213.8
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.179.213.8 | PORT=8443
+  server: 54.179.213.8
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.179.237.30 | PORT=80
+  server: 54.179.237.30
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.179.237.30 | PORT=443
+  server: 54.179.237.30
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.179.237.30 | PORT=8443
+  server: 54.179.237.30
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.74.226.160 | PORT=80
+  server: 54.74.226.160
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.74.226.160 | PORT=443
+  server: 54.74.226.160
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=54.74.226.160 | PORT=8443
+  server: 54.74.226.160
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=56.69.183.8 | PORT=80
+  server: 56.69.183.8
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=56.69.183.8 | PORT=443
+  server: 56.69.183.8
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=56.69.183.8 | PORT=8443
+  server: 56.69.183.8
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=56.69.45.182 | PORT=80
+  server: 56.69.45.182
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=56.69.45.182 | PORT=443
+  server: 56.69.45.182
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=56.69.45.182 | PORT=8443
+  server: 56.69.45.182
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.128.176.82 | PORT=80
+  server: 57.128.176.82
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.128.176.82 | PORT=443
+  server: 57.128.176.82
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.128.176.82 | PORT=8443
+  server: 57.128.176.82
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.128.214.118 | PORT=80
+  server: 57.128.214.118
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.128.214.118 | PORT=443
+  server: 57.128.214.118
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.128.214.118 | PORT=8443
+  server: 57.128.214.118
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.131.35.117 | PORT=80
+  server: 57.131.35.117
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.131.35.117 | PORT=443
+  server: 57.131.35.117
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=57.131.35.117 | PORT=8443
+  server: 57.131.35.117
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=60.249.101.167 | PORT=80
+  server: 60.249.101.167
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=60.249.101.167 | PORT=443
+  server: 60.249.101.167
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=60.249.101.167 | PORT=8443
+  server: 60.249.101.167
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=61.245.10.8 | PORT=80
+  server: 61.245.10.8
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=61.245.10.8 | PORT=443
+  server: 61.245.10.8
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=61.245.10.8 | PORT=8443
+  server: 61.245.10.8
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=61.245.11.45 | PORT=80
+  server: 61.245.11.45
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=61.245.11.45 | PORT=443
+  server: 61.245.11.45
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=61.245.11.45 | PORT=8443
+  server: 61.245.11.45
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.102.24 | PORT=80
+  server: 62.182.102.24
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.102.24 | PORT=443
+  server: 62.182.102.24
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.102.24 | PORT=8443
+  server: 62.182.102.24
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.102.93 | PORT=80
+  server: 62.182.102.93
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.102.93 | PORT=443
+  server: 62.182.102.93
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.102.93 | PORT=8443
+  server: 62.182.102.93
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.192.194 | PORT=80
+  server: 62.182.192.194
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.192.194 | PORT=443
+  server: 62.182.192.194
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.192.194 | PORT=8443
+  server: 62.182.192.194
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.192.195 | PORT=80
+  server: 62.182.192.195
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.192.195 | PORT=443
+  server: 62.182.192.195
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.192.195 | PORT=8443
+  server: 62.182.192.195
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.195.147 | PORT=80
+  server: 62.182.195.147
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.195.147 | PORT=443
+  server: 62.182.195.147
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.195.147 | PORT=8443
+  server: 62.182.195.147
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.194 | PORT=80
+  server: 62.182.196.194
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.194 | PORT=443
+  server: 62.182.196.194
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.194 | PORT=8443
+  server: 62.182.196.194
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.230 | PORT=80
+  server: 62.182.196.230
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.230 | PORT=443
+  server: 62.182.196.230
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.230 | PORT=8443
+  server: 62.182.196.230
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.25 | PORT=80
+  server: 62.182.196.25
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.25 | PORT=443
+  server: 62.182.196.25
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.196.25 | PORT=8443
+  server: 62.182.196.25
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.197.18 | PORT=80
+  server: 62.182.197.18
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.197.18 | PORT=443
+  server: 62.182.197.18
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.197.18 | PORT=8443
+  server: 62.182.197.18
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.197.237 | PORT=80
+  server: 62.182.197.237
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.197.237 | PORT=443
+  server: 62.182.197.237
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.197.237 | PORT=8443
+  server: 62.182.197.237
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.198.178 | PORT=80
+  server: 62.182.198.178
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.198.178 | PORT=443
+  server: 62.182.198.178
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.182.198.178 | PORT=8443
+  server: 62.182.198.178
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.233.57.167 | PORT=80
+  server: 62.233.57.167
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.233.57.167 | PORT=443
+  server: 62.233.57.167
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.233.57.167 | PORT=8443
+  server: 62.233.57.167
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.233.57.193 | PORT=80
+  server: 62.233.57.193
+  port: 80
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.233.57.193 | PORT=443
+  server: 62.233.57.193
+  port: 443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+- name: BPB-sgjsc.eu | IP=62.233.57.193 | PORT=8443
+  server: 62.233.57.193
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sgjsc.eu
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sgjsc.eu
+proxy-groups:
+- name: CF-Nest-Test
+  type: select
+  proxies:
+  - BPB-sgjsc.eu | IP=31.57.28.22 | PORT=443
+  - BPB-sgjsc.eu | IP=31.57.28.22 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.58.76.27 | PORT=80
+  - BPB-sgjsc.eu | IP=31.58.76.27 | PORT=443
+  - BPB-sgjsc.eu | IP=31.58.76.27 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.58.77.150 | PORT=80
+  - BPB-sgjsc.eu | IP=31.58.77.150 | PORT=443
+  - BPB-sgjsc.eu | IP=31.58.77.150 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.58.77.174 | PORT=80
+  - BPB-sgjsc.eu | IP=31.58.77.174 | PORT=443
+  - BPB-sgjsc.eu | IP=31.58.77.174 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.58.77.194 | PORT=80
+  - BPB-sgjsc.eu | IP=31.58.77.194 | PORT=443
+  - BPB-sgjsc.eu | IP=31.58.77.194 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.58.77.225 | PORT=80
+  - BPB-sgjsc.eu | IP=31.58.77.225 | PORT=443
+  - BPB-sgjsc.eu | IP=31.58.77.225 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.59.102.96 | PORT=80
+  - BPB-sgjsc.eu | IP=31.59.102.96 | PORT=443
+  - BPB-sgjsc.eu | IP=31.59.102.96 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.59.105.119 | PORT=80
+  - BPB-sgjsc.eu | IP=31.59.105.119 | PORT=443
+  - BPB-sgjsc.eu | IP=31.59.105.119 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.59.45.136 | PORT=80
+  - BPB-sgjsc.eu | IP=31.59.45.136 | PORT=443
+  - BPB-sgjsc.eu | IP=31.59.45.136 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.76.226.238 | PORT=80
+  - BPB-sgjsc.eu | IP=31.76.226.238 | PORT=443
+  - BPB-sgjsc.eu | IP=31.76.226.238 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.76.35.56 | PORT=80
+  - BPB-sgjsc.eu | IP=31.76.35.56 | PORT=443
+  - BPB-sgjsc.eu | IP=31.76.35.56 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.76.97.163 | PORT=80
+  - BPB-sgjsc.eu | IP=31.76.97.163 | PORT=443
+  - BPB-sgjsc.eu | IP=31.76.97.163 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.77.183.100 | PORT=80
+  - BPB-sgjsc.eu | IP=31.77.183.100 | PORT=443
+  - BPB-sgjsc.eu | IP=31.77.183.100 | PORT=8443
+  - BPB-sgjsc.eu | IP=31.77.183.13 | PORT=80
+  - BPB-sgjsc.eu | IP=31.77.183.13 | PORT=443
+  - BPB-sgjsc.eu | IP=31.77.183.13 | PORT=8443
+  - BPB-sgjsc.eu | IP=34.175.202.195 | PORT=80
+  - BPB-sgjsc.eu | IP=34.175.202.195 | PORT=443
+  - BPB-sgjsc.eu | IP=34.175.202.195 | PORT=8443
+  - BPB-sgjsc.eu | IP=35.154.184.88 | PORT=80
+  - BPB-sgjsc.eu | IP=35.154.184.88 | PORT=443
+  - BPB-sgjsc.eu | IP=35.154.184.88 | PORT=8443
+  - BPB-sgjsc.eu | IP=35.210.99.51 | PORT=80
+  - BPB-sgjsc.eu | IP=35.210.99.51 | PORT=443
+  - BPB-sgjsc.eu | IP=35.210.99.51 | PORT=8443
+  - BPB-sgjsc.eu | IP=35.241.172.224 | PORT=80
+  - BPB-sgjsc.eu | IP=35.241.172.224 | PORT=443
+  - BPB-sgjsc.eu | IP=35.241.172.224 | PORT=8443
+  - BPB-sgjsc.eu | IP=35.42.169.95 | PORT=80
+  - BPB-sgjsc.eu | IP=35.42.169.95 | PORT=443
+  - BPB-sgjsc.eu | IP=35.42.169.95 | PORT=8443
+  - BPB-sgjsc.eu | IP=37.205.15.169 | PORT=80
+  - BPB-sgjsc.eu | IP=37.205.15.169 | PORT=443
+  - BPB-sgjsc.eu | IP=37.205.15.169 | PORT=8443
+  - BPB-sgjsc.eu | IP=37.221.210.113 | PORT=80
+  - BPB-sgjsc.eu | IP=37.221.210.113 | PORT=443
+  - BPB-sgjsc.eu | IP=37.221.210.113 | PORT=8443
+  - BPB-sgjsc.eu | IP=37.221.66.2 | PORT=80
+  - BPB-sgjsc.eu | IP=37.221.66.2 | PORT=443
+  - BPB-sgjsc.eu | IP=37.221.66.2 | PORT=8443
+  - BPB-sgjsc.eu | IP=37.32.46.68 | PORT=80
+  - BPB-sgjsc.eu | IP=37.32.46.68 | PORT=443
+  - BPB-sgjsc.eu | IP=37.32.46.68 | PORT=8443
+  - BPB-sgjsc.eu | IP=37.46.211.176 | PORT=80
+  - BPB-sgjsc.eu | IP=37.46.211.176 | PORT=443
+  - BPB-sgjsc.eu | IP=37.46.211.176 | PORT=8443
+  - BPB-sgjsc.eu | IP=37.9.171.189 | PORT=80
+  - BPB-sgjsc.eu | IP=37.9.171.189 | PORT=443
+  - BPB-sgjsc.eu | IP=37.9.171.189 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.107.234.39 | PORT=80
+  - BPB-sgjsc.eu | IP=38.107.234.39 | PORT=443
+  - BPB-sgjsc.eu | IP=38.107.234.39 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.100.80 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.100.80 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.100.80 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.108.148 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.108.148 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.108.148 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.109.174 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.109.174 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.109.174 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.18.43 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.18.43 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.18.43 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.196.40 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.196.40 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.196.40 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.239.173 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.239.173 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.239.173 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.240.91 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.240.91 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.240.91 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.180.48.182 | PORT=80
+  - BPB-sgjsc.eu | IP=38.180.48.182 | PORT=443
+  - BPB-sgjsc.eu | IP=38.180.48.182 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.181.52.16 | PORT=80
+  - BPB-sgjsc.eu | IP=38.181.52.16 | PORT=443
+  - BPB-sgjsc.eu | IP=38.181.52.16 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.207.174.111 | PORT=80
+  - BPB-sgjsc.eu | IP=38.207.174.111 | PORT=443
+  - BPB-sgjsc.eu | IP=38.207.174.111 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.207.184.202 | PORT=80
+  - BPB-sgjsc.eu | IP=38.207.184.202 | PORT=443
+  - BPB-sgjsc.eu | IP=38.207.184.202 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.213.228.91 | PORT=80
+  - BPB-sgjsc.eu | IP=38.213.228.91 | PORT=443
+  - BPB-sgjsc.eu | IP=38.213.228.91 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.54.116.31 | PORT=80
+  - BPB-sgjsc.eu | IP=38.54.116.31 | PORT=443
+  - BPB-sgjsc.eu | IP=38.54.116.31 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.54.45.184 | PORT=80
+  - BPB-sgjsc.eu | IP=38.54.45.184 | PORT=443
+  - BPB-sgjsc.eu | IP=38.54.45.184 | PORT=8443
+  - BPB-sgjsc.eu | IP=38.54.64.204 | PORT=80
+  - BPB-sgjsc.eu | IP=38.54.64.204 | PORT=443
+  - BPB-sgjsc.eu | IP=38.54.64.204 | PORT=8443
+  - BPB-sgjsc.eu | IP=42.193.173.86 | PORT=80
+  - BPB-sgjsc.eu | IP=42.193.173.86 | PORT=443
+  - BPB-sgjsc.eu | IP=42.193.173.86 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.108.46.150 | PORT=80
+  - BPB-sgjsc.eu | IP=43.108.46.150 | PORT=443
+  - BPB-sgjsc.eu | IP=43.108.46.150 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.128.135.99 | PORT=80
+  - BPB-sgjsc.eu | IP=43.128.135.99 | PORT=443
+  - BPB-sgjsc.eu | IP=43.128.135.99 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.129.217.38 | PORT=80
+  - BPB-sgjsc.eu | IP=43.129.217.38 | PORT=443
+  - BPB-sgjsc.eu | IP=43.129.217.38 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.129.80.179 | PORT=80
+  - BPB-sgjsc.eu | IP=43.129.80.179 | PORT=443
+  - BPB-sgjsc.eu | IP=43.129.80.179 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.131.225.115 | PORT=80
+  - BPB-sgjsc.eu | IP=43.131.225.115 | PORT=443
+  - BPB-sgjsc.eu | IP=43.131.225.115 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.131.242.223 | PORT=80
+  - BPB-sgjsc.eu | IP=43.131.242.223 | PORT=443
+  - BPB-sgjsc.eu | IP=43.131.242.223 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.132.231.159 | PORT=80
+  - BPB-sgjsc.eu | IP=43.132.231.159 | PORT=443
+  - BPB-sgjsc.eu | IP=43.132.231.159 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.155.205.141 | PORT=80
+  - BPB-sgjsc.eu | IP=43.155.205.141 | PORT=443
+  - BPB-sgjsc.eu | IP=43.155.205.141 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.156.142.191 | PORT=80
+  - BPB-sgjsc.eu | IP=43.156.142.191 | PORT=443
+  - BPB-sgjsc.eu | IP=43.156.142.191 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.160.220.72 | PORT=80
+  - BPB-sgjsc.eu | IP=43.160.220.72 | PORT=443
+  - BPB-sgjsc.eu | IP=43.160.220.72 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.160.246.223 | PORT=80
+  - BPB-sgjsc.eu | IP=43.160.246.223 | PORT=443
+  - BPB-sgjsc.eu | IP=43.160.246.223 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.161.236.173 | PORT=80
+  - BPB-sgjsc.eu | IP=43.161.236.173 | PORT=443
+  - BPB-sgjsc.eu | IP=43.161.236.173 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.161.254.71 | PORT=80
+  - BPB-sgjsc.eu | IP=43.161.254.71 | PORT=443
+  - BPB-sgjsc.eu | IP=43.161.254.71 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.164.137.118 | PORT=80
+  - BPB-sgjsc.eu | IP=43.164.137.118 | PORT=443
+  - BPB-sgjsc.eu | IP=43.164.137.118 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.169.18.179 | PORT=80
+  - BPB-sgjsc.eu | IP=43.169.18.179 | PORT=443
+  - BPB-sgjsc.eu | IP=43.169.18.179 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.169.19.179 | PORT=80
+  - BPB-sgjsc.eu | IP=43.169.19.179 | PORT=443
+  - BPB-sgjsc.eu | IP=43.169.19.179 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.174.218.1 | PORT=80
+  - BPB-sgjsc.eu | IP=43.174.218.1 | PORT=443
+  - BPB-sgjsc.eu | IP=43.174.218.1 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.213.230.249 | PORT=80
+  - BPB-sgjsc.eu | IP=43.213.230.249 | PORT=443
+  - BPB-sgjsc.eu | IP=43.213.230.249 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.229.254.182 | PORT=80
+  - BPB-sgjsc.eu | IP=43.229.254.182 | PORT=443
+  - BPB-sgjsc.eu | IP=43.229.254.182 | PORT=8443
+  - BPB-sgjsc.eu | IP=43.229.254.71 | PORT=80
+  - BPB-sgjsc.eu | IP=43.229.254.71 | PORT=443
+  - BPB-sgjsc.eu | IP=43.229.254.71 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.12.143.25 | PORT=80
+  - BPB-sgjsc.eu | IP=45.12.143.25 | PORT=443
+  - BPB-sgjsc.eu | IP=45.12.143.25 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.12.28.129 | PORT=80
+  - BPB-sgjsc.eu | IP=45.12.28.129 | PORT=443
+  - BPB-sgjsc.eu | IP=45.12.28.129 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.12.68.99 | PORT=80
+  - BPB-sgjsc.eu | IP=45.12.68.99 | PORT=443
+  - BPB-sgjsc.eu | IP=45.12.68.99 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.129.126.241 | PORT=80
+  - BPB-sgjsc.eu | IP=45.129.126.241 | PORT=443
+  - BPB-sgjsc.eu | IP=45.129.126.241 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.13.237.193 | PORT=80
+  - BPB-sgjsc.eu | IP=45.13.237.193 | PORT=443
+  - BPB-sgjsc.eu | IP=45.13.237.193 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.131.179.106 | PORT=80
+  - BPB-sgjsc.eu | IP=45.131.179.106 | PORT=443
+  - BPB-sgjsc.eu | IP=45.131.179.106 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.133.17.106 | PORT=80
+  - BPB-sgjsc.eu | IP=45.133.17.106 | PORT=443
+  - BPB-sgjsc.eu | IP=45.133.17.106 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.141.139.209 | PORT=80
+  - BPB-sgjsc.eu | IP=45.141.139.209 | PORT=443
+  - BPB-sgjsc.eu | IP=45.141.139.209 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.141.234.138 | PORT=80
+  - BPB-sgjsc.eu | IP=45.141.234.138 | PORT=443
+  - BPB-sgjsc.eu | IP=45.141.234.138 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.142.31.20 | PORT=80
+  - BPB-sgjsc.eu | IP=45.142.31.20 | PORT=443
+  - BPB-sgjsc.eu | IP=45.142.31.20 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.144.172.33 | PORT=80
+  - BPB-sgjsc.eu | IP=45.144.172.33 | PORT=443
+  - BPB-sgjsc.eu | IP=45.144.172.33 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.145.56.191 | PORT=80
+  - BPB-sgjsc.eu | IP=45.145.56.191 | PORT=443
+  - BPB-sgjsc.eu | IP=45.145.56.191 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.147.250.39 | PORT=80
+  - BPB-sgjsc.eu | IP=45.147.250.39 | PORT=443
+  - BPB-sgjsc.eu | IP=45.147.250.39 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.147.49.183 | PORT=80
+  - BPB-sgjsc.eu | IP=45.147.49.183 | PORT=443
+  - BPB-sgjsc.eu | IP=45.147.49.183 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.148.31.227 | PORT=80
+  - BPB-sgjsc.eu | IP=45.148.31.227 | PORT=443
+  - BPB-sgjsc.eu | IP=45.148.31.227 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.150.128.159 | PORT=80
+  - BPB-sgjsc.eu | IP=45.150.128.159 | PORT=443
+  - BPB-sgjsc.eu | IP=45.150.128.159 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.150.236.135 | PORT=80
+  - BPB-sgjsc.eu | IP=45.150.236.135 | PORT=443
+  - BPB-sgjsc.eu | IP=45.150.236.135 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.151.183.187 | PORT=80
+  - BPB-sgjsc.eu | IP=45.151.183.187 | PORT=443
+  - BPB-sgjsc.eu | IP=45.151.183.187 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.153.130.61 | PORT=80
+  - BPB-sgjsc.eu | IP=45.153.130.61 | PORT=443
+  - BPB-sgjsc.eu | IP=45.153.130.61 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.202.246.126 | PORT=80
+  - BPB-sgjsc.eu | IP=45.202.246.126 | PORT=443
+  - BPB-sgjsc.eu | IP=45.202.246.126 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.202.246.91 | PORT=80
+  - BPB-sgjsc.eu | IP=45.202.246.91 | PORT=443
+  - BPB-sgjsc.eu | IP=45.202.246.91 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.32.191.198 | PORT=80
+  - BPB-sgjsc.eu | IP=45.32.191.198 | PORT=443
+  - BPB-sgjsc.eu | IP=45.32.191.198 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.32.241.82 | PORT=80
+  - BPB-sgjsc.eu | IP=45.32.241.82 | PORT=443
+  - BPB-sgjsc.eu | IP=45.32.241.82 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.32.243.13 | PORT=80
+  - BPB-sgjsc.eu | IP=45.32.243.13 | PORT=443
+  - BPB-sgjsc.eu | IP=45.32.243.13 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.32.248.233 | PORT=80
+  - BPB-sgjsc.eu | IP=45.32.248.233 | PORT=443
+  - BPB-sgjsc.eu | IP=45.32.248.233 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.39.241.116 | PORT=80
+  - BPB-sgjsc.eu | IP=45.39.241.116 | PORT=443
+  - BPB-sgjsc.eu | IP=45.39.241.116 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.39.255.27 | PORT=80
+  - BPB-sgjsc.eu | IP=45.39.255.27 | PORT=443
+  - BPB-sgjsc.eu | IP=45.39.255.27 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.86.228.104 | PORT=80
+  - BPB-sgjsc.eu | IP=45.86.228.104 | PORT=443
+  - BPB-sgjsc.eu | IP=45.86.228.104 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.89.219.174 | PORT=80
+  - BPB-sgjsc.eu | IP=45.89.219.174 | PORT=443
+  - BPB-sgjsc.eu | IP=45.89.219.174 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.89.220.218 | PORT=80
+  - BPB-sgjsc.eu | IP=45.89.220.218 | PORT=443
+  - BPB-sgjsc.eu | IP=45.89.220.218 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.89.228.81 | PORT=80
+  - BPB-sgjsc.eu | IP=45.89.228.81 | PORT=443
+  - BPB-sgjsc.eu | IP=45.89.228.81 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.89.232.128 | PORT=80
+  - BPB-sgjsc.eu | IP=45.89.232.128 | PORT=443
+  - BPB-sgjsc.eu | IP=45.89.232.128 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.89.52.247 | PORT=80
+  - BPB-sgjsc.eu | IP=45.89.52.247 | PORT=443
+  - BPB-sgjsc.eu | IP=45.89.52.247 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.89.52.85 | PORT=80
+  - BPB-sgjsc.eu | IP=45.89.52.85 | PORT=443
+  - BPB-sgjsc.eu | IP=45.89.52.85 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.90.57.139 | PORT=80
+  - BPB-sgjsc.eu | IP=45.90.57.139 | PORT=443
+  - BPB-sgjsc.eu | IP=45.90.57.139 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.93.31.131 | PORT=80
+  - BPB-sgjsc.eu | IP=45.93.31.131 | PORT=443
+  - BPB-sgjsc.eu | IP=45.93.31.131 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.93.31.34 | PORT=80
+  - BPB-sgjsc.eu | IP=45.93.31.34 | PORT=443
+  - BPB-sgjsc.eu | IP=45.93.31.34 | PORT=8443
+  - BPB-sgjsc.eu | IP=45.95.169.128 | PORT=80
+  - BPB-sgjsc.eu | IP=45.95.169.128 | PORT=443
+  - BPB-sgjsc.eu | IP=45.95.169.128 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.28.70.105 | PORT=80
+  - BPB-sgjsc.eu | IP=46.28.70.105 | PORT=443
+  - BPB-sgjsc.eu | IP=46.28.70.105 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.28.70.200 | PORT=80
+  - BPB-sgjsc.eu | IP=46.28.70.200 | PORT=443
+  - BPB-sgjsc.eu | IP=46.28.70.200 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.28.71.145 | PORT=80
+  - BPB-sgjsc.eu | IP=46.28.71.145 | PORT=443
+  - BPB-sgjsc.eu | IP=46.28.71.145 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.29.162.139 | PORT=80
+  - BPB-sgjsc.eu | IP=46.29.162.139 | PORT=443
+  - BPB-sgjsc.eu | IP=46.29.162.139 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.29.238.112 | PORT=80
+  - BPB-sgjsc.eu | IP=46.29.238.112 | PORT=443
+  - BPB-sgjsc.eu | IP=46.29.238.112 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.8.178.102 | PORT=80
+  - BPB-sgjsc.eu | IP=46.8.178.102 | PORT=443
+  - BPB-sgjsc.eu | IP=46.8.178.102 | PORT=8443
+  - BPB-sgjsc.eu | IP=46.8.194.76 | PORT=80
+  - BPB-sgjsc.eu | IP=46.8.194.76 | PORT=443
+  - BPB-sgjsc.eu | IP=46.8.194.76 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.100.208.186 | PORT=80
+  - BPB-sgjsc.eu | IP=47.100.208.186 | PORT=443
+  - BPB-sgjsc.eu | IP=47.100.208.186 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.236.119.109 | PORT=80
+  - BPB-sgjsc.eu | IP=47.236.119.109 | PORT=443
+  - BPB-sgjsc.eu | IP=47.236.119.109 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.242.28.106 | PORT=80
+  - BPB-sgjsc.eu | IP=47.242.28.106 | PORT=443
+  - BPB-sgjsc.eu | IP=47.242.28.106 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.250.212.59 | PORT=80
+  - BPB-sgjsc.eu | IP=47.250.212.59 | PORT=443
+  - BPB-sgjsc.eu | IP=47.250.212.59 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.250.81.46 | PORT=80
+  - BPB-sgjsc.eu | IP=47.250.81.46 | PORT=443
+  - BPB-sgjsc.eu | IP=47.250.81.46 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.76.171.37 | PORT=80
+  - BPB-sgjsc.eu | IP=47.76.171.37 | PORT=443
+  - BPB-sgjsc.eu | IP=47.76.171.37 | PORT=8443
+  - BPB-sgjsc.eu | IP=47.83.139.13 | PORT=80
+  - BPB-sgjsc.eu | IP=47.83.139.13 | PORT=443
+  - BPB-sgjsc.eu | IP=47.83.139.13 | PORT=8443
+  - BPB-sgjsc.eu | IP=49.51.169.107 | PORT=80
+  - BPB-sgjsc.eu | IP=49.51.169.107 | PORT=443
+  - BPB-sgjsc.eu | IP=49.51.169.107 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.134.119.210 | PORT=80
+  - BPB-sgjsc.eu | IP=5.134.119.210 | PORT=443
+  - BPB-sgjsc.eu | IP=5.134.119.210 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.144.179.124 | PORT=80
+  - BPB-sgjsc.eu | IP=5.144.179.124 | PORT=443
+  - BPB-sgjsc.eu | IP=5.144.179.124 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.144.179.208 | PORT=80
+  - BPB-sgjsc.eu | IP=5.144.179.208 | PORT=443
+  - BPB-sgjsc.eu | IP=5.144.179.208 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.157.30.2 | PORT=80
+  - BPB-sgjsc.eu | IP=5.157.30.2 | PORT=443
+  - BPB-sgjsc.eu | IP=5.157.30.2 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.175.178.254 | PORT=80
+  - BPB-sgjsc.eu | IP=5.175.178.254 | PORT=443
+  - BPB-sgjsc.eu | IP=5.175.178.254 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.175.236.58 | PORT=80
+  - BPB-sgjsc.eu | IP=5.175.236.58 | PORT=443
+  - BPB-sgjsc.eu | IP=5.175.236.58 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.180.20.134 | PORT=80
+  - BPB-sgjsc.eu | IP=5.180.20.134 | PORT=443
+  - BPB-sgjsc.eu | IP=5.180.20.134 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.181.202.75 | PORT=80
+  - BPB-sgjsc.eu | IP=5.181.202.75 | PORT=443
+  - BPB-sgjsc.eu | IP=5.181.202.75 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.181.77.132 | PORT=80
+  - BPB-sgjsc.eu | IP=5.181.77.132 | PORT=443
+  - BPB-sgjsc.eu | IP=5.181.77.132 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.253.28.109 | PORT=80
+  - BPB-sgjsc.eu | IP=5.253.28.109 | PORT=443
+  - BPB-sgjsc.eu | IP=5.253.28.109 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.253.29.241 | PORT=80
+  - BPB-sgjsc.eu | IP=5.253.29.241 | PORT=443
+  - BPB-sgjsc.eu | IP=5.253.29.241 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.253.30.171 | PORT=80
+  - BPB-sgjsc.eu | IP=5.253.30.171 | PORT=443
+  - BPB-sgjsc.eu | IP=5.253.30.171 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.34.180.230 | PORT=80
+  - BPB-sgjsc.eu | IP=5.34.180.230 | PORT=443
+  - BPB-sgjsc.eu | IP=5.34.180.230 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.34.220.81 | PORT=80
+  - BPB-sgjsc.eu | IP=5.34.220.81 | PORT=443
+  - BPB-sgjsc.eu | IP=5.34.220.81 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.39.253.208 | PORT=80
+  - BPB-sgjsc.eu | IP=5.39.253.208 | PORT=443
+  - BPB-sgjsc.eu | IP=5.39.253.208 | PORT=8443
+  - BPB-sgjsc.eu | IP=5.39.253.54 | PORT=80
+  - BPB-sgjsc.eu | IP=5.39.253.54 | PORT=443
+  - BPB-sgjsc.eu | IP=5.39.253.54 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.15.105.75 | PORT=80
+  - BPB-sgjsc.eu | IP=51.15.105.75 | PORT=443
+  - BPB-sgjsc.eu | IP=51.15.105.75 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.15.236.52 | PORT=80
+  - BPB-sgjsc.eu | IP=51.15.236.52 | PORT=443
+  - BPB-sgjsc.eu | IP=51.15.236.52 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.15.50.45 | PORT=80
+  - BPB-sgjsc.eu | IP=51.15.50.45 | PORT=443
+  - BPB-sgjsc.eu | IP=51.15.50.45 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.15.56.136 | PORT=80
+  - BPB-sgjsc.eu | IP=51.15.56.136 | PORT=443
+  - BPB-sgjsc.eu | IP=51.15.56.136 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.15.96.108 | PORT=80
+  - BPB-sgjsc.eu | IP=51.15.96.108 | PORT=443
+  - BPB-sgjsc.eu | IP=51.15.96.108 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.159.6.227 | PORT=80
+  - BPB-sgjsc.eu | IP=51.159.6.227 | PORT=443
+  - BPB-sgjsc.eu | IP=51.159.6.227 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.75.32.106 | PORT=80
+  - BPB-sgjsc.eu | IP=51.75.32.106 | PORT=443
+  - BPB-sgjsc.eu | IP=51.75.32.106 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.83.98.78 | PORT=80
+  - BPB-sgjsc.eu | IP=51.83.98.78 | PORT=443
+  - BPB-sgjsc.eu | IP=51.83.98.78 | PORT=8443
+  - BPB-sgjsc.eu | IP=51.91.40.26 | PORT=80
+  - BPB-sgjsc.eu | IP=51.91.40.26 | PORT=443
+  - BPB-sgjsc.eu | IP=51.91.40.26 | PORT=8443
+  - BPB-sgjsc.eu | IP=52.19.138.237 | PORT=80
+  - BPB-sgjsc.eu | IP=52.19.138.237 | PORT=443
+  - BPB-sgjsc.eu | IP=52.19.138.237 | PORT=8443
+  - BPB-sgjsc.eu | IP=52.66.200.252 | PORT=80
+  - BPB-sgjsc.eu | IP=52.66.200.252 | PORT=443
+  - BPB-sgjsc.eu | IP=52.66.200.252 | PORT=8443
+  - BPB-sgjsc.eu | IP=54.169.57.101 | PORT=80
+  - BPB-sgjsc.eu | IP=54.169.57.101 | PORT=443
+  - BPB-sgjsc.eu | IP=54.169.57.101 | PORT=8443
+  - BPB-sgjsc.eu | IP=54.179.213.8 | PORT=80
+  - BPB-sgjsc.eu | IP=54.179.213.8 | PORT=443
+  - BPB-sgjsc.eu | IP=54.179.213.8 | PORT=8443
+  - BPB-sgjsc.eu | IP=54.179.237.30 | PORT=80
+  - BPB-sgjsc.eu | IP=54.179.237.30 | PORT=443
+  - BPB-sgjsc.eu | IP=54.179.237.30 | PORT=8443
+  - BPB-sgjsc.eu | IP=54.74.226.160 | PORT=80
+  - BPB-sgjsc.eu | IP=54.74.226.160 | PORT=443
+  - BPB-sgjsc.eu | IP=54.74.226.160 | PORT=8443
+  - BPB-sgjsc.eu | IP=56.69.183.8 | PORT=80
+  - BPB-sgjsc.eu | IP=56.69.183.8 | PORT=443
+  - BPB-sgjsc.eu | IP=56.69.183.8 | PORT=8443
+  - BPB-sgjsc.eu | IP=56.69.45.182 | PORT=80
+  - BPB-sgjsc.eu | IP=56.69.45.182 | PORT=443
+  - BPB-sgjsc.eu | IP=56.69.45.182 | PORT=8443
+  - BPB-sgjsc.eu | IP=57.128.176.82 | PORT=80
+  - BPB-sgjsc.eu | IP=57.128.176.82 | PORT=443
+  - BPB-sgjsc.eu | IP=57.128.176.82 | PORT=8443
+  - BPB-sgjsc.eu | IP=57.128.214.118 | PORT=80
+  - BPB-sgjsc.eu | IP=57.128.214.118 | PORT=443
+  - BPB-sgjsc.eu | IP=57.128.214.118 | PORT=8443
+  - BPB-sgjsc.eu | IP=57.131.35.117 | PORT=80
+  - BPB-sgjsc.eu | IP=57.131.35.117 | PORT=443
+  - BPB-sgjsc.eu | IP=57.131.35.117 | PORT=8443
+  - BPB-sgjsc.eu | IP=60.249.101.167 | PORT=80
+  - BPB-sgjsc.eu | IP=60.249.101.167 | PORT=443
+  - BPB-sgjsc.eu | IP=60.249.101.167 | PORT=8443
+  - BPB-sgjsc.eu | IP=61.245.10.8 | PORT=80
+  - BPB-sgjsc.eu | IP=61.245.10.8 | PORT=443
+  - BPB-sgjsc.eu | IP=61.245.10.8 | PORT=8443
+  - BPB-sgjsc.eu | IP=61.245.11.45 | PORT=80
+  - BPB-sgjsc.eu | IP=61.245.11.45 | PORT=443
+  - BPB-sgjsc.eu | IP=61.245.11.45 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.102.24 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.102.24 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.102.24 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.102.93 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.102.93 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.102.93 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.192.194 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.192.194 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.192.194 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.192.195 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.192.195 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.192.195 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.195.147 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.195.147 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.195.147 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.196.194 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.196.194 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.196.194 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.196.230 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.196.230 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.196.230 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.196.25 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.196.25 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.196.25 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.197.18 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.197.18 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.197.18 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.197.237 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.197.237 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.197.237 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.182.198.178 | PORT=80
+  - BPB-sgjsc.eu | IP=62.182.198.178 | PORT=443
+  - BPB-sgjsc.eu | IP=62.182.198.178 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.233.57.167 | PORT=80
+  - BPB-sgjsc.eu | IP=62.233.57.167 | PORT=443
+  - BPB-sgjsc.eu | IP=62.233.57.167 | PORT=8443
+  - BPB-sgjsc.eu | IP=62.233.57.193 | PORT=80
+  - BPB-sgjsc.eu | IP=62.233.57.193 | PORT=443
+  - BPB-sgjsc.eu | IP=62.233.57.193 | PORT=8443
+rules:
+- MATCH,CF-Nest-Test

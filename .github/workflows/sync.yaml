@@ -1,0 +1,35 @@
+name: sync
+
+on:
+  push:
+    paths:
+      - 'sync.py'
+      - '.github/workflows/sync.yml'
+      - '789565769241/1-gem.yaml.txt'
+  workflow_dispatch: # 支持手动点击触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 赋予写权限以自动提交生成的文件
+
+    steps:
+      - name: 迁出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 运行 IP 提取脚本
+        run: python sync.py
+
+      - name: 自动提交并推送提取后的 IP 列表文件
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add clean_ip_list.txt
+          git diff --staged --quiet || git commit -m "Auto-update clean_ip_list.txt via workflow [skip ci]"
+          git push

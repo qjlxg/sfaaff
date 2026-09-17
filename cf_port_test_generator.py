@@ -17,8 +17,8 @@ import sys
 # ===================== 配置区域 =====================
 
 IP_SOURCES = {
-    "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
-   # "2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
+    # "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
+   "2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
     # 后面的源如果 404 会自动跳过
     "3only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_3only.txt",
     "4only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_4only.txt",

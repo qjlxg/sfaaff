@@ -76023,550 +76023,6 @@ proxies:
     path: /tr?ed=2560
     headers:
       Host: kv.gimbox.us.kg
-- name: BPB-mb.90safe.cn | IP=130.94.58.215 | PORT=8443
-  server: 130.94.58.215
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=146.235.59.153 | PORT=8443
-  server: 146.235.59.153
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=156.38.157.171 | PORT=8443
-  server: 156.38.157.171
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=173.242.63.235 | PORT=8443
-  server: 173.242.63.235
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=185.105.108.92 | PORT=8443
-  server: 185.105.108.92
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=185.125.171.128 | PORT=8443
-  server: 185.125.171.128
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=185.216.68.218 | PORT=8443
-  server: 185.216.68.218
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=185.86.77.181 | PORT=8443
-  server: 185.86.77.181
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=188.240.213.98 | PORT=8443
-  server: 188.240.213.98
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=193.181.211.119 | PORT=8443
-  server: 193.181.211.119
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=194.55.164.154 | PORT=8443
-  server: 194.55.164.154
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=20.219.46.208 | PORT=8443
-  server: 20.219.46.208
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=213.183.55.153 | PORT=8443
-  server: 213.183.55.153
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=213.255.209.61 | PORT=8443
-  server: 213.255.209.61
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=216.238.79.83 | PORT=8443
-  server: 216.238.79.83
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=216.238.80.148 | PORT=8443
-  server: 216.238.80.148
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=43.173.1.153 | PORT=8443
-  server: 43.173.1.153
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=5.35.103.185 | PORT=8443
-  server: 5.35.103.185
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=54.229.164.147 | PORT=8443
-  server: 54.229.164.147
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=63.32.194.15 | PORT=8443
-  server: 63.32.194.15
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=64.176.4.154 | PORT=8443
-  server: 64.176.4.154
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=65.2.215.47 | PORT=8443
-  server: 65.2.215.47
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=78.153.131.199 | PORT=8443
-  server: 78.153.131.199
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=81.29.149.219 | PORT=8443
-  server: 81.29.149.219
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=84.208.211.208 | PORT=8443
-  server: 84.208.211.208
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=89.46.42.141 | PORT=8443
-  server: 89.46.42.141
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=91.149.167.147 | PORT=8443
-  server: 91.149.167.147
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=91.231.182.162 | PORT=8443
-  server: 91.231.182.162
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=91.239.6.51 | PORT=8443
-  server: 91.239.6.51
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=92.113.146.87 | PORT=8443
-  server: 92.113.146.87
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=94.156.189.144 | PORT=8443
-  server: 94.156.189.144
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
-- name: BPB-mb.90safe.cn | IP=95.130.84.36 | PORT=8443
-  server: 95.130.84.36
-  port: 8443
-  type: trojan
-  password: bpb-trojan
-  network: ws
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: randomized
-  alpn:
-  - h3
-  servername: mb.90safe.cn
-  ws-opts:
-    path: /tr?ed=2560
-    headers:
-      Host: mb.90safe.cn
 - name: BPB-jd02.wxl5888.us.kg | IP=130.94.58.215 | PORT=8443
   server: 130.94.58.215
   port: 8443
@@ -84999,6 +84455,550 @@ proxies:
     path: /tr?ed=2560
     headers:
       Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=43.173.1.153 | PORT=8443
+  server: 43.173.1.153
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=5.35.103.185 | PORT=8443
+  server: 5.35.103.185
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=54.229.164.147 | PORT=8443
+  server: 54.229.164.147
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=63.32.194.15 | PORT=8443
+  server: 63.32.194.15
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=64.176.4.154 | PORT=8443
+  server: 64.176.4.154
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=65.2.215.47 | PORT=8443
+  server: 65.2.215.47
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=78.153.131.199 | PORT=8443
+  server: 78.153.131.199
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=81.29.149.219 | PORT=8443
+  server: 81.29.149.219
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=84.208.211.208 | PORT=8443
+  server: 84.208.211.208
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=89.46.42.141 | PORT=8443
+  server: 89.46.42.141
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=91.149.167.147 | PORT=8443
+  server: 91.149.167.147
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=91.231.182.162 | PORT=8443
+  server: 91.231.182.162
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=91.239.6.51 | PORT=8443
+  server: 91.239.6.51
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=92.113.146.87 | PORT=8443
+  server: 92.113.146.87
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=94.156.189.144 | PORT=8443
+  server: 94.156.189.144
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-dongsi.us.kg | IP=95.130.84.36 | PORT=8443
+  server: 95.130.84.36
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: dongsi.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: dongsi.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=130.94.58.215 | PORT=8443
+  server: 130.94.58.215
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=146.235.59.153 | PORT=8443
+  server: 146.235.59.153
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=156.38.157.171 | PORT=8443
+  server: 156.38.157.171
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=173.242.63.235 | PORT=8443
+  server: 173.242.63.235
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=185.105.108.92 | PORT=8443
+  server: 185.105.108.92
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=185.125.171.128 | PORT=8443
+  server: 185.125.171.128
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=185.216.68.218 | PORT=8443
+  server: 185.216.68.218
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=185.86.77.181 | PORT=8443
+  server: 185.86.77.181
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=188.240.213.98 | PORT=8443
+  server: 188.240.213.98
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=193.181.211.119 | PORT=8443
+  server: 193.181.211.119
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=194.55.164.154 | PORT=8443
+  server: 194.55.164.154
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=20.219.46.208 | PORT=8443
+  server: 20.219.46.208
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=213.183.55.153 | PORT=8443
+  server: 213.183.55.153
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=213.255.209.61 | PORT=8443
+  server: 213.255.209.61
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=216.238.79.83 | PORT=8443
+  server: 216.238.79.83
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
+- name: BPB-sun-worker.sunduoke.us.kg | IP=216.238.80.148 | PORT=8443
+  server: 216.238.80.148
+  port: 8443
+  type: trojan
+  password: bpb-trojan
+  network: ws
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: randomized
+  alpn:
+  - h3
+  servername: sun-worker.sunduoke.us.kg
+  ws-opts:
+    path: /tr?ed=2560
+    headers:
+      Host: sun-worker.sunduoke.us.kg
 proxy-groups:
 - name: CF-Nest-Test
   type: select
@@ -89475,38 +89475,6 @@ proxy-groups:
   - BPB-kv.gimbox.us.kg | IP=92.113.146.87 | PORT=8443
   - BPB-kv.gimbox.us.kg | IP=94.156.189.144 | PORT=8443
   - BPB-kv.gimbox.us.kg | IP=95.130.84.36 | PORT=8443
-  - BPB-mb.90safe.cn | IP=130.94.58.215 | PORT=8443
-  - BPB-mb.90safe.cn | IP=146.235.59.153 | PORT=8443
-  - BPB-mb.90safe.cn | IP=156.38.157.171 | PORT=8443
-  - BPB-mb.90safe.cn | IP=173.242.63.235 | PORT=8443
-  - BPB-mb.90safe.cn | IP=185.105.108.92 | PORT=8443
-  - BPB-mb.90safe.cn | IP=185.125.171.128 | PORT=8443
-  - BPB-mb.90safe.cn | IP=185.216.68.218 | PORT=8443
-  - BPB-mb.90safe.cn | IP=185.86.77.181 | PORT=8443
-  - BPB-mb.90safe.cn | IP=188.240.213.98 | PORT=8443
-  - BPB-mb.90safe.cn | IP=193.181.211.119 | PORT=8443
-  - BPB-mb.90safe.cn | IP=194.55.164.154 | PORT=8443
-  - BPB-mb.90safe.cn | IP=20.219.46.208 | PORT=8443
-  - BPB-mb.90safe.cn | IP=213.183.55.153 | PORT=8443
-  - BPB-mb.90safe.cn | IP=213.255.209.61 | PORT=8443
-  - BPB-mb.90safe.cn | IP=216.238.79.83 | PORT=8443
-  - BPB-mb.90safe.cn | IP=216.238.80.148 | PORT=8443
-  - BPB-mb.90safe.cn | IP=43.173.1.153 | PORT=8443
-  - BPB-mb.90safe.cn | IP=5.35.103.185 | PORT=8443
-  - BPB-mb.90safe.cn | IP=54.229.164.147 | PORT=8443
-  - BPB-mb.90safe.cn | IP=63.32.194.15 | PORT=8443
-  - BPB-mb.90safe.cn | IP=64.176.4.154 | PORT=8443
-  - BPB-mb.90safe.cn | IP=65.2.215.47 | PORT=8443
-  - BPB-mb.90safe.cn | IP=78.153.131.199 | PORT=8443
-  - BPB-mb.90safe.cn | IP=81.29.149.219 | PORT=8443
-  - BPB-mb.90safe.cn | IP=84.208.211.208 | PORT=8443
-  - BPB-mb.90safe.cn | IP=89.46.42.141 | PORT=8443
-  - BPB-mb.90safe.cn | IP=91.149.167.147 | PORT=8443
-  - BPB-mb.90safe.cn | IP=91.231.182.162 | PORT=8443
-  - BPB-mb.90safe.cn | IP=91.239.6.51 | PORT=8443
-  - BPB-mb.90safe.cn | IP=92.113.146.87 | PORT=8443
-  - BPB-mb.90safe.cn | IP=94.156.189.144 | PORT=8443
-  - BPB-mb.90safe.cn | IP=95.130.84.36 | PORT=8443
   - BPB-jd02.wxl5888.us.kg | IP=130.94.58.215 | PORT=8443
   - BPB-jd02.wxl5888.us.kg | IP=146.235.59.153 | PORT=8443
   - BPB-jd02.wxl5888.us.kg | IP=156.38.157.171 | PORT=8443
@@ -90003,5 +89971,37 @@ proxy-groups:
   - BPB-dongsi.us.kg | IP=213.255.209.61 | PORT=8443
   - BPB-dongsi.us.kg | IP=216.238.79.83 | PORT=8443
   - BPB-dongsi.us.kg | IP=216.238.80.148 | PORT=8443
+  - BPB-dongsi.us.kg | IP=43.173.1.153 | PORT=8443
+  - BPB-dongsi.us.kg | IP=5.35.103.185 | PORT=8443
+  - BPB-dongsi.us.kg | IP=54.229.164.147 | PORT=8443
+  - BPB-dongsi.us.kg | IP=63.32.194.15 | PORT=8443
+  - BPB-dongsi.us.kg | IP=64.176.4.154 | PORT=8443
+  - BPB-dongsi.us.kg | IP=65.2.215.47 | PORT=8443
+  - BPB-dongsi.us.kg | IP=78.153.131.199 | PORT=8443
+  - BPB-dongsi.us.kg | IP=81.29.149.219 | PORT=8443
+  - BPB-dongsi.us.kg | IP=84.208.211.208 | PORT=8443
+  - BPB-dongsi.us.kg | IP=89.46.42.141 | PORT=8443
+  - BPB-dongsi.us.kg | IP=91.149.167.147 | PORT=8443
+  - BPB-dongsi.us.kg | IP=91.231.182.162 | PORT=8443
+  - BPB-dongsi.us.kg | IP=91.239.6.51 | PORT=8443
+  - BPB-dongsi.us.kg | IP=92.113.146.87 | PORT=8443
+  - BPB-dongsi.us.kg | IP=94.156.189.144 | PORT=8443
+  - BPB-dongsi.us.kg | IP=95.130.84.36 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=130.94.58.215 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=146.235.59.153 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=156.38.157.171 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=173.242.63.235 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=185.105.108.92 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=185.125.171.128 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=185.216.68.218 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=185.86.77.181 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=188.240.213.98 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=193.181.211.119 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=194.55.164.154 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=20.219.46.208 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=213.183.55.153 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=213.255.209.61 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=216.238.79.83 | PORT=8443
+  - BPB-sun-worker.sunduoke.us.kg | IP=216.238.80.148 | PORT=8443
 rules:
 - MATCH,CF-Nest-Test

@@ -4,9 +4,9 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'cf_port_test_generator.py'
+      - 'generator.py'
       - 'gem.yaml'
-      - '.github/workflows/cf_port_test_generator.yml'
+      - '.github/workflows/generator.yml'
   schedule:
     # 北京时间每天早上 8:00（UTC 00:00）
     - cron: '0 0 * * *'
@@ -41,7 +41,7 @@ jobs:
       - name: Run generate.py
         id: generate
         run: |
-          python cf_port_test_generator.py
+          python generator.py
         continue-on-error: false   # 注册失败就让整个任务失败，方便排查
 
       - name: Commit and push if changed

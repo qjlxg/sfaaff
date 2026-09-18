@@ -8,7 +8,7 @@ Cloudflare 优选 IP 套娃生成器（GitHub 用）
 2. 按 uuid + path + host/sni 指纹去重
 3. 拉取优选 IP
 4. 生成两档配置：
-   - probe：每个基础节点 × 前 N 个 IP × 443（给 Colab 探路）
+   - probe：每个基础节点 × 前 N 个 IP × 443（探路）
    - full ：每个基础节点 × 全部 IP × 443（给探路存活后再测）
 
 不做 Mihomo 测活（GitHub 上测不准）。
@@ -327,7 +327,7 @@ def adapt_node(node: dict, server: str, port: int) -> dict:
         new_node["ws-opts"] = clean
 
     base_name = node.get("name") or "node"
-    # 名字里带上指纹信息，方便 Colab 按基础节点做早停
+    # 名字里带上指纹信息，方便按基础节点做早停
     fp_short = node_fingerprint(node)[:48]
     new_node["name"] = f"{base_name} | IP={server} | PORT={port} | FP={fp_short}"
     return new_node
@@ -408,7 +408,7 @@ def main():
     print("\n完成。输出目录：")
     print(f"  探路包: {OUTPUT_DIR}/probe/")
     print(f"  全量包: {OUTPUT_DIR}/full/")
-    print("请把 generated/ 推到仓库，再用 Colab 测活。")
+    print("请把 generated/ 推到仓库，再测活。")
 
 
 if __name__ == "__main__":

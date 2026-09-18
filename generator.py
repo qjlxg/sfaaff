@@ -43,7 +43,7 @@ OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30       # 探路每个节点用前多少个 IP
 TEST_PORTS = [443]
 MAX_NODES_PER_FILE = 15000    # 与原来 generator 一致
-TEST_IP_LIMIT = 15000         # 与原来一致；每个 IP 源上限
+TEST_IP_LIMIT = 5000         # 与原来一致；每个 IP 源上限
 PROGRESS_EVERY = 200
 USER_AGENT = "Mozilla/5.0 (compatible; cf-nest-generator/1.0)"
 

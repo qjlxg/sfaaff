@@ -5,8 +5,8 @@ on:
     branches: [ "main" ]
     paths:
       - 'generator.py'
-      - 'gem.yaml'
-      - '.github/workflows/generator.yml'
+     
+      - '.github/workflows/generate.yml'
   workflow_dispatch:
   # schedule:
   #   - cron: '0 16 * * *'

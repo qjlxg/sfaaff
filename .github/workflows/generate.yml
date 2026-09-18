@@ -1,6 +1,12 @@
 name: generate-nest
 
 on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'generator.py'
+      - 'gem.yaml'
+      - '.github/workflows/generator.yml'
   workflow_dispatch:
   # schedule:
   #   - cron: '0 16 * * *'

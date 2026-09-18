@@ -37,7 +37,7 @@ IP_SOURCES = {
 
 # 模板：优先扫 nodes/ 下所有 .txt；也可指定单个文件
 NODES_DIR = Path("nodes")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/001.txt")  # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
+TEMPLATE_FILE: Optional[Path] = Path("nodes/vmess/001.txt")  # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描  nodes/trojan/001.txt    nodes/vmess/001.txt  nodes/vless/001.txt nodes/vless/002.txt
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30       # 探路每个节点用前多少个 IP

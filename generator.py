@@ -25,7 +25,7 @@ IP_SOURCES = {
     "5plus": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_5plus.txt",
 }
 
-TEMPLATE_FILE = Path("gem.yaml")          # 你的节点模板
+TEMPLATE_FILE = Path("nodes/vmess/001.txt")          # 你的节点模板
 OUTPUT_PREFIX = "cf_nest_"                # 输出文件前缀
 TEST_IP_LIMIT = 5000                       # 每个 IP 源最多取多少个（建议 30~80）
 TEST_PORTS = [8443,]                        # 强烈建议先只测 443，成功率最高

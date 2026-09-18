@@ -2,7 +2,7 @@ import os
 import re
 
 # 路径配置
-SOURCE_FILE = "789565769241/1-gem.yaml.txt"
+SOURCE_FILE = "dd.txt"
 OUTPUT_FILE = "clean_ip_list.txt"
 
 def main():

@@ -40,7 +40,7 @@ NODES_DIR = Path("nodes")
 TEMPLATE_FILE: Optional[Path] = None  # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
 
 OUTPUT_DIR = Path("generated")
-PROBE_IP_COUNT = 100          # 探路每个节点用前多少个 IP
+PROBE_IP_COUNT = 20         # 探路每个节点用前多少个 IP
 TEST_PORTS = [443]
 MAX_NODES_PER_FILE = 5000    # 与原来 generator 一致
 TEST_IP_LIMIT = 5000         # 与原来一致；每个 IP 源上限

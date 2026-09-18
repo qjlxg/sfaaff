@@ -1,0 +1,39 @@
+name: generate-nest
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 16 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deps
+        run: pip install requests pyyaml
+      - name: Generate
+        run: |
+          if [ ! -d nodes ]; then
+            echo "请先放入 nodes/ 目录（collect_nodes 的输出）"
+            exit 0
+          fi
+          python generator.py
+      - name: Commit generated
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated/ || true
+          if git diff --staged --quiet; then
+            echo "无变化"
+          else
+            git commit -m "chore: update generated nest configs"
+            git push
+          fi

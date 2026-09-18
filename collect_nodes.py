@@ -4,7 +4,6 @@
 collect_nodes.py
 多源代理节点订阅聚合脚本（支持明文 / Base64 / Clash YAML）
 按协议分类保存，每 500 节点自动拆分，支持并行、去重、增量跳过
-仅保留适合优选 IP 套娃的 Cloudflare 自建节点（workers.dev / pages.dev / bpb 等）
 """
 
 from __future__ import annotations
@@ -13,13 +12,15 @@ import base64
 import csv
 import hashlib
 import json
+import os
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
-from urllib.parse import unquote, urlparse, parse_qs
+from urllib.parse import unquote, urlparse
 
 import requests
 import yaml
@@ -32,46 +33,19 @@ STATS_CSV = NODES_DIR / "stats.csv"                     # 每次运行统计
 CHANGELOG = NODES_DIR / "changelog.md"                  # 变化记录
 HASH_FILE = NODES_DIR / "source_hashes.json"            # 内容哈希（用于跳过）
 MAX_WORKERS = 12                                        # 并行线程数
-NODES_PER_FILE = 5000                                   # 每个文件最多节点数
+NODES_PER_FILE = 5000                                    # 每个文件最多节点数
 REQUEST_TIMEOUT = 25                                    # 单个源超时秒数
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/120.0.0.0 Safari/537.36"
+    "Chrome/150.0.0.0 Safari/537.36"
 )
 
-# ---------- Cloudflare 自建节点过滤（宽松模式）----------
-# 只保留这些协议
-CF_PROTOCOLS = {"vless", "trojan", "vmess"}
-
-# Cloudflare 常用端口
-CF_PORTS = {
-    80, 443, 2052, 2053, 2082, 2083, 2086, 2087,
-    2095, 2096, 8080, 8443, 8880,
+# 支持的协议前缀（用于最终分类）
+SUPPORTED_PROTOCOLS = {
+    "ss", "ssr", "vmess", "vless", "trojan",
+    "hysteria", "hysteria2", "hy2", "tuic", "wireguard", "wg"
 }
-
-# 域名特征（小写匹配）
-CF_DOMAIN_KEYWORDS = (
-    "workers.dev",
-    "pages.dev",
-)
-
-# 节点名 / 备注 / host / sni 关键词（小写匹配）
-CF_NAME_KEYWORDS = (
-    "bpb",
-    "worker",
-    "workers",
-    "cloudflare",
-    "pages.dev",
-    "workers.dev",
-    "优选",
-    "套娃",
-    "cf-",
-    "cf_",
-    "-cf",
-    "_cf",
-    "vpslook",
-)
 
 # 北京时间
 BEIJING_TZ = timezone(timedelta(hours=8))
@@ -89,6 +63,7 @@ def content_hash(text: str) -> str:
 def safe_b64decode(data: str) -> Optional[str]:
     """尝试 Base64 解码，失败返回 None"""
     data = data.strip().replace("\n", "").replace("\r", "").replace(" ", "")
+    # 补全 padding
     padding = 4 - len(data) % 4
     if padding != 4:
         data += "=" * padding
@@ -131,13 +106,17 @@ def load_subscriptions() -> List[str]:
     return urls
 
 
+
 # ======================== 网络拉取 ========================
 def fetch_url(url: str) -> Tuple[str, Optional[str], Optional[str]]:
-    """返回: (url, content, error)"""
+    """
+    返回: (url, content, error)
+    """
     headers = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     try:
         resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, allow_redirects=True)
         resp.raise_for_status()
+        # 优先尝试 utf-8，失败则用 content 猜测
         try:
             text = resp.content.decode("utf-8")
         except UnicodeDecodeError:
@@ -170,6 +149,7 @@ def parse_clash_yaml(text: str) -> List[str]:
     """解析 Clash / Mihomo YAML，提取 proxies 并尽量转成分享链接"""
     links = []
     try:
+        # 有些文件前面有注释或 BOM
         text = text.lstrip("\ufeff")
         data = yaml.safe_load(text)
         if not isinstance(data, dict):
@@ -200,15 +180,18 @@ def clash_proxy_to_share_link(p: dict) -> Optional[str]:
 
     try:
         if t == "ss":
+            # ss://method:password@server:port#name
             method = p.get("cipher") or p.get("method") or "aes-256-gcm"
             password = p.get("password") or ""
             userinfo = base64.urlsafe_b64encode(f"{method}:{password}".encode()).decode().rstrip("=")
             return f"ss://{userinfo}@{server}:{port}#{name}"
 
         elif t == "ssr":
+            # 简化处理，很多源已不再提供 ssr
             return None
 
         elif t == "vmess":
+            # 构造标准 vmess json 再 base64
             conf = {
                 "v": "2",
                 "ps": name,
@@ -239,8 +222,6 @@ def clash_proxy_to_share_link(p: dict) -> Optional[str]:
                 params.append(f"type={p['network']}")
             if p.get("servername") or p.get("sni"):
                 params.append(f"sni={p.get('servername') or p.get('sni')}")
-            if p.get("host"):
-                params.append(f"host={p['host']}")
             query = "&".join(params)
             return f"vless://{uuid}@{server}:{port}?{query}#{name}"
 
@@ -253,6 +234,7 @@ def clash_proxy_to_share_link(p: dict) -> Optional[str]:
             return f"trojan://{password}@{server}:{port}?{query}#{name}"
 
         elif t in ("hysteria", "hysteria2", "hy2"):
+            # hysteria2://auth@server:port?params#name
             auth = p.get("password") or p.get("auth") or ""
             protocol = "hysteria2" if t != "hysteria" else "hysteria"
             return f"{protocol}://{auth}@{server}:{port}#{name}"
@@ -268,27 +250,39 @@ def clash_proxy_to_share_link(p: dict) -> Optional[str]:
 
 
 def detect_and_parse(content: str) -> List[str]:
-    """自动检测格式并解析出所有分享链接"""
+    """
+    自动检测格式并解析出所有分享链接
+    优先级：
+    1. 直接包含大量分享链接 → 提取
+    2. 看起来是 Base64 → 解码后再提取
+    3. 看起来是 YAML → 按 Clash 解析
+    """
     content = content.strip()
     if not content:
         return []
 
+    # 1. 先直接提取（很多源已经是明文链接列表）
     links = extract_share_links(content)
-    if len(links) >= 3:
+    if len(links) >= 3:          # 有一定数量就认为有效
         return links
 
+    # 2. 尝试 Base64
     decoded = safe_b64decode(content)
     if decoded and is_mostly_printable(decoded):
         links = extract_share_links(decoded)
         if links:
             return links
+        # 解码后可能是 YAML
         if "proxies:" in decoded or "Proxy:" in decoded:
             return parse_clash_yaml(decoded)
 
+    # 3. 直接当 YAML 解析
     if "proxies:" in content or "Proxy:" in content or content.lstrip().startswith("{"):
         return parse_clash_yaml(content)
 
+    # 4. 再试一次 Base64（有些源是双重编码或带换行）
     if not links:
+        # 去掉可能的前缀注释后重试
         pure = re.sub(r"^#.*$", "", content, flags=re.MULTILINE).strip()
         decoded = safe_b64decode(pure)
         if decoded:
@@ -303,7 +297,9 @@ def normalize_link(link: str) -> str:
     """简单规范化，用于去重（去掉 # 后面的备注差异）"""
     link = link.strip()
     if "#" in link:
-        return link.split("#", 1)[0]
+        # 保留协议部分，备注可以不同但内容相同
+        base = link.split("#", 1)[0]
+        return base
     return link
 
 
@@ -318,127 +314,6 @@ def get_protocol(link: str) -> str:
     if proto == "wg":
         return "wireguard"
     return proto
-
-
-# ======================== CF 自建节点过滤 ========================
-def _text_has_cf_keyword(text: str) -> bool:
-    """文本中是否包含 CF 相关关键词"""
-    if not text:
-        return False
-    low = text.lower()
-    for kw in CF_DOMAIN_KEYWORDS:
-        if kw in low:
-            return True
-    for kw in CF_NAME_KEYWORDS:
-        if kw in low:
-            return True
-    return False
-
-
-def _parse_vmess_info(link: str) -> dict:
-    """解析 vmess:// 得到 add/port/ps/host/sni 等"""
-    try:
-        b64 = link.split("://", 1)[1]
-        if "#" in b64:
-            b64 = b64.split("#", 1)[0]
-        raw = safe_b64decode(b64)
-        if not raw:
-            return {}
-        return json.loads(raw)
-    except Exception:
-        return {}
-
-
-def is_cf_style_node(link: str) -> bool:
-    """
-    判断是否为适合优选 IP 套娃的 Cloudflare 自建节点（宽松模式）
-    条件（满足其一即可，同时协议必须是 vless/trojan/vmess）：
-    1. 协议为 vless / trojan / vmess
-    2. 域名含 workers.dev / pages.dev
-       或 节点名/备注/host/sni 含 bpb、worker、cf、cloudflare、pages、优选、套娃 等
-    3. 端口尽量落在 Cloudflare 常用端口（解析不到端口时不卡死）
-    """
-    proto = get_protocol(link)
-    if proto not in CF_PROTOCOLS:
-        return False
-
-    full = link
-    remark = ""
-    host = ""
-    port = None
-    sni_host = ""
-
-    # 提取备注
-    if "#" in link:
-        main, remark = link.split("#", 1)
-        remark = unquote(remark)
-    else:
-        main = link
-
-    # ----- vmess 特殊处理 -----
-    if proto == "vmess":
-        info = _parse_vmess_info(main)
-        host = str(info.get("add") or "")
-        try:
-            port = int(info.get("port") or 0) or None
-        except Exception:
-            port = None
-        remark = remark or str(info.get("ps") or "")
-        sni_host = str(info.get("host") or info.get("sni") or "")
-    else:
-        # vless://uuid@host:port?params#remark
-        # trojan://pass@host:port?params#remark
-        try:
-            # 去掉协议前缀
-            rest = main.split("://", 1)[1]
-            # 用户信息 @ 主机
-            if "@" in rest:
-                rest = rest.split("@", 1)[1]
-            # host:port?query
-            host_port = rest.split("?", 1)[0]
-            if ":" in host_port:
-                host_part, port_part = host_port.rsplit(":", 1)
-                host = host_part
-                try:
-                    port = int(port_part)
-                except Exception:
-                    port = None
-            else:
-                host = host_port
-
-            # 解析 query 里的 host / sni
-            if "?" in rest:
-                qs = rest.split("?", 1)[1]
-                params = parse_qs(qs)
-                for key in ("host", "sni", "servername", "peer"):
-                    if key in params and params[key]:
-                        sni_host = params[key][0]
-                        break
-        except Exception:
-            pass
-
-    # 端口检查：解析到了端口且不在常用列表 → 仍可通过关键词放行，但优先端口匹配
-    port_ok = (port is None) or (port in CF_PORTS)
-
-    # 关键词 / 域名检查
-    domain_ok = _text_has_cf_keyword(host) or _text_has_cf_keyword(sni_host)
-    name_ok = _text_has_cf_keyword(remark) or _text_has_cf_keyword(full)
-
-    # 宽松：域名或名称命中即可；端口作为辅助（不强制）
-    if domain_ok or name_ok:
-        return True
-
-    # 如果只有端口对 + 协议对，但完全没有 CF 特征，则不要（避免普通机场节点）
-    return False
-
-
-def filter_cf_nodes(links: List[str]) -> List[str]:
-    """过滤出 CF 自建风格节点"""
-    kept = []
-    for link in links:
-        if is_cf_style_node(link):
-            kept.append(link)
-    return kept
 
 
 # ======================== 主流程 ========================
@@ -479,12 +354,14 @@ def process_one_source(url: str, prev_hashes: Dict[str, str]) -> dict:
     h = content_hash(content)
     result["hash"] = h
 
+    # 增量跳过
     if prev_hashes.get(url) == h:
         result["skipped"] = True
         result["status"] = "skipped"
         return result
 
     links = detect_and_parse(content)
+    # 去重本源内部
     seen = set()
     unique = []
     for link in links:
@@ -502,12 +379,13 @@ def save_nodes_by_protocol(all_links: List[str]):
     """按协议建子目录 + 每 500 个拆分文件"""
     NODES_DIR.mkdir(parents=True, exist_ok=True)
 
+    # 清空旧的协议子目录（保留 stats / changelog / hash）
     for item in NODES_DIR.iterdir():
         if item.is_dir():
             for f in item.glob("*.txt"):
                 f.unlink()
             try:
-                item.rmdir()
+                item.rmdir()  # 目录空了就删掉
             except OSError:
                 pass
 
@@ -534,6 +412,7 @@ def save_nodes_by_protocol(all_links: List[str]):
             print(f"  → 写入 {proto}/{filename.name}  ({len(chunk)} 个节点)")
 
     print(f"[完成] 共生成 {total_files} 个文件，覆盖 {len(groups)} 种协议")
+
 
 
 def write_stats(results: List[dict]):
@@ -617,6 +496,7 @@ def main():
                         seen_global.add(norm)
                         all_links.append(link)
 
+    # 更新哈希（只记录成功或跳过的）
     new_hashes = dict(prev_hashes)
     for r in results:
         if r["hash"] and r["status"] in ("ok", "skipped"):
@@ -624,12 +504,7 @@ def main():
     save_hashes(new_hashes)
 
     print(f"\n[信息] 全局去重后共 {len(all_links)} 个有效节点")
-
-    # ---------- 过滤 Cloudflare 自建节点 ----------
-    cf_links = filter_cf_nodes(all_links)
-    print(f"[信息] 过滤后保留 CF 自建风格节点：{len(cf_links)} 个")
-
-    save_nodes_by_protocol(cf_links)
+    save_nodes_by_protocol(all_links)
     write_stats(results)
     write_changelog(results, prev_hashes)
 

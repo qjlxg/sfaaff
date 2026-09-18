@@ -18,7 +18,7 @@ import sys
 
 IP_SOURCES = {
      "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
-  # "2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
+   #"2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
     # 后面的源如果 404 会自动跳过
     "3only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_3only.txt",
     "4only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_4only.txt",
@@ -270,12 +270,6 @@ def adapt_node(node: dict, server: str, port: int) -> dict:
                   node.get("ws-opts", {}).get("headers", {}).get("Host"))
         if domain:
             new_node["servername"] = domain
-            
-        # 保留原节点的客户端指纹，防止 TLS 握手时指纹丢失
-        for fp_key in ["client-fingerprint", "fingerprint"]:
-            if fp_key in node:
-                new_node[fp_key] = node[fp_key]
-                break
     else:
         new_node["tls"] = False
         new_node["skip-cert-verify"] = True

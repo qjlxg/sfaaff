@@ -1,1 +1,0 @@
-wireguard://OECgUAYg44DpeKYt0L9rZGelRm5zCkH%2Ff5ea6lSHS3s%3D@[2606:4700:d0:0:6242:953b:b76f:a794]:3854?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A88b7%3A3022%3Af333%3A9119%3A5eb8%2F128&amp;presharedkey=&amp;reserved=147%2C66%2C222&amp;publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&amp;mtu=1420#%40Network_442_%20YouTube

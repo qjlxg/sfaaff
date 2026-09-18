@@ -1,18 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Cloudflare 优选 IP 套娃生成器（GitHub 用）
-
-功能：
-1. 从 nodes/ 或指定模板加载节点
-2. 按 uuid + path + host/sni 指纹去重
-3. 拉取优选 IP
-4. 生成两档配置：
-   - probe：每个基础节点 × 前 N 个 IP × 443（给 Colab 探路）
-   - full ：每个基础节点 × 全部 IP × 443（给探路存活后再测）
-
-不做 Mihomo 测活（GitHub 上测不准）。
-"""
 
 from __future__ import annotations
 
@@ -27,7 +14,6 @@ from urllib.parse import parse_qs, unquote, urlparse
 import requests
 import yaml
 
-# ===================== 配置 =====================
 IP_SOURCES = {
     "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
     "3only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_3only.txt",
@@ -35,19 +21,16 @@ IP_SOURCES = {
     "5plus": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_5plus.txt",
 }
 
-# 模板：优先扫 nodes/ 下所有 .txt；也可指定单个文件
 NODES_DIR = Path("nodes")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/vmess/001.txt")  # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描  nodes/trojan/001.txt    nodes/vmess/001.txt  nodes/vless/001.txt nodes/vless/002.txt
+TEMPLATE_FILE: Optional[Path] = Path("nodes/vmess/002.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描  nodes/trojan/001.txt    nodes/vmess/001.txt  nodes/vless/001.txt nodes/vless/002.txt
 
 OUTPUT_DIR = Path("generated")
-PROBE_IP_COUNT = 30       # 探路每个节点用前多少个 IP
+PROBE_IP_COUNT = 30
 TEST_PORTS = [443]
-MAX_NODES_PER_FILE = 5000    # 与原来 generator 一致
-TEST_IP_LIMIT = 5000         # 与原来一致；每个 IP 源上限
+MAX_NODES_PER_FILE = 5000
+TEST_IP_LIMIT = 5000
 PROGRESS_EVERY = 200
 USER_AGENT = "Mozilla/5.0 (compatible; cf-nest-generator/1.0)"
-
-# ==================================================
 
 
 def fetch_ips(url: str, limit: int = 0) -> List[str]:
@@ -221,7 +204,6 @@ def load_templates() -> List[dict]:
         content = fp.read_text(encoding="utf-8", errors="ignore").strip()
         if not content:
             continue
-        # YAML
         try:
             data = yaml.safe_load(content)
             if isinstance(data, dict) and data.get("proxies"):
@@ -230,7 +212,6 @@ def load_templates() -> List[dict]:
                 continue
         except Exception:
             pass
-        # 明文链接
         n = 0
         for line in content.splitlines():
             p = parse_uri(line.strip())
@@ -240,7 +221,6 @@ def load_templates() -> List[dict]:
         if n:
             print(f"  [链接] {fp}: {n} 个")
             continue
-        # Base64
         clean = re.sub(r"\s+", "", content)
         for pad in ("", "=", "==", "==="):
             try:
@@ -259,7 +239,6 @@ def load_templates() -> List[dict]:
 
 
 def node_fingerprint(node: dict) -> str:
-    """uuid/password + path + host/sni + type → 同一后端去重"""
     t = (node.get("type") or "").lower()
     uid = node.get("uuid") or node.get("password") or ""
     path = ""
@@ -308,8 +287,6 @@ def adapt_node(node: dict, server: str, port: int) -> dict:
             new_node["servername"] = domain
             if new_node.get("type") == "trojan":
                 new_node["sni"] = domain
-        
-        # 完整保留原节点的客户端指纹，防止 TLS 握手时指纹丢失
         for fp_key in ["client-fingerprint", "fingerprint"]:
             if fp_key in node:
                 new_node[fp_key] = node[fp_key]
@@ -333,7 +310,6 @@ def adapt_node(node: dict, server: str, port: int) -> dict:
         new_node["ws-opts"] = clean
 
     base_name = node.get("name") or "node"
-    # 名字里带上指纹信息，方便 Colab 按基础节点做早停
     fp_short = node_fingerprint(node)[:48]
     new_node["name"] = f"{base_name} | IP={server} | PORT={port} | FP={fp_short}"
     return new_node
@@ -356,7 +332,6 @@ def save_yaml(proxies: List[dict], filepath: Path):
 
 
 def generate(mode: str, base_nodes: List[dict], ips: List[str], source_name: str):
-    """mode: probe | full"""
     use_ips = ips[:PROBE_IP_COUNT] if mode == "probe" else ips
     if not use_ips:
         print(f"  [{mode}] 无 IP，跳过")
@@ -391,7 +366,7 @@ def generate(mode: str, base_nodes: List[dict], ips: List[str], source_name: str
 
 def main():
     print("=" * 60)
-    print(" CF 套娃生成器（去重 + 探路/全量，不测活）")
+    print(" （去重 + 探路/全量，不测活）")
     print("=" * 60)
 
     raw = load_templates()
@@ -414,7 +389,7 @@ def main():
     print("\n完成。输出目录：")
     print(f"  探路包: {OUTPUT_DIR}/probe/")
     print(f"  全量包: {OUTPUT_DIR}/full/")
-    print("请把 generated/ 推到仓库，再用 Colab 测活。")
+   
 
 
 if __name__ == "__main__":

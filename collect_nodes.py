@@ -13,8 +13,8 @@ collect_nodes.py
 - 按协议分类，每 NODES_PER_FILE 个拆分
 - 基于核心指纹的全局持久化去重（只判重，不删参数）
 - 完整度过滤（过滤残缺节点和 Reality 节点）
-- 【小改动1】指纹对 uid 做 strip().lower() 提升健壮性
-- 【小改动2】全量目录写入前增加数量暴跌保护
+- 指纹对 uid 做 strip().lower() 提升健壮性
+- 全量目录写入前增加数量暴跌保护
 """
 
 from __future__ import annotations
@@ -43,17 +43,15 @@ UPDATE_DIR = Path("nodes_update")        # 仅本轮有更新的节点
 STATS_CSV = NODES_DIR / "stats.csv"
 CHANGELOG = NODES_DIR / "changelog.md"
 HASH_FILE = NODES_DIR / "source_hashes.json"
-FP_FILE = NODES_DIR / "seen_fingerprints.json"   # 持久化指纹文件
+FP_FILE = NODES_DIR / "seen_fingerprints.json"
 
 MAX_WORKERS = 12
 NODES_PER_FILE = 18000
 REQUEST_TIMEOUT = 25
 
-# Telegram 公开频道 t.me/s/xxx 最多翻几页（1=只第一页）
 TG_MAX_PAGES = 5
 TG_PAGE_DELAY = 0.4
 
-# 正文中的 http(s) 订阅链接是否再抓一层
 ENABLE_SECOND_HOP = True
 SECOND_HOP_MAX = 15
 
@@ -516,7 +514,7 @@ def parse_trojan_uri(uri: str) -> Optional[dict]:
         net = (q.get("type") or ["ws"])[0]
         sni = (q.get("sni") or [""])[0]
         host = (q.get("host") or [""])[0]
-        path = unquote((q.get("path") or ["/?ed=2560"])[0]
+        path = unquote((q.get("path") or ["/?ed=2560"])[0])   # 已修复括号
         fp = (q.get("fp") or ["chrome"])[0]
         tls = security == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
         proxy = {
@@ -555,7 +553,7 @@ def parse_vless_uri(uri: str) -> Optional[dict]:
         security = (q.get("security") or ["tls"])[0]
         sni = (q.get("sni") or [""])[0]
         host = (q.get("host") or [""])[0]
-        path = unquote((q.get("path") or ["/?ed=2560"])[0]
+        path = unquote((q.get("path") or ["/?ed=2560"])[0])   # 已修复括号
         tls = security == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
         proxy = {
             "name": name,
@@ -609,7 +607,6 @@ def node_fingerprint(proxy: dict) -> str:
 
 
 def get_link_fingerprint(link: str) -> str:
-    """从原始 share link 计算指纹。解析失败时用完整 normalize 后的链接兜底，避免误删。"""
     proxy = parse_uri_to_proxy(link)
     if proxy:
         return node_fingerprint(proxy)
@@ -617,14 +614,6 @@ def get_link_fingerprint(link: str) -> str:
 
 
 def is_complete_enough(link: str) -> bool:
-    """
-    完整度过滤：
-    - 必须能成功解析
-    - 必须有 uuid 或 password
-    - 拒绝 Reality 节点（当前 generator 主要面向 WS+TLS）
-    - 拒绝完全没有 path 且没有 host/sni 的残缺节点
-    通过过滤的节点仍然保存完整原始链接，不做任何精简。
-    """
     proxy = parse_uri_to_proxy(link)
     if not proxy:
         return False
@@ -633,12 +622,10 @@ def is_complete_enough(link: str) -> bool:
     if not uid:
         return False
 
-    # 拒绝 Reality
     low = link.lower()
     if "security=reality" in low or "security%3dreality" in low:
         return False
 
-    # 提取 path 和 host
     path = ""
     host = proxy.get("servername") or proxy.get("sni") or ""
     if isinstance(proxy.get("ws-opts"), dict):
@@ -648,7 +635,6 @@ def is_complete_enough(link: str) -> bool:
             host = host or headers.get("Host") or ""
 
     t = (proxy.get("type") or "").lower()
-    # 对 trojan / vless / vmess，如果既没有 path 也没有 host，视为残缺
     if t in ("trojan", "vless", "vmess") and not path and not host:
         return False
 
@@ -816,7 +802,7 @@ def save_nodes_cumulative(update_links: List[str]):
             seen.add(norm)
             merged.append(link)
 
-    # 【小改动2】安全校验：如果合并后数量比历史暴跌超过 30%，则警告并跳过覆盖
+    # 安全校验：合并后数量比历史暴跌超过 30% 则跳过覆盖
     if old and len(merged) < len(old) * 0.7:
         print(f"⚠️ 警告：合并后节点数 {len(merged)} 比历史 {len(old)} 下降超过 30%，跳过覆盖全量目录，防止数据被洗掉。")
         print(f"   本轮更新节点仍会写入 nodes_update/，请检查后再手动处理。")
@@ -872,7 +858,6 @@ def main():
     NODES_DIR.mkdir(parents=True, exist_ok=True)
     UPDATE_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 加载历史指纹
     seen_fps = load_seen_fingerprints()
     print(f"[信息] 已加载历史指纹: {len(seen_fps)} 个")
 
@@ -880,8 +865,8 @@ def main():
     prev_hashes = load_previous_hashes()
     results = []
     all_links: List[str] = []
-    seen_global: Set[str] = set()          # 本轮内完整链接去重
-    new_fps_this_run: Set[str] = set()     # 本轮真正新增的指纹
+    seen_global: Set[str] = set()
+    new_fps_this_run: Set[str] = set()
 
     print(f"[信息] 开始并行拉取（workers={MAX_WORKERS}）...")
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -899,15 +884,13 @@ def main():
                     norm = normalize_link(link)
                     if norm not in seen_global:
                         seen_global.add(norm)
-                        # 完整度过滤 + 指纹判重
                         if not is_complete_enough(link):
                             continue
                         fp = get_link_fingerprint(link)
                         if fp not in seen_fps and fp not in new_fps_this_run:
                             new_fps_this_run.add(fp)
-                            all_links.append(link)   # 保存完整原始链接
+                            all_links.append(link)
 
-    # 更新并保存指纹集合
     if new_fps_this_run:
         seen_fps.update(new_fps_this_run)
         save_seen_fingerprints(seen_fps)

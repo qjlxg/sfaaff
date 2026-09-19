@@ -22,7 +22,7 @@ IP_SOURCES = {
 }
 
 NODES_DIR = Path("nodes_update")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/006.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
+TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/005.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30

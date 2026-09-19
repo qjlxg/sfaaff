@@ -131,3 +131,6 @@ hysteria://@5.83.129.153:20088#德国-004 |594KB/s
 hysteria://@208.87.243.151:38845#美国-061 |4.3MB/s
 hysteria://host:port?protocol=udp&auth=123456&peer=sni.domain&insecure=1&upmbps=100&downmbps=100&alpn=hysteria&obfs=xplus&obfsParam=123456#remarks
 hysteria://5.83.129.153:20088/?insecure=1&peer=apple.com&auth=dongtaiwang.com&upmbps=10&downmbps=50&alpn=h3#德国
+hysteria://5.83.129.90:54177?alpn=h3&auth_str=dongtaiwang.com&downmbps=1000&obfsParam=&protocol=udp&insecure=1&peer=apple.com&sub_tag=C002-260622&upmbps=500&udp=true#%F0%9F%87%A9%F0%9F%87%AADE_29%7C706KB%2Fs%7CC002-260622
+hysteria://5.83.129.153:20088?alpn=h3&auth_str=dongtaiwang.com&downmbps=1000&obfsParam=&protocol=udp&insecure=1&peer=apple.com&sub_tag=C002-260622&upmbps=500&udp=true#%F0%9F%87%A9%F0%9F%87%AADE_68%7C802KB%2Fs%7CC002-260622
+hysteria://5.83.129.153:20088?alpn=h3&amp;auth_str=dongtaiwang.com&amp;downmbps=1000&amp;insecure=1&amp;peer=apple.com&amp;udp=true&amp;upmbps=500#%F0%9F%87%A9%F0%9F%87%AADE_1%7C2.1MB%2Fs%7CGPT%E2%81%BA%7CYT-NL%7CD%2B%7C50%25

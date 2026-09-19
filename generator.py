@@ -379,6 +379,16 @@ def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    # 运行前清空 generated/probe 下所有的文件，以免上次运行的结果混在一起
+    out_probe_dir = OUTPUT_DIR / "probe"
+    if out_probe_dir.exists():
+        for p in out_probe_dir.glob("*"):
+            if p.is_file():
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+
     for name, url in IP_SOURCES.items():
         ips = fetch_ips(url, TEST_IP_LIMIT)
         if not ips:

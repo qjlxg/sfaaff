@@ -12,6 +12,7 @@ collect_nodes.py
 - 本轮更新 → nodes_update/；累计全量 → nodes/
 - 按协议分类，每 NODES_PER_FILE 个拆分
 - 【新增】基于核心指纹的全局持久化去重（只判重，不删参数）
+- 【新增】完整度过滤（过滤残缺节点和 Reality 节点）
 """
 
 from __future__ import annotations
@@ -40,7 +41,7 @@ UPDATE_DIR = Path("nodes_update")        # 仅本轮有更新的节点
 STATS_CSV = NODES_DIR / "stats.csv"
 CHANGELOG = NODES_DIR / "changelog.md"
 HASH_FILE = NODES_DIR / "source_hashes.json"
-FP_FILE = NODES_DIR / "seen_fingerprints.json"   # 【新增】持久化指纹文件
+FP_FILE = NODES_DIR / "seen_fingerprints.json"   # 持久化指纹文件
 
 MAX_WORKERS = 12
 NODES_PER_FILE = 18000
@@ -54,7 +55,11 @@ TG_PAGE_DELAY = 0.4
 ENABLE_SECOND_HOP = True
 SECOND_HOP_MAX = 15
 
-USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" )
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/153.0.0.0 Safari/537.36"
+)
 
 BEIJING_TZ = timezone(timedelta(hours=8))
 
@@ -460,7 +465,7 @@ def get_protocol(link: str) -> str:
     return proto
 
 
-# ======================== 【新增】指纹相关（只用于判重，不删数据） ========================
+# ======================== 指纹 + 完整度过滤 ========================
 def parse_vmess_uri(uri: str) -> Optional[dict]:
     try:
         b64 = uri[8:].split("#")[0]
@@ -606,8 +611,46 @@ def get_link_fingerprint(link: str) -> str:
     proxy = parse_uri_to_proxy(link)
     if proxy:
         return node_fingerprint(proxy)
-    # 解析失败的节点，用完整链接（去名字）作为指纹，保证不丢数据
     return "raw|" + normalize_link(link)
+
+
+def is_complete_enough(link: str) -> bool:
+    """
+    完整度过滤：
+    - 必须能成功解析
+    - 必须有 uuid 或 password
+    - 拒绝 Reality 节点（当前 generator 主要面向 WS+TLS）
+    - 拒绝完全没有 path 且没有 host/sni 的残缺节点
+    通过过滤的节点仍然保存完整原始链接，不做任何精简。
+    """
+    proxy = parse_uri_to_proxy(link)
+    if not proxy:
+        return False
+
+    uid = proxy.get("uuid") or proxy.get("password") or ""
+    if not uid:
+        return False
+
+    # 拒绝 Reality
+    low = link.lower()
+    if "security=reality" in low or "security%3dreality" in low:
+        return False
+
+    # 提取 path 和 host
+    path = ""
+    host = proxy.get("servername") or proxy.get("sni") or ""
+    if isinstance(proxy.get("ws-opts"), dict):
+        path = proxy["ws-opts"].get("path") or ""
+        headers = proxy["ws-opts"].get("headers") or {}
+        if isinstance(headers, dict):
+            host = host or headers.get("Host") or ""
+
+    t = (proxy.get("type") or "").lower()
+    # 对 trojan / vless / vmess，如果既没有 path 也没有 host，视为残缺
+    if t in ("trojan", "vless", "vmess") and not path and not host:
+        return False
+
+    return True
 
 
 def load_seen_fingerprints() -> Set[str]:
@@ -628,7 +671,7 @@ def save_seen_fingerprints(fps: Set[str]):
         json.dump(sorted(list(fps)), f, ensure_ascii=False, indent=2)
 
 
-# ======================== 原有逻辑（几乎不动） ========================
+# ======================== 原有逻辑 ========================
 def load_previous_hashes() -> Dict[str, str]:
     if HASH_FILE.exists():
         try:
@@ -820,7 +863,7 @@ def main():
     NODES_DIR.mkdir(parents=True, exist_ok=True)
     UPDATE_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 【新增】加载历史指纹
+    # 加载历史指纹
     seen_fps = load_seen_fingerprints()
     print(f"[信息] 已加载历史指纹: {len(seen_fps)} 个")
 
@@ -847,13 +890,15 @@ def main():
                     norm = normalize_link(link)
                     if norm not in seen_global:
                         seen_global.add(norm)
-                        # 【新增】指纹判重：只保留真正新服务器的完整原始链接
+                        # 完整度过滤 + 指纹判重
+                        if not is_complete_enough(link):
+                            continue
                         fp = get_link_fingerprint(link)
                         if fp not in seen_fps and fp not in new_fps_this_run:
                             new_fps_this_run.add(fp)
-                            all_links.append(link)   # 保存完整原始链接，不做任何精简
+                            all_links.append(link)   # 保存完整原始链接
 
-    # 【新增】更新并保存指纹集合
+    # 更新并保存指纹集合
     if new_fps_this_run:
         seen_fps.update(new_fps_this_run)
         save_seen_fingerprints(seen_fps)
@@ -867,7 +912,7 @@ def main():
             new_hashes[r["url"]] = r["hash"]
     save_hashes(new_hashes)
 
-    print(f"\n[信息] 本轮真正新节点（指纹去重后）: {len(all_links)} 个")
+    print(f"\n[信息] 本轮真正新节点（完整度过滤 + 指纹去重后）: {len(all_links)} 个")
     save_nodes_update_only(all_links)
     save_nodes_cumulative(all_links)
     write_stats(results)

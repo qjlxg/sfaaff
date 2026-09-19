@@ -11,8 +11,10 @@ collect_nodes.py
 - 可选：正文里的 http(s) 订阅链接再展开一层
 - 本轮更新 → nodes_update/；累计全量 → nodes/
 - 按协议分类，每 NODES_PER_FILE 个拆分
-- 【新增】基于核心指纹的全局持久化去重（只判重，不删参数）
-- 【新增】完整度过滤（过滤残缺节点和 Reality 节点）
+- 基于核心指纹的全局持久化去重（只判重，不删参数）
+- 完整度过滤（过滤残缺节点和 Reality 节点）
+- 【小改动1】指纹对 uid 做 strip().lower() 提升健壮性
+- 【小改动2】全量目录写入前增加数量暴跌保护
 """
 
 from __future__ import annotations
@@ -514,7 +516,7 @@ def parse_trojan_uri(uri: str) -> Optional[dict]:
         net = (q.get("type") or ["ws"])[0]
         sni = (q.get("sni") or [""])[0]
         host = (q.get("host") or [""])[0]
-        path = unquote((q.get("path") or ["/?ed=2560"])[0])
+        path = unquote((q.get("path") or ["/?ed=2560"])[0]
         fp = (q.get("fp") or ["chrome"])[0]
         tls = security == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
         proxy = {
@@ -553,7 +555,7 @@ def parse_vless_uri(uri: str) -> Optional[dict]:
         security = (q.get("security") or ["tls"])[0]
         sni = (q.get("sni") or [""])[0]
         host = (q.get("host") or [""])[0]
-        path = unquote((q.get("path") or ["/?ed=2560"])[0])
+        path = unquote((q.get("path") or ["/?ed=2560"])[0]
         tls = security == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
         proxy = {
             "name": name,
@@ -592,9 +594,9 @@ def parse_uri_to_proxy(uri: str) -> Optional[dict]:
 
 
 def node_fingerprint(proxy: dict) -> str:
-    """核心指纹：只用于判重，不用于精简数据"""
+    """核心指纹：只用于判重，不用于精简数据（已对 uid 做 strip().lower()）"""
     t = (proxy.get("type") or "").lower()
-    uid = proxy.get("uuid") or proxy.get("password") or ""
+    uid = (proxy.get("uuid") or proxy.get("password") or "").strip().lower()
     path = ""
     host = ""
     if isinstance(proxy.get("ws-opts"), dict):
@@ -813,6 +815,13 @@ def save_nodes_cumulative(update_links: List[str]):
         if norm not in seen:
             seen.add(norm)
             merged.append(link)
+
+    # 【小改动2】安全校验：如果合并后数量比历史暴跌超过 30%，则警告并跳过覆盖
+    if old and len(merged) < len(old) * 0.7:
+        print(f"⚠️ 警告：合并后节点数 {len(merged)} 比历史 {len(old)} 下降超过 30%，跳过覆盖全量目录，防止数据被洗掉。")
+        print(f"   本轮更新节点仍会写入 nodes_update/，请检查后再手动处理。")
+        return
+
     print(f"\n[信息] 写入累计全量 → {NODES_DIR}/ （旧 {len(old)} + 本轮 {len(update_links)} → 合并后 {len(merged)}）")
     _clear_protocol_dirs(NODES_DIR)
     n = _write_links_by_protocol(NODES_DIR, merged, "全量")

@@ -33,7 +33,7 @@ STATS_CSV = NODES_DIR / "stats.csv"                     # 每次运行统计
 CHANGELOG = NODES_DIR / "changelog.md"                  # 变化记录
 HASH_FILE = NODES_DIR / "source_hashes.json"            # 内容哈希（用于跳过）
 MAX_WORKERS = 12                                        # 并行线程数
-NODES_PER_FILE = 95000                                    # 每个文件最多节点数
+NODES_PER_FILE = 18000                                    # 每个文件最多节点数
 REQUEST_TIMEOUT = 25                                    # 单个源超时秒数
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

@@ -1,19 +1,10 @@
 name: Delete Old Workflow Runs
+
 on:
   workflow_dispatch:
-
   schedule:
-    - cron: '0 */3 * * *'
-    
-    #inputs:
-    #  days:
-    #    description: 'Number of days.'
-    #    required: true
-    #    default: 0
-    #  minimum_runs:
-    #    description: 'The minimum runs to keep for each workflow.'
-    #    required: true
-    #    default: 3
+    - cron: '0 0 * * *'  # 每天午夜执行一次，避免过于频繁
+
 jobs:
   del_runs:
     name: Delete old runs
@@ -24,5 +15,6 @@ jobs:
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          retain_days: 0
-          keep_minimum_runs: 0
+          retain_days: 3          # 保留最近3天的记录
+          keep_minimum_runs: 2    # 每个 workflow 至少保留2个运行实例
+          # target_workflow_id: "your-workflow-filename.yml" # 可选：指定只清理某个特定的 workflow

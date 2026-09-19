@@ -1,5 +1,5 @@
 proxies:
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -15,7 +15,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -31,7 +31,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -47,7 +47,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -63,7 +63,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -79,7 +79,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -95,7 +95,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -111,7 +111,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -127,7 +127,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -143,7 +143,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -159,7 +159,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -175,7 +175,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -191,7 +191,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -207,7 +207,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -223,7 +223,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-SG @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-SG @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -239,7 +239,7 @@ proxies:
     headers:
       Host: cfsg.ogairy.cn
   servername: cfsg.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -255,7 +255,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -271,7 +271,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -287,7 +287,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -303,7 +303,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -319,7 +319,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -335,7 +335,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -351,7 +351,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -367,7 +367,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -383,7 +383,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -399,7 +399,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -415,7 +415,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -431,7 +431,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -447,7 +447,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -463,7 +463,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-US @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-US @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -479,7 +479,7 @@ proxies:
     headers:
       Host: cfus.ogairy.cn
   servername: cfus.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -495,7 +495,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -511,7 +511,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -527,7 +527,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -543,7 +543,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -559,7 +559,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -575,7 +575,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -591,7 +591,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -607,7 +607,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -623,7 +623,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -639,7 +639,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -655,7 +655,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -671,7 +671,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -687,7 +687,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -703,7 +703,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-IN @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-IN @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -719,7 +719,7 @@ proxies:
     headers:
       Host: cfin.ogairy.cn
   servername: cfin.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -735,7 +735,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -751,7 +751,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -767,7 +767,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -783,7 +783,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -799,7 +799,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -815,7 +815,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -831,7 +831,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -847,7 +847,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -863,7 +863,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -879,7 +879,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -895,7 +895,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -911,7 +911,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -927,7 +927,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -943,7 +943,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-BR @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-BR @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -959,7 +959,7 @@ proxies:
     headers:
       Host: cfbr.ogairy.cn
   servername: cfbr.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -975,7 +975,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -991,7 +991,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -1007,7 +1007,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -1023,7 +1023,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -1039,7 +1039,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -1055,7 +1055,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -1071,7 +1071,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -1087,7 +1087,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -1103,7 +1103,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -1119,7 +1119,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -1135,7 +1135,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -1151,7 +1151,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -1167,7 +1167,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -1183,7 +1183,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 旺仔免费-AU @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
+- name: 旺仔免费-AU @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -1199,7 +1199,7 @@ proxies:
     headers:
       Host: cfau.ogairy.cn
   servername: cfau.ogairy.cn
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -1215,7 +1215,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -1231,7 +1231,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -1247,7 +1247,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -1263,7 +1263,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -1279,7 +1279,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -1295,7 +1295,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -1311,7 +1311,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -1327,7 +1327,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -1343,7 +1343,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -1359,7 +1359,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -1375,7 +1375,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -1391,7 +1391,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -1407,7 +1407,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -1423,7 +1423,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
+- name: 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -1439,7 +1439,7 @@ proxies:
     headers:
       Host: de2.ping-game.ir
   servername: de2.ping-game.ir
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.0.245
   port: 443
   type: vmess
@@ -1451,7 +1451,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.16.145
   port: 443
   type: vmess
@@ -1463,7 +1463,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.19.200
   port: 443
   type: vmess
@@ -1475,7 +1475,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.31.241
   port: 443
   type: vmess
@@ -1487,7 +1487,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.34.253
   port: 443
   type: vmess
@@ -1499,7 +1499,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.40.179
   port: 443
   type: vmess
@@ -1511,7 +1511,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.50.106
   port: 443
   type: vmess
@@ -1523,7 +1523,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.61.24
   port: 443
   type: vmess
@@ -1535,7 +1535,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.66.17
   port: 443
   type: vmess
@@ -1547,7 +1547,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.66.54
   port: 443
   type: vmess
@@ -1559,7 +1559,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.7.70
   port: 443
   type: vmess
@@ -1571,7 +1571,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 104.21.76.103
   port: 443
   type: vmess
@@ -1583,7 +1583,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 130.94.58.215
   port: 443
   type: vmess
@@ -1595,7 +1595,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 141.105.130.102
   port: 443
   type: vmess
@@ -1607,7 +1607,7 @@ proxies:
   skip-cert-verify: true
   network: http
   servername: 62.3.12.140
-- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+- name: 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
   server: 172.64.156.156
   port: 443
   type: vmess
@@ -1623,110 +1623,110 @@ proxy-groups:
 - name: CF-Nest
   type: select
   proxies:
-  - 旺仔免费-SG @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-SG @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-US @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-IN @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-BR @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 旺仔免费-AU @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioeb'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
-  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3'
+  - 旺仔免费-SG @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-SG @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfsg.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-US @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfus.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-IN @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfin.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-BR @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfbr.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.0.245 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.16.145 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.19.200 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.31.241 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.34.253 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.40.179 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.50.106 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.61.24 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.66.17 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.66.54 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.7.70 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=104.21.76.103 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=130.94.58.215 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=141.105.130.102 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 旺仔免费-AU @wz9527888 | IP=172.64.156.156 | PORT=443 | FP=vmess+44f1c590-71d6-4c15-af6c-9fc424890ce6+/?ed=2048+cfau.ogairy.cn
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇩🇪 Germany 14 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+58fe1542-5290-40ad-815a-77707a81afe5+/ioebhlmhl1ctbfhbl95myfrx2+de2.ping-game.ir'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.0.245 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.16.145 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.19.200 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.31.241 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.34.253 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.40.179 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.50.106 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.61.24 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.17 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.66.54 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.7.70 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=104.21.76.103 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=130.94.58.215 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=141.105.130.102 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
+  - 'B - 🇲🇩 Moldova 01 TG: @nodpai | IP=172.64.156.156 | PORT=443 | FP=vmess+90a7a201-de71-4696-be44-f2c04aa36348++62.3.12.140'
 rules:
 - MATCH,CF-Nest

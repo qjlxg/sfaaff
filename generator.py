@@ -22,7 +22,7 @@ IP_SOURCES = {
 }
 
 NODES_DIR = Path("nodes_update")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/003.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描  nodes/trojan/001.txt    nodes/vmess/001.txt  nodes/vless/001.txt nodes/vless/002.txt
+TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/003.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30
@@ -331,17 +331,17 @@ def save_yaml(proxies: List[dict], filepath: Path):
     print(f"  → 保存 {filepath.name}（{len(proxies)} 个）")
 
 
-def generate(mode: str, base_nodes: List[dict], ips: List[str], source_name: str):
-    use_ips = ips[:PROBE_IP_COUNT] if mode == "probe" else ips
+def generate_probe(base_nodes: List[dict], ips: List[str], source_name: str):
+    use_ips = ips[:PROBE_IP_COUNT]
     if not use_ips:
-        print(f"  [{mode}] 无 IP，跳过")
+        print(f"  [probe] 无 IP，跳过")
         return
 
-    print(f"\n[{mode}] 源={source_name} 基础节点={len(base_nodes)} IP={len(use_ips)} 端口={TEST_PORTS}")
+    print(f"\n[probe] 源={source_name} 基础节点={len(base_nodes)} 探路IP={len(use_ips)} 端口={TEST_PORTS}")
     batch: List[dict] = []
     file_idx = 1
     total = 0
-    out_dir = OUTPUT_DIR / mode
+    out_dir = OUTPUT_DIR / "probe"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     for base in base_nodes:
@@ -352,21 +352,21 @@ def generate(mode: str, base_nodes: List[dict], ips: List[str], source_name: str
                 if total % PROGRESS_EVERY == 0:
                     print(f"  已生成 {total} ...")
                 if len(batch) >= MAX_NODES_PER_FILE:
-                    path = out_dir / f"cf_nest_{source_name}_{mode}_{file_idx:02d}.yaml"
+                    path = out_dir / f"cf_nest_{source_name}_probe_{file_idx:02d}.yaml"
                     save_yaml(batch, path)
                     batch = []
                     file_idx += 1
 
     if batch:
-        path = out_dir / f"cf_nest_{source_name}_{mode}_{file_idx:02d}.yaml"
+        path = out_dir / f"cf_nest_{source_name}_probe_{file_idx:02d}.yaml"
         save_yaml(batch, path)
 
-    print(f"  [{mode}/{source_name}] 合计 {total} 个节点")
+    print(f"  [probe/{source_name}] 合计 {total} 个节点")
 
 
 def main():
     print("=" * 60)
-    print(" （去重 + 探路/全量，不测活）")
+    print(" 节点去重 + 仅生成探路包（已精简）")
     print("=" * 60)
 
     raw = load_templates()
@@ -383,13 +383,11 @@ def main():
         ips = fetch_ips(url, TEST_IP_LIMIT)
         if not ips:
             continue
-        generate("probe", base_nodes, ips, name)
-        generate("full", base_nodes, ips, name)
+        # 仅生成探路包，剔除全量包
+        generate_probe(base_nodes, ips, name)
 
     print("\n完成。输出目录：")
     print(f"  探路包: {OUTPUT_DIR}/probe/")
-    print(f"  全量包: {OUTPUT_DIR}/full/")
-   
 
 
 if __name__ == "__main__":

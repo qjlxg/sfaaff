@@ -249,7 +249,7 @@ def node_fingerprint(node: dict) -> str:
         if isinstance(headers, dict):
             host = headers.get("Host") or ""
     host = host or node.get("servername") or node.get("sni") or ""
-    # 关键修改：用 + 代替 |，避免被 Colab 正则截断
+    # 用 + 代替 |，避免被 Colab 正则截断
     return f"{t}+{uid}+{path}+{host}".lower()
 
 
@@ -311,7 +311,8 @@ def adapt_node(node: dict, server: str, port: int) -> dict:
         new_node["ws-opts"] = clean
 
     base_name = node.get("name") or "node"
-    fp_short = node_fingerprint(node)[:48]
+    # 只改这一处：不再截断指纹，完整保留
+    fp_short = node_fingerprint(node)
     new_node["name"] = f"{base_name} | IP={server} | PORT={port} | FP={fp_short}"
     return new_node
 

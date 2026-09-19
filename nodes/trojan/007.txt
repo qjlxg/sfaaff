@@ -1,0 +1,1 @@
+trojan://bpb-trojan@104.21.31.241:443?security=tls&sni=hu1.pages.dev&allowInsecure=1&fp=randomized&type=ws&path=/tr?ed%3D2560&host=hu1.pages.dev#BPB-hu1.pages.dev%20%7C%20IP=104.21.31.241%20%7C%20PORT=443%20%7C%20FP=trojan%7Cbpb-trojan%7C/tr?ed=2560%7Chu1.pages.dev

@@ -22,7 +22,7 @@ IP_SOURCES = {
 }
 
 NODES_DIR = Path("nodes_update")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/004.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
+TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/007.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30
@@ -30,7 +30,7 @@ TEST_PORTS = [443]
 MAX_NODES_PER_FILE = 5000
 TEST_IP_LIMIT = 5000
 PROGRESS_EVERY = 200
-USER_AGENT = "Mozilla/5.0 (compatible; cf-nest-generator/1.0)"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
 
 
 def fetch_ips(url: str, limit: int = 0) -> List[str]:

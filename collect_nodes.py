@@ -3,7 +3,14 @@
 """
 collect_nodes.py
 多源代理节点订阅聚合脚本（支持明文 / Base64 / Clash YAML）
-按协议分类保存，每 500 节点自动拆分，支持并行、去重、增量跳过
+
+功能：
+- 并行拉取、内容哈希增量跳过
+- t.me/s/ 频道最多翻 N 页
+- GitHub 仓库链接自动尝试 raw README.md
+- 可选：正文里的 http(s) 订阅链接再展开一层
+- 本轮更新 → nodes_update/；累计全量 → nodes/
+- 按协议分类，每 NODES_PER_FILE 个拆分
 """
 
 from __future__ import annotations
@@ -12,7 +19,6 @@ import base64
 import csv
 import hashlib
 import json
-import os
 import re
 import sys
 import time
@@ -20,37 +26,66 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
-from urllib.parse import unquote, urlparse
+from urllib.parse import urlparse
 
 import requests
 import yaml
 
 # ======================== 配置区域 ========================
-# 远程订阅源列表（一行一个 URL）
 SOURCES_URL = "https://raw.githubusercontent.com/qjlxg/results/refs/heads/main/sources.txt"
-NODES_DIR = Path("nodes")                               # 所有生成文件放这里
-STATS_CSV = NODES_DIR / "stats.csv"                     # 每次运行统计
-CHANGELOG = NODES_DIR / "changelog.md"                  # 变化记录
-HASH_FILE = NODES_DIR / "source_hashes.json"            # 内容哈希（用于跳过）
-MAX_WORKERS = 12                                        # 并行线程数
-NODES_PER_FILE = 18000                                    # 每个文件最多节点数
-REQUEST_TIMEOUT = 25                                    # 单个源超时秒数
+
+NODES_DIR = Path("nodes")                 # 累计全量
+UPDATE_DIR = Path("nodes_update")        # 仅本轮有更新的节点
+STATS_CSV = NODES_DIR / "stats.csv"
+CHANGELOG = NODES_DIR / "changelog.md"
+HASH_FILE = NODES_DIR / "source_hashes.json"
+
+MAX_WORKERS = 12
+NODES_PER_FILE = 18000
+REQUEST_TIMEOUT = 25
+
+# Telegram 公开频道 t.me/s/xxx 最多翻几页（1=只第一页）
+TG_MAX_PAGES = 5
+TG_PAGE_DELAY = 0.4
+
+# 正文中的 http(s) 订阅链接是否再抓一层
+ENABLE_SECOND_HOP = True
+SECOND_HOP_MAX = 15
+
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/150.0.0.0 Safari/537.36"
 )
 
-# 支持的协议前缀（用于最终分类）
-SUPPORTED_PROTOCOLS = {
-    "vm", "vl", "tr",
-}
-
-# 北京时间
 BEIJING_TZ = timezone(timedelta(hours=8))
 
+SECOND_HOP_SKIP_KEYWORDS = (
+    "img.shields.io",
+    "shields.io",
+    "github.com/stars",
+    "github.com/stargazers",
+    "github.com/blob/",
+    "/LICENSE",
+    "play.google.com",
+    "apps.apple.com",
+    "badge",
+    ".png",
+    ".jpg",
+    ".svg",
+    ".gif",
+    ".webp",
+    "buymeacoffee",
+    "paypal.com",
+    "twitter.com",
+    "x.com/",
+    "facebook.com",
+    "instagram.com",
+    "youtube.com",
+    "my.telegram.org",
+)
 
-# ======================== 工具函数 ========================
+# ======================== 工具 ========================
 def now_beijing() -> str:
     return datetime.now(BEIJING_TZ).strftime("%Y-%m-%d %H:%M:%S")
 
@@ -60,9 +95,7 @@ def content_hash(text: str) -> str:
 
 
 def safe_b64decode(data: str) -> Optional[str]:
-    """尝试 Base64 解码，失败返回 None"""
     data = data.strip().replace("\n", "").replace("\r", "").replace(" ", "")
-    # 补全 padding
     padding = 4 - len(data) % 4
     if padding != 4:
         data += "=" * padding
@@ -80,9 +113,7 @@ def is_mostly_printable(text: str) -> bool:
     return printable / len(text) > 0.85
 
 
-# ======================== 订阅源读取 ========================
 def load_subscriptions() -> List[str]:
-    """从远程 sources.txt 拉取订阅源列表"""
     print(f"[信息] 正在获取远程订阅源列表: {SOURCES_URL}")
     try:
         resp = requests.get(
@@ -97,25 +128,56 @@ def load_subscriptions() -> List[str]:
         sys.exit(1)
 
     urls = []
+    seen = set()
     for line in text.splitlines():
         line = line.strip()
-        if line and not line.startswith("#"):
-            urls.append(line)
+        if not line or line.startswith("#"):
+            continue
+        if line in seen:
+            continue
+        seen.add(line)
+        urls.append(line)
     print(f"[信息] 共加载 {len(urls)} 个订阅源")
     return urls
 
 
+def is_telegram_s(url: str) -> bool:
+    try:
+        p = urlparse(url)
+        return p.netloc.lower() in ("t.me", "www.t.me") and p.path.startswith("/s/")
+    except Exception:
+        return False
 
-# ======================== 网络拉取 ========================
+
+def is_github_repo_home(url: str) -> bool:
+    try:
+        p = urlparse(url)
+        if p.netloc.lower() not in ("github.com", "www.github.com"):
+            return False
+        parts = [x for x in p.path.strip("/").split("/") if x]
+        return len(parts) == 2
+    except Exception:
+        return False
+
+
+def github_raw_readme_candidates(url: str) -> List[str]:
+    p = urlparse(url)
+    parts = [x for x in p.path.strip("/").split("/") if x]
+    if len(parts) < 2:
+        return []
+    owner, repo = parts[0], parts[1].removesuffix(".git")
+    out = []
+    for branch in ("main", "master"):
+        for name in ("README.md", "readme.md", "README.MD"):
+            out.append(f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{name}")
+    return out
+
+
 def fetch_url(url: str) -> Tuple[str, Optional[str], Optional[str]]:
-    """
-    返回: (url, content, error)
-    """
     headers = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     try:
         resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, allow_redirects=True)
         resp.raise_for_status()
-        # 优先尝试 utf-8，失败则用 content 猜测
         try:
             text = resp.content.decode("utf-8")
         except UnicodeDecodeError:
@@ -125,7 +187,69 @@ def fetch_url(url: str) -> Tuple[str, Optional[str], Optional[str]]:
         return url, None, str(e)
 
 
-# ======================== 节点提取核心 ========================
+def fetch_telegram_pages(url: str, max_pages: int = TG_MAX_PAGES) -> Tuple[str, Optional[str], Optional[str]]:
+    headers = {"User-Agent": USER_AGENT, "Accept": "text/html"}
+    all_html: List[str] = []
+    current = url.split("?")[0].rstrip("/")
+    seen_before: Set[str] = set()
+
+    try:
+        for page in range(max_pages):
+            resp = requests.get(current, headers=headers, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+            resp.raise_for_status()
+            html = resp.content.decode("utf-8", errors="ignore")
+            all_html.append(html)
+
+            if page >= max_pages - 1:
+                break
+
+            befores = re.findall(
+                r'(?:href|data-before)=["\']?(?:https://t\.me/s/[^"\']*\?before=)?(\d+)',
+                html,
+                flags=re.I,
+            )
+            next_before = None
+            for b in befores:
+                if b not in seen_before:
+                    next_before = b
+                    break
+            if not next_before:
+                ids = re.findall(r'data-post="[^"]+/(\d+)"', html)
+                if ids:
+                    try:
+                        next_before = str(min(int(x) for x in ids))
+                    except ValueError:
+                        next_before = None
+            if not next_before or next_before in seen_before:
+                break
+            seen_before.add(next_before)
+            base = url.split("?")[0].rstrip("/")
+            current = f"{base}?before={next_before}"
+            time.sleep(TG_PAGE_DELAY)
+
+        return url, "\n".join(all_html), None
+    except Exception as e:
+        if all_html:
+            return url, "\n".join(all_html), None
+        return url, None, str(e)
+
+
+def fetch_github_readme(url: str) -> Tuple[str, Optional[str], Optional[str]]:
+    for raw in github_raw_readme_candidates(url):
+        _, text, err = fetch_url(raw)
+        if text and not err and len(text.strip()) > 20:
+            return url, text, None
+    return fetch_url(url)
+
+
+def fetch_source_content(url: str) -> Tuple[str, Optional[str], Optional[str]]:
+    if is_telegram_s(url):
+        return fetch_telegram_pages(url, TG_MAX_PAGES)
+    if is_github_repo_home(url):
+        return fetch_github_readme(url)
+    return fetch_url(url)
+
+
 SHARE_LINK_PATTERN = re.compile(
     r"(?:^|[\s\"'<>])("
     r"(?:ss|ssr|vmess|vless|trojan|hysteria2?|hy2|tuic|wireguard|wg)://[^\s\"'<>]+"
@@ -133,9 +257,10 @@ SHARE_LINK_PATTERN = re.compile(
     re.IGNORECASE | re.MULTILINE,
 )
 
+HTTP_URL_PATTERN = re.compile(r"https?://[^\s\"'<>\]\)]+", re.IGNORECASE)
+
 
 def extract_share_links(text: str) -> List[str]:
-    """从任意文本中提取所有分享链接"""
     links = []
     for m in SHARE_LINK_PATTERN.finditer(text):
         link = m.group(1).rstrip(".,;)]}>'\"")
@@ -144,11 +269,37 @@ def extract_share_links(text: str) -> List[str]:
     return links
 
 
+def extract_http_urls(text: str) -> List[str]:
+    return [m.group(0).rstrip(".,;)]}>'\"") for m in HTTP_URL_PATTERN.finditer(text)]
+
+
+def should_skip_second_hop(url: str) -> bool:
+    low = url.lower()
+    for kw in SECOND_HOP_SKIP_KEYWORDS:
+        if kw.lower() in low:
+            return True
+    if "github.com/" in low and "raw.githubusercontent.com" not in low:
+        if "/blob/" in low:
+            return False
+        return True
+    return False
+
+
+def blob_to_raw(url: str) -> Optional[str]:
+    m = re.match(
+        r"https?://(?:www\.)?github\.com/([^/]+)/([^/]+)/blob/([^/]+)/(.+)",
+        url,
+        re.I,
+    )
+    if not m:
+        return None
+    owner, repo, branch, path = m.groups()
+    return f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}"
+
+
 def parse_clash_yaml(text: str) -> List[str]:
-    """解析 Clash / Mihomo YAML，提取 proxies 并尽量转成分享链接"""
     links = []
     try:
-        # 有些文件前面有注释或 BOM
         text = text.lstrip("\ufeff")
         data = yaml.safe_load(text)
         if not isinstance(data, dict):
@@ -156,7 +307,6 @@ def parse_clash_yaml(text: str) -> List[str]:
         proxies = data.get("proxies") or data.get("Proxy") or []
         if not isinstance(proxies, list):
             return links
-
         for p in proxies:
             if not isinstance(p, dict):
                 continue
@@ -169,28 +319,21 @@ def parse_clash_yaml(text: str) -> List[str]:
 
 
 def clash_proxy_to_share_link(p: dict) -> Optional[str]:
-    """把 Clash 节点字典尽量转成标准分享链接（简化版，覆盖主流）"""
     t = (p.get("type") or "").lower()
     name = p.get("name") or "node"
     server = p.get("server") or p.get("servername") or ""
     port = p.get("port")
     if not server or not port:
         return None
-
     try:
         if t == "ss":
-            # ss://method:password@server:port#name
             method = p.get("cipher") or p.get("method") or "aes-256-gcm"
             password = p.get("password") or ""
             userinfo = base64.urlsafe_b64encode(f"{method}:{password}".encode()).decode().rstrip("=")
             return f"ss://{userinfo}@{server}:{port}#{name}"
-
-        elif t == "ssr":
-            # 简化处理，很多源已不再提供 ssr
+        if t == "ssr":
             return None
-
-        elif t == "vmess":
-            # 构造标准 vmess json 再 base64
+        if t == "vmess":
             conf = {
                 "v": "2",
                 "ps": name,
@@ -200,17 +343,15 @@ def clash_proxy_to_share_link(p: dict) -> Optional[str]:
                 "aid": str(p.get("alterId") or p.get("alterid") or 0),
                 "scy": p.get("cipher") or "auto",
                 "net": p.get("network") or "tcp",
-                "type": p.get("type") or "none",
+                "type": "none",
                 "host": (p.get("ws-opts") or {}).get("headers", {}).get("Host") or p.get("host") or "",
                 "path": (p.get("ws-opts") or {}).get("path") or p.get("path") or "",
                 "tls": "tls" if p.get("tls") else "",
                 "sni": p.get("servername") or p.get("sni") or "",
             }
             raw = json.dumps(conf, ensure_ascii=False, separators=(",", ":"))
-            b64 = base64.b64encode(raw.encode()).decode()
-            return f"vmess://{b64}"
-
-        elif t == "vless":
+            return f"vmess://{base64.b64encode(raw.encode()).decode()}"
+        if t == "vless":
             uuid = p.get("uuid") or ""
             params = []
             if p.get("tls"):
@@ -221,89 +362,95 @@ def clash_proxy_to_share_link(p: dict) -> Optional[str]:
                 params.append(f"type={p['network']}")
             if p.get("servername") or p.get("sni"):
                 params.append(f"sni={p.get('servername') or p.get('sni')}")
-            query = "&".join(params)
-            return f"vless://{uuid}@{server}:{port}?{query}#{name}"
-
-        elif t == "trojan":
+            return f"vless://{uuid}@{server}:{port}?{'&'.join(params)}#{name}"
+        if t == "trojan":
             password = p.get("password") or ""
             params = []
             if p.get("sni") or p.get("servername"):
                 params.append(f"sni={p.get('sni') or p.get('servername')}")
-            query = "&".join(params)
-            return f"trojan://{password}@{server}:{port}?{query}#{name}"
-
-        elif t in ("hysteria", "hysteria2", "hy2"):
-            # hysteria2://auth@server:port?params#name
+            return f"trojan://{password}@{server}:{port}?{'&'.join(params)}#{name}"
+        if t in ("hysteria", "hysteria2", "hy2"):
             auth = p.get("password") or p.get("auth") or ""
             protocol = "hysteria2" if t != "hysteria" else "hysteria"
             return f"{protocol}://{auth}@{server}:{port}#{name}"
-
-        elif t == "tuic":
-            uuid = p.get("uuid") or ""
-            password = p.get("password") or ""
-            return f"tuic://{uuid}:{password}@{server}:{port}#{name}"
-
+        if t == "tuic":
+            return f"tuic://{p.get('uuid') or ''}:{p.get('password') or ''}@{server}:{port}#{name}"
     except Exception:
         return None
     return None
 
 
 def detect_and_parse(content: str) -> List[str]:
-    """
-    自动检测格式并解析出所有分享链接
-    优先级：
-    1. 直接包含大量分享链接 → 提取
-    2. 看起来是 Base64 → 解码后再提取
-    3. 看起来是 YAML → 按 Clash 解析
-    """
     content = content.strip()
     if not content:
         return []
-
-    # 1. 先直接提取（很多源已经是明文链接列表）
     links = extract_share_links(content)
-    if len(links) >= 3:          # 有一定数量就认为有效
+    if len(links) >= 3:
         return links
-
-    # 2. 尝试 Base64
     decoded = safe_b64decode(content)
     if decoded and is_mostly_printable(decoded):
         links = extract_share_links(decoded)
         if links:
             return links
-        # 解码后可能是 YAML
         if "proxies:" in decoded or "Proxy:" in decoded:
             return parse_clash_yaml(decoded)
-
-    # 3. 直接当 YAML 解析
     if "proxies:" in content or "Proxy:" in content or content.lstrip().startswith("{"):
-        return parse_clash_yaml(content)
-
-    # 4. 再试一次 Base64（有些源是双重编码或带换行）
+        ylinks = parse_clash_yaml(content)
+        if ylinks:
+            return ylinks
     if not links:
-        # 去掉可能的前缀注释后重试
         pure = re.sub(r"^#.*$", "", content, flags=re.MULTILINE).strip()
         decoded = safe_b64decode(pure)
         if decoded:
             links = extract_share_links(decoded)
             if not links and ("proxies:" in decoded or "Proxy:" in decoded):
                 links = parse_clash_yaml(decoded)
-
     return links
 
 
+def expand_second_hop(content: str, origin_url: str) -> List[str]:
+    if not ENABLE_SECOND_HOP:
+        return []
+    candidates: List[str] = []
+    seen = set()
+    for u in extract_http_urls(content):
+        if should_skip_second_hop(u):
+            raw = blob_to_raw(u)
+            if raw and raw not in seen:
+                seen.add(raw)
+                candidates.append(raw)
+            continue
+        if u.rstrip("/") == origin_url.rstrip("/"):
+            continue
+        if u in seen:
+            continue
+        seen.add(u)
+        candidates.append(u)
+        if len(candidates) >= SECOND_HOP_MAX:
+            break
+
+    extra: List[str] = []
+    for u in candidates:
+        if is_telegram_s(u):
+            _, text, err = fetch_telegram_pages(u, max_pages=min(2, TG_MAX_PAGES))
+        elif is_github_repo_home(u):
+            _, text, err = fetch_github_readme(u)
+        else:
+            _, text, err = fetch_url(u)
+        if err or not text:
+            continue
+        extra.extend(detect_and_parse(text))
+    return extra
+
+
 def normalize_link(link: str) -> str:
-    """简单规范化，用于去重（去掉 # 后面的备注差异）"""
     link = link.strip()
     if "#" in link:
-        # 保留协议部分，备注可以不同但内容相同
-        base = link.split("#", 1)[0]
-        return base
+        return link.split("#", 1)[0]
     return link
 
 
 def get_protocol(link: str) -> str:
-    """从分享链接提取协议名"""
     m = re.match(r"^([a-z0-9]+)://", link, re.IGNORECASE)
     if not m:
         return "unknown"
@@ -315,7 +462,6 @@ def get_protocol(link: str) -> str:
     return proto
 
 
-# ======================== 主流程 ========================
 def load_previous_hashes() -> Dict[str, str]:
     if HASH_FILE.exists():
         try:
@@ -333,7 +479,6 @@ def save_hashes(hashes: Dict[str, str]):
 
 
 def process_one_source(url: str, prev_hashes: Dict[str, str]) -> dict:
-    """处理单个订阅源，返回统计信息"""
     result = {
         "url": url,
         "count": 0,
@@ -344,7 +489,17 @@ def process_one_source(url: str, prev_hashes: Dict[str, str]) -> dict:
         "links": [],
     }
 
-    url, content, err = fetch_url(url)
+    low = url.lower()
+    if any(k in low for k in (
+        "img.shields.io", "shields.io/badge", "play.google.com",
+        "apps.apple.com", ".png", ".svg", ".jpg",
+    )):
+        result["status"] = "skipped"
+        result["skipped"] = True
+        result["error"] = "noise url"
+        return result
+
+    _, content, err = fetch_source_content(url)
     if err or content is None:
         result["status"] = "error"
         result["error"] = err or "empty content"
@@ -353,14 +508,15 @@ def process_one_source(url: str, prev_hashes: Dict[str, str]) -> dict:
     h = content_hash(content)
     result["hash"] = h
 
-    # 增量跳过
     if prev_hashes.get(url) == h:
         result["skipped"] = True
         result["status"] = "skipped"
         return result
 
     links = detect_and_parse(content)
-    # 去重本源内部
+    if ENABLE_SECOND_HOP and len(links) < 5:
+        links.extend(expand_second_hop(content, url))
+
     seen = set()
     unique = []
     for link in links:
@@ -374,33 +530,33 @@ def process_one_source(url: str, prev_hashes: Dict[str, str]) -> dict:
     return result
 
 
-def save_nodes_by_protocol(all_links: List[str]):
-    """按协议建子目录 + 每 500 个拆分文件"""
-    NODES_DIR.mkdir(parents=True, exist_ok=True)
-
-    # 清空旧的协议子目录（保留 stats / changelog / hash）
-    for item in NODES_DIR.iterdir():
+def _clear_protocol_dirs(root: Path):
+    if not root.exists():
+        return
+    for item in root.iterdir():
         if item.is_dir():
             for f in item.glob("*.txt"):
                 f.unlink()
             try:
-                item.rmdir()  # 目录空了就删掉
+                item.rmdir()
             except OSError:
                 pass
 
+
+def _write_links_by_protocol(root: Path, links: List[str], label: str) -> int:
+    root.mkdir(parents=True, exist_ok=True)
     groups: Dict[str, List[str]] = {}
-    for link in all_links:
+    for link in links:
         proto = get_protocol(link)
         groups.setdefault(proto, []).append(link)
 
     total_files = 0
-    for proto, links in sorted(groups.items()):
-        if not links:
+    for proto, plinks in sorted(groups.items()):
+        if not plinks:
             continue
-        unique = list(dict.fromkeys(links))
-        proto_dir = NODES_DIR / proto
+        unique = list(dict.fromkeys(plinks))
+        proto_dir = root / proto
         proto_dir.mkdir(parents=True, exist_ok=True)
-
         for i in range(0, len(unique), NODES_PER_FILE):
             chunk = unique[i : i + NODES_PER_FILE]
             idx = i // NODES_PER_FILE + 1
@@ -408,10 +564,49 @@ def save_nodes_by_protocol(all_links: List[str]):
             with open(filename, "w", encoding="utf-8") as f:
                 f.write("\n".join(chunk) + "\n")
             total_files += 1
-            print(f"  → 写入 {proto}/{filename.name}  ({len(chunk)} 个节点)")
+            print(f"  → [{label}] {proto}/{filename.name}  ({len(chunk)} 个)")
+    return total_files
 
-    print(f"[完成] 共生成 {total_files} 个文件，覆盖 {len(groups)} 种协议")
 
+def load_existing_nodes(root: Path) -> List[str]:
+    if not root.exists():
+        return []
+    links: List[str] = []
+    for f in sorted(root.rglob("*.txt")):
+        try:
+            for line in f.read_text(encoding="utf-8", errors="ignore").splitlines():
+                line = line.strip()
+                if line and "://" in line:
+                    links.append(line)
+        except Exception:
+            pass
+    return links
+
+
+def save_nodes_update_only(update_links: List[str]):
+    print(f"\n[信息] 写入本轮更新 → {UPDATE_DIR}/ （共 {len(update_links)} 个节点）")
+    _clear_protocol_dirs(UPDATE_DIR)
+    UPDATE_DIR.mkdir(parents=True, exist_ok=True)
+    if not update_links:
+        print("  → 本轮无更新，nodes_update/ 已清空")
+        return
+    n = _write_links_by_protocol(UPDATE_DIR, update_links, "更新")
+    print(f"[完成] nodes_update/ 共 {n} 个文件")
+
+
+def save_nodes_cumulative(update_links: List[str]):
+    old = load_existing_nodes(NODES_DIR)
+    seen: Set[str] = set()
+    merged: List[str] = []
+    for link in old + update_links:
+        norm = normalize_link(link)
+        if norm not in seen:
+            seen.add(norm)
+            merged.append(link)
+    print(f"\n[信息] 写入累计全量 → {NODES_DIR}/ （旧 {len(old)} + 本轮 {len(update_links)} → 合并后 {len(merged)}）")
+    _clear_protocol_dirs(NODES_DIR)
+    n = _write_links_by_protocol(NODES_DIR, merged, "全量")
+    print(f"[完成] nodes/ 共 {n} 个文件")
 
 
 def write_stats(results: List[dict]):
@@ -423,55 +618,43 @@ def write_stats(results: List[dict]):
             writer.writerow(["timestamp", "url", "count", "status", "error", "skipped"])
         ts = now_beijing()
         for r in results:
-            writer.writerow([
-                ts,
-                r["url"],
-                r["count"],
-                r["status"],
-                r.get("error", ""),
-                r.get("skipped", False),
-            ])
+            writer.writerow([ts, r["url"], r["count"], r["status"], r.get("error", ""), r.get("skipped", False)])
 
 
 def write_changelog(results: List[dict], prev_hashes: Dict[str, str]):
     NODES_DIR.mkdir(parents=True, exist_ok=True)
-    lines = []
-    lines.append(f"## 运行时间：{now_beijing()} (北京时间)\n")
-
+    lines = [f"## 运行时间：{now_beijing()} (北京时间)\n"]
     updated = [r for r in results if not r.get("skipped") and r["status"] == "ok"]
     skipped = [r for r in results if r.get("skipped")]
     errors = [r for r in results if r["status"] == "error"]
-
     lines.append(f"- 成功更新：{len(updated)} 个源")
-    lines.append(f"- 内容未变跳过：{len(skipped)} 个源")
-    lines.append(f"- 拉取失败：{len(errors)} 个源\n")
-
+    lines.append(f"- 内容未变/噪音跳过：{len(skipped)} 个源")
+    lines.append(f"- 拉取失败：{len(errors)} 个源")
+    lines.append(f"- TG 频道最多翻页：{TG_MAX_PAGES}")
+    lines.append(f"- 二级订阅展开：{'开' if ENABLE_SECOND_HOP else '关'}\n")
     if updated:
         lines.append("### 本次有更新的源\n")
         for r in updated:
             lines.append(f"- `{r['url']}` → **{r['count']}** 个节点")
         lines.append("")
-
     if errors:
         lines.append("### 失败的源\n")
         for r in errors:
             lines.append(f"- `{r['url']}` : {r.get('error', '')}")
         lines.append("")
-
-    old = ""
-    if CHANGELOG.exists():
-        old = CHANGELOG.read_text(encoding="utf-8")
+    old = CHANGELOG.read_text(encoding="utf-8") if CHANGELOG.exists() else ""
     with open(CHANGELOG, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n---\n\n" + old)
 
 
 def main():
     print(f"========== collect_nodes 开始运行 {now_beijing()} ==========")
+    print(f"  TG_MAX_PAGES={TG_MAX_PAGES}  ENABLE_SECOND_HOP={ENABLE_SECOND_HOP}  SECOND_HOP_MAX={SECOND_HOP_MAX}")
     NODES_DIR.mkdir(parents=True, exist_ok=True)
+    UPDATE_DIR.mkdir(parents=True, exist_ok=True)
 
     urls = load_subscriptions()
     prev_hashes = load_previous_hashes()
-
     results = []
     all_links: List[str] = []
     seen_global: Set[str] = set()
@@ -482,32 +665,33 @@ def main():
         for future in as_completed(future_map):
             r = future.result()
             results.append(r)
-            status = r["status"]
             if r.get("skipped"):
-                print(f"  [跳过] {r['url'][:60]}... (内容未变化)")
-            elif status == "error":
-                print(f"  [失败] {r['url'][:60]}... → {r.get('error')}")
+                print(f"  [跳过] {r['url'][:70]}... ({r.get('error') or '内容未变化'})")
+            elif r["status"] == "error":
+                print(f"  [失败] {r['url'][:70]}... → {r.get('error')}")
             else:
-                print(f"  [成功] {r['url'][:60]}... → {r['count']} 节点")
+                print(f"  [成功] {r['url'][:70]}... → {r['count']} 节点")
                 for link in r["links"]:
                     norm = normalize_link(link)
                     if norm not in seen_global:
                         seen_global.add(norm)
                         all_links.append(link)
 
-    # 更新哈希（只记录成功或跳过的）
     new_hashes = dict(prev_hashes)
     for r in results:
-        if r["hash"] and r["status"] in ("ok", "skipped"):
+        if r["hash"] and r["status"] in ("ok", "skipped") and r.get("error") != "noise url":
             new_hashes[r["url"]] = r["hash"]
     save_hashes(new_hashes)
 
-    print(f"\n[信息] 全局去重后共 {len(all_links)} 个有效节点")
-    save_nodes_by_protocol(all_links)
+    print(f"\n[信息] 本轮有更新的源解析出 {len(all_links)} 个节点")
+    save_nodes_update_only(all_links)
+    save_nodes_cumulative(all_links)
     write_stats(results)
     write_changelog(results, prev_hashes)
 
     print(f"========== 运行结束 {now_beijing()} ==========")
+    print(f"下游请优先使用: {UPDATE_DIR}/")
+    print(f"完整累计在:     {NODES_DIR}/")
 
 
 if __name__ == "__main__":

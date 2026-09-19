@@ -11,6 +11,7 @@ collect_nodes.py
 - 可选：正文里的 http(s) 订阅链接再展开一层
 - 本轮更新 → nodes_update/；累计全量 → nodes/
 - 按协议分类，每 NODES_PER_FILE 个拆分
+- 【新增】基于核心指纹的全局持久化去重（只判重，不删参数）
 """
 
 from __future__ import annotations
@@ -26,7 +27,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 import requests
 import yaml
@@ -39,6 +40,7 @@ UPDATE_DIR = Path("nodes_update")        # 仅本轮有更新的节点
 STATS_CSV = NODES_DIR / "stats.csv"
 CHANGELOG = NODES_DIR / "changelog.md"
 HASH_FILE = NODES_DIR / "source_hashes.json"
+FP_FILE = NODES_DIR / "seen_fingerprints.json"   # 【新增】持久化指纹文件
 
 MAX_WORKERS = 12
 NODES_PER_FILE = 18000
@@ -52,11 +54,7 @@ TG_PAGE_DELAY = 0.4
 ENABLE_SECOND_HOP = True
 SECOND_HOP_MAX = 15
 
-USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/150.0.0.0 Safari/537.36"
-)
+USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" )
 
 BEIJING_TZ = timezone(timedelta(hours=8))
 
@@ -462,6 +460,175 @@ def get_protocol(link: str) -> str:
     return proto
 
 
+# ======================== 【新增】指纹相关（只用于判重，不删数据） ========================
+def parse_vmess_uri(uri: str) -> Optional[dict]:
+    try:
+        b64 = uri[8:].split("#")[0]
+        pad = 4 - len(b64) % 4
+        if pad != 4:
+            b64 += "=" * pad
+        cfg = json.loads(base64.b64decode(b64).decode("utf-8", errors="ignore"))
+        name = cfg.get("ps") or f"vmess-{cfg.get('add', 'node')}"
+        host = cfg.get("host") or ""
+        port = int(cfg.get("port") or 443)
+        tls = str(cfg.get("tls", "")).lower() == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
+        proxy = {
+            "name": name,
+            "server": cfg.get("add"),
+            "port": port,
+            "type": "vmess",
+            "uuid": cfg.get("id"),
+            "alterId": int(cfg.get("aid") or 0),
+            "cipher": cfg.get("scy") or "auto",
+            "udp": True,
+            "tls": tls,
+            "skip-cert-verify": True,
+            "network": cfg.get("net") or "ws",
+        }
+        if tls:
+            proxy["servername"] = host or cfg.get("add")
+        if proxy["network"] == "ws":
+            proxy["ws-opts"] = {
+                "path": cfg.get("path") or "/?ed=2560",
+                "headers": {"Host": host} if host else {},
+            }
+        return proxy
+    except Exception:
+        return None
+
+
+def parse_trojan_uri(uri: str) -> Optional[dict]:
+    try:
+        p = urlparse(uri)
+        password = p.username
+        server = p.hostname
+        port = p.port or 443
+        name = unquote(p.fragment) if p.fragment else f"trojan-{server}"
+        q = parse_qs(p.query)
+        security = (q.get("security") or ["tls"])[0]
+        net = (q.get("type") or ["ws"])[0]
+        sni = (q.get("sni") or [""])[0]
+        host = (q.get("host") or [""])[0]
+        path = unquote((q.get("path") or ["/?ed=2560"])[0])
+        fp = (q.get("fp") or ["chrome"])[0]
+        tls = security == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
+        proxy = {
+            "name": name,
+            "server": server,
+            "port": port,
+            "type": "trojan",
+            "password": password,
+            "network": net,
+            "udp": True,
+            "tls": tls,
+            "skip-cert-verify": True,
+            "client-fingerprint": fp,
+        }
+        if tls:
+            proxy["servername"] = sni or host or server
+        if net == "ws":
+            ws = {"path": path or "/?ed=2560"}
+            if host:
+                ws["headers"] = {"Host": host}
+            proxy["ws-opts"] = ws
+        return proxy
+    except Exception:
+        return None
+
+
+def parse_vless_uri(uri: str) -> Optional[dict]:
+    try:
+        p = urlparse(uri)
+        uuid = p.username
+        server = p.hostname
+        port = p.port or 443
+        name = unquote(p.fragment) if p.fragment else f"vless-{server}"
+        q = parse_qs(p.query)
+        net = (q.get("type") or ["ws"])[0]
+        security = (q.get("security") or ["tls"])[0]
+        sni = (q.get("sni") or [""])[0]
+        host = (q.get("host") or [""])[0]
+        path = unquote((q.get("path") or ["/?ed=2560"])[0])
+        tls = security == "tls" or port in (443, 8443, 2053, 2083, 2087, 2096)
+        proxy = {
+            "name": name,
+            "server": server,
+            "port": port,
+            "type": "vless",
+            "uuid": uuid,
+            "network": net,
+            "udp": True,
+            "tls": tls,
+            "skip-cert-verify": True,
+        }
+        if tls:
+            proxy["servername"] = sni or host or server
+        if net == "ws":
+            ws = {"path": path or "/?ed=2560"}
+            if host:
+                ws["headers"] = {"Host": host}
+            proxy["ws-opts"] = ws
+        return proxy
+    except Exception:
+        return None
+
+
+def parse_uri_to_proxy(uri: str) -> Optional[dict]:
+    uri = uri.strip()
+    if not uri:
+        return None
+    if uri.startswith("vmess://"):
+        return parse_vmess_uri(uri)
+    if uri.startswith("trojan://"):
+        return parse_trojan_uri(uri)
+    if uri.startswith("vless://"):
+        return parse_vless_uri(uri)
+    return None
+
+
+def node_fingerprint(proxy: dict) -> str:
+    """核心指纹：只用于判重，不用于精简数据"""
+    t = (proxy.get("type") or "").lower()
+    uid = proxy.get("uuid") or proxy.get("password") or ""
+    path = ""
+    host = ""
+    if isinstance(proxy.get("ws-opts"), dict):
+        path = proxy["ws-opts"].get("path") or ""
+        headers = proxy["ws-opts"].get("headers") or {}
+        if isinstance(headers, dict):
+            host = headers.get("Host") or ""
+    host = host or proxy.get("servername") or proxy.get("sni") or ""
+    return f"{t}|{uid}|{path}|{host}".lower()
+
+
+def get_link_fingerprint(link: str) -> str:
+    """从原始 share link 计算指纹。解析失败时用完整 normalize 后的链接兜底，避免误删。"""
+    proxy = parse_uri_to_proxy(link)
+    if proxy:
+        return node_fingerprint(proxy)
+    # 解析失败的节点，用完整链接（去名字）作为指纹，保证不丢数据
+    return "raw|" + normalize_link(link)
+
+
+def load_seen_fingerprints() -> Set[str]:
+    if FP_FILE.exists():
+        try:
+            with open(FP_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return set(data)
+        except Exception:
+            pass
+    return set()
+
+
+def save_seen_fingerprints(fps: Set[str]):
+    NODES_DIR.mkdir(parents=True, exist_ok=True)
+    with open(FP_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(list(fps)), f, ensure_ascii=False, indent=2)
+
+
+# ======================== 原有逻辑（几乎不动） ========================
 def load_previous_hashes() -> Dict[str, str]:
     if HASH_FILE.exists():
         try:
@@ -653,11 +820,16 @@ def main():
     NODES_DIR.mkdir(parents=True, exist_ok=True)
     UPDATE_DIR.mkdir(parents=True, exist_ok=True)
 
+    # 【新增】加载历史指纹
+    seen_fps = load_seen_fingerprints()
+    print(f"[信息] 已加载历史指纹: {len(seen_fps)} 个")
+
     urls = load_subscriptions()
     prev_hashes = load_previous_hashes()
     results = []
     all_links: List[str] = []
-    seen_global: Set[str] = set()
+    seen_global: Set[str] = set()          # 本轮内完整链接去重
+    new_fps_this_run: Set[str] = set()     # 本轮真正新增的指纹
 
     print(f"[信息] 开始并行拉取（workers={MAX_WORKERS}）...")
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -675,7 +847,19 @@ def main():
                     norm = normalize_link(link)
                     if norm not in seen_global:
                         seen_global.add(norm)
-                        all_links.append(link)
+                        # 【新增】指纹判重：只保留真正新服务器的完整原始链接
+                        fp = get_link_fingerprint(link)
+                        if fp not in seen_fps and fp not in new_fps_this_run:
+                            new_fps_this_run.add(fp)
+                            all_links.append(link)   # 保存完整原始链接，不做任何精简
+
+    # 【新增】更新并保存指纹集合
+    if new_fps_this_run:
+        seen_fps.update(new_fps_this_run)
+        save_seen_fingerprints(seen_fps)
+        print(f"[信息] 本轮新增指纹: {len(new_fps_this_run)} 个，累计指纹总数: {len(seen_fps)}")
+    else:
+        print(f"[信息] 本轮没有发现新服务器指纹（全部已存在）")
 
     new_hashes = dict(prev_hashes)
     for r in results:
@@ -683,7 +867,7 @@ def main():
             new_hashes[r["url"]] = r["hash"]
     save_hashes(new_hashes)
 
-    print(f"\n[信息] 本轮有更新的源解析出 {len(all_links)} 个节点")
+    print(f"\n[信息] 本轮真正新节点（指纹去重后）: {len(all_links)} 个")
     save_nodes_update_only(all_links)
     save_nodes_cumulative(all_links)
     write_stats(results)
@@ -692,6 +876,8 @@ def main():
     print(f"========== 运行结束 {now_beijing()} ==========")
     print(f"下游请优先使用: {UPDATE_DIR}/")
     print(f"完整累计在:     {NODES_DIR}/")
+    if not all_links:
+        print("提示：本轮无新服务器，后续 generator 和测活脚本可直接跳过，节省时间。")
 
 
 if __name__ == "__main__":

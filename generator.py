@@ -21,8 +21,8 @@ IP_SOURCES = {
     "5plus": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_5plus.txt",
 }
 
-NODES_DIR = Path("nodes")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/002.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描  nodes/trojan/001.txt    nodes/vmess/001.txt  nodes/vless/001.txt nodes/vless/002.txt
+NODES_DIR = Path("nodes_update")
+TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/001.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描  nodes/trojan/001.txt    nodes/vmess/001.txt  nodes/vless/001.txt nodes/vless/002.txt
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30

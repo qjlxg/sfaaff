@@ -22,7 +22,7 @@ IP_SOURCES = {
 }
 
 NODES_DIR = Path("nodes_update")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/vmess/002.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
+TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/005.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30
@@ -240,7 +240,7 @@ def load_templates() -> List[dict]:
 
 def node_fingerprint(node: dict) -> str:
     t = (node.get("type") or "").lower()
-    uid = node.get("uuid") or node.get("password") or ""
+    uid = (node.get("uuid") or node.get("password") or "").strip().lower()
     path = ""
     host = ""
     if isinstance(node.get("ws-opts"), dict):
@@ -249,7 +249,8 @@ def node_fingerprint(node: dict) -> str:
         if isinstance(headers, dict):
             host = headers.get("Host") or ""
     host = host or node.get("servername") or node.get("sni") or ""
-    return f"{t}|{uid}|{path}|{host}".lower()
+    # 关键修改：用 + 代替 |，避免被 Colab 正则截断
+    return f"{t}+{uid}+{path}+{host}".lower()
 
 
 def dedupe_by_fingerprint(proxies: List[dict]) -> List[dict]:

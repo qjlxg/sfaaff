@@ -16,13 +16,13 @@ import yaml
 
 IP_SOURCES = {
     "1only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_1only.txt",
-    "2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
+   # "2only": "https://raw.githubusercontent.com/qjlxg/sfaaff/refs/heads/main/ips_2only.txt",
     "4only": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_4only.txt",
     "5plus": "https://raw.githubusercontent.com/qjlxg/Program/refs/heads/main/ips_5plus.txt",
 }
 
 NODES_DIR = Path("nodes_update")
-TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/007.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
+TEMPLATE_FILE: Optional[Path] = Path("nodes/trojan/006.txt") # 例如 Path("nodes/vmess/001.txt")，None 表示自动扫描
 
 OUTPUT_DIR = Path("generated")
 PROBE_IP_COUNT = 30

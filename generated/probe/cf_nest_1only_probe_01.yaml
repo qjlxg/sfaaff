@@ -1,6 +1,6 @@
 proxies:
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.148.22 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.17.148.22
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=101.108.49.121 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 101.108.49.121
   port: 443
   type: trojan
   password: bpb-trojan
@@ -15,8 +15,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.23.50 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.17.23.50
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.136.146.73 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.136.146.73
   port: 443
   type: trojan
   password: bpb-trojan
@@ -31,8 +31,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.0.245 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.0.245
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.167.234.26 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.167.234.26
   port: 443
   type: trojan
   password: bpb-trojan
@@ -47,8 +47,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.1.102 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.1.102
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.169.206.131 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.169.206.131
   port: 443
   type: trojan
   password: bpb-trojan
@@ -63,8 +63,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.14.50 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.14.50
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.186.64.182 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.186.64.182
   port: 443
   type: trojan
   password: bpb-trojan
@@ -79,8 +79,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.15.165 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.15.165
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.197.185.178 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.197.185.178
   port: 443
   type: trojan
   password: bpb-trojan
@@ -95,8 +95,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.16.145 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.16.145
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.242.133.57 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.242.133.57
   port: 443
   type: trojan
   password: bpb-trojan
@@ -111,8 +111,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.17.86 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.17.86
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.63.30.163 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.63.30.163
   port: 443
   type: trojan
   password: bpb-trojan
@@ -127,8 +127,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.18.17 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.18.17
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.70.115.106 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 103.70.115.106
   port: 443
   type: trojan
   password: bpb-trojan
@@ -143,8 +143,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.19.200 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.19.200
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.0.89 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.0.89
   port: 443
   type: trojan
   password: bpb-trojan
@@ -159,8 +159,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.2.101 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.2.101
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.102.197 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.102.197
   port: 443
   type: trojan
   password: bpb-trojan
@@ -175,8 +175,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.31.241
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.105.166 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.105.166
   port: 443
   type: trojan
   password: bpb-trojan
@@ -191,8 +191,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.34.253 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.34.253
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.105.6 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.105.6
   port: 443
   type: trojan
   password: bpb-trojan
@@ -207,8 +207,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.37.166 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.37.166
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.147.181 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.147.181
   port: 443
   type: trojan
   password: bpb-trojan
@@ -223,8 +223,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.40.179 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.40.179
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.150.184 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.150.184
   port: 443
   type: trojan
   password: bpb-trojan
@@ -239,8 +239,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.42.82 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.42.82
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.222.21 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.222.21
   port: 443
   type: trojan
   password: bpb-trojan
@@ -255,8 +255,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.50.106 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.50.106
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.245.154 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.245.154
   port: 443
   type: trojan
   password: bpb-trojan
@@ -271,8 +271,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.59.29 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.59.29
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.246.19 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.246.19
   port: 443
   type: trojan
   password: bpb-trojan
@@ -287,8 +287,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.60.40 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.60.40
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.247.32 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.247.32
   port: 443
   type: trojan
   password: bpb-trojan
@@ -303,8 +303,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.61.24 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.61.24
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.249.110 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.249.110
   port: 443
   type: trojan
   password: bpb-trojan
@@ -319,8 +319,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.63.162 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.63.162
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.251.114 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.251.114
   port: 443
   type: trojan
   password: bpb-trojan
@@ -335,8 +335,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.64.168 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.64.168
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.54.142 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.54.142
   port: 443
   type: trojan
   password: bpb-trojan
@@ -351,8 +351,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.66.17 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.66.17
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.65.1 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.65.1
   port: 443
   type: trojan
   password: bpb-trojan
@@ -367,8 +367,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.66.54 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.66.54
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.69.102 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.16.69.102
   port: 443
   type: trojan
   password: bpb-trojan
@@ -383,8 +383,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.68.164 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.68.164
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.100.170 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.17.100.170
   port: 443
   type: trojan
   password: bpb-trojan
@@ -399,8 +399,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.7.70 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.7.70
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.112.132 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.17.112.132
   port: 443
   type: trojan
   password: bpb-trojan
@@ -415,8 +415,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.72.61 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.72.61
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.112.33 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.17.112.33
   port: 443
   type: trojan
   password: bpb-trojan
@@ -431,8 +431,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.73.50 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.73.50
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.139.37 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.17.139.37
   port: 443
   type: trojan
   password: bpb-trojan
@@ -447,8 +447,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.76.103 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.76.103
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.142.212 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.17.142.212
   port: 443
   type: trojan
   password: bpb-trojan
@@ -463,8 +463,8 @@ proxies:
     headers:
       Host: hu1.pages.dev
   sni: hu1.pages.dev
-- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.76.126 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  server: 104.21.76.126
+- name: BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.145.3 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  server: 104.17.145.3
   port: 443
   type: trojan
   password: bpb-trojan
@@ -483,35 +483,35 @@ proxy-groups:
 - name: CF-Nest
   type: select
   proxies:
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.148.22 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.23.50 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.0.245 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.1.102 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.14.50 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.15.165 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.16.145 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.17.86 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.18.17 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.19.200 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.2.101 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.34.253 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.37.166 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.40.179 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.42.82 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.50.106 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.59.29 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.60.40 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.61.24 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.63.162 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.64.168 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.66.17 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.66.54 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.68.164 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.7.70 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.72.61 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.73.50 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.76.103 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
-  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.21.76.126 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=101.108.49.121 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.136.146.73 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.167.234.26 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.169.206.131 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.186.64.182 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.197.185.178 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.242.133.57 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.63.30.163 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=103.70.115.106 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.0.89 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.102.197 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.105.166 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.105.6 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.147.181 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.150.184 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.222.21 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.245.154 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.246.19 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.247.32 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.249.110 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.251.114 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.54.142 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.65.1 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.16.69.102 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.100.170 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.112.132 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.112.33 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.139.37 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.142.212 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
+  - BPB-hu1.pages.dev | IP=104.21.31.241 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev | IP=104.17.145.3 | PORT=443 | FP=trojan|bpb-trojan|/tr?ed=2560|hu1.pages.dev
 rules:
 - MATCH,CF-Nest
